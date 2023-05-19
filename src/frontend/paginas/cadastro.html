@@ -12,43 +12,84 @@
 
     <div class="container">
         <form action="" method="" class="formulario">
-            <h1 class="titulo">Cadastrar</h1>
+            <h2 class="titulo">Cadastrar</h2>
 
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome">
+            <div class="alinhado">
+                <div class="label_campo">
+                    <input type="text" name="nome" id="nome">
+                    <label>Nome*</label>
+                </div>
 
-            <label for="cpf">Cpf</label>
-            <input type="text" name="cpf" id="cpf">
+                <div class="label_campo">
+                    <input type="text" name="cpf" id="cpf">
+                    <label>Cpf*</label>
+                </div>
+            </div>
+            
+            <div class="alinhado">
+                <div class="label_campo">
+                    <input type="number" name="dataDeNascimento" id="dataDeNascimento">
+                    <label>Data de Nascimento*</label>                    
+                </div>
 
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email">
+                <div class="label_campo">
+                    <input type="text" name="celular" id="celular">
+                    <label>Celular*</label>                    
+                </div>
+            </div>
+            
+            <div class="alinhado">
+                <div class="label_campo">
+                    <input type="text" name="email" id="email">
+                    <label>Email*</label>                    
+                </div>
+            </div>
 
-            <label for="senha">Senha</label>
-            <input type="text" name="senha" id="senha">
+            <div class="alinhado">
+                <div class="label_campo">
+                    <input type="password" name="senha" id="senha">
+                    <label>Senha*</label>                    
+                </div>
 
-            <label for="dataDeNascimento">Data de Nascimento</label>
-            <input type="number" name="dataDeNascimento" id="dataDeNascimento">
+                <div class="label_campo">
+                    <input type="password" name="confirmacaosenha" id="confirmacaosenha">
+                    <label>Confirme sua senha*</label>                    
+                </div>
+            </div>
+            
+            <div class="alinhado">
+                <div class="label_campo">
+                    <input type="text" name="cep" id="cep">
+                    <label>Cep*</label>                    
+                </div>
+                <div class="label_campo">
+                    <input type="text" name="cidade" id="cidade">
+                    <label>Cidade*</label>                    
+                </div>
 
-            <label for="cep">Cep</label>
-            <input type="text" name="cep" id="cep">
+                <div class="label_campo">
+                    <input type="text" name="estado" id="estado">
+                    <label>Estado*</label>
+                </div>
+            </div>
+            
+            <div class="alinhado">
+                <div class="label_campo">
+                    <input type="text" name="bairro" id="bairro">
+                    <label>Bairro*</label>
+                    
+                </div>
 
-            <label for="estado">Estado</label>
-            <input type="text" name="estado" id="estado">
+                <div class="label_campo">
+                    <input type="text" name="rua" id="rua">
+                    <label>Rua*</label>                    
+                </div>
 
-            <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade">
-
-            <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="bairro">
-
-            <label for="rua">Rua</label>
-            <input type="text" name="rua" id="rua">
-
-            <label for="numero">Número</label>
-            <input type="text" name="numero" id="numero">
-
-            <label for="celular">Celular</label>
-            <input type="text" name="celular" id="celular">
+                <div class="label_campo">
+                    <input type="text" name="numero" id="numero">
+                    <label>Número*</label>
+                </div>
+            </div>
 
             <div class="button-box">
                 <button type="submit" id="botaoCadastrar">Enviar</button>

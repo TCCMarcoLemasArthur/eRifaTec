@@ -18,11 +18,10 @@
     flex-direction: column;
     margin: 15px auto;
     width: 100%;
-    max-width: 500px;
+    max-width: 46rem;
     background-color: white;
     padding: 15px 20px 0;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .titulo {
@@ -34,28 +33,51 @@
     user-select: none;
 }
 
+.alinhado {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.label_campo {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
 .formulario label {
-    color: #808080;
-    font-weight: 700;
+    position: absolute;
     text-transform: uppercase;
+    pointer-events: none;
+    left: 1rem;
+    padding: 2px;
+    transform: translateY(-50%);
+    cursor: default;
+    transition: all 300ms ease 0s;
+    background-color: white;
+    color: rgb(127, 133, 141);
+    font-size: 0.75rem;
+    font-weight: 400;
 }
 
 .formulario input {
-    display: block;
+    height: 3rem;
     width: 100%;
-    background-color: #f3f3f3;
-    border: 1px solid blacj;
+    background: none;
+    border: 0.0625rem solid rgb(127, 133, 141);
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 1rem;
     font-weight: 600;
-    padding: 15px;
+    padding: 0.6875rem 1rem;
     color: #343434;
     margin: 0 0 15px;
     transition: all 200ms ease;
-}
-
-.formulario input:focus {
-    background-color: white;
 }
 
 .button-box {
@@ -77,4 +99,8 @@
     font-weight: 500;
     margin-bottom: 20px;
     transition: all 0.2s ease;
+}
+
+.formulario .erro {
+    border-color: rgb(230, 0, 0);
 }
