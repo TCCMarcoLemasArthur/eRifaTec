@@ -10,103 +10,53 @@
 
 <body>
 
-    <h1>Cadastro</h1>
-    <form action="" method="">
-        <label for="">Nome</label>
-        <input type="text" name="nome">
-        <br><br>
-        <label for="">Cpf</label>
-        <input type="text" name="cpf">
-        <br><br>
-        <label for="">Email</label>
-        <input type="text" name="email">
-        <br><br>
-        <label for="">Senha</label>
-        <input type="text" name="senha">
-        <br><br>
-        <label for="">Data de Nascimento</label>
-        <input type="number" name="dataNascimento">
-        <br><br>
-        <label for="">Cep</label>
-        <input type="text" name="cep">
-        <br><br>
-        <label for="">Estado</label>
-        <input type="text" name="estado">
-        <br><br>
-        <label for="">Cidade</label>
-        <input type="text" name="cidade">
-        <br><br>
-        <label for="">Bairro</label>
-        <input type="text" name="bairro">
-        <br><br>
-        <label for="">Rua</label>
-        <input type="text" name="rua">
-        <br><br>
-        <label for="">Número</label>
-        <input type="text" name="numero">
-        <br><br>
-        <button>Cadastrar</button>
-    </form>
-    <script>
-        var inputNome = document.querySelector("#nome");
-        var nomeUsuario = inputNome.value;
+    <div class="container">
+        <div>
+            <div class="header">
+                <h2>Cadastrar</h2>
+            </div>
+            <form action="" method="">
+                <label for="">Nome</label>
+                <input type="text" name="nome" id="nome">
+                <br><br>
+                <label for="">Cpf</label>
+                <input type="text" name="cpf" id="cpf">
+                <br><br>
+                <label for="">Email</label>
+                <input type="text" name="email" id="email">
+                <br><br>
+                <label for="">Senha</label>
+                <input type="text" name="senha" id="senha">
+                <br><br>
+                <label for="">Data de Nascimento</label>
+                <input type="number" name="dataDeNascimento" id="dataDeNascimento">
+                <br><br>
+                <label for="">Cep</label>
+                <input type="text" name="cep" id="cep">
+                <br><br>
+                <label for="">Estado</label>
+                <input type="text" name="estado" id="estado">
+                <br><br>
+                <label for="">Cidade</label>
+                <input type="text" name="cidade" id="cidade">
+                <br><br>
+                <label for="">Bairro</label>
+                <input type="text" name="bairro" id="bairro">
+                <br><br>
+                <label for="">Rua</label>
+                <input type="text" name="rua" id="rua">
+                <br><br>
+                <label for="">Número</label>
+                <input type="text" name="numero" id="numero">
+                <br><br>
+                <label for="">Celular</label>
+                <input type="text" name="celular" id="celular">
+                <br><br>
+                <button type="submit" id="botaoCadastrar">Enviar</button>
+        </div>
 
-        var inputCpf = document.querySelector("#cpf");
-        var cpfUsuario = inputCpf.value;
+        <script src="./cadastro.js"></script>
 
-        var inputEmail = document.querySelector("#email");
-        var emailUsuario = inputEmail.value;
-
-        var inputSenha = document.querySelector("#senha");
-        var senhaUsuario = inputSenha.value;
-
-        var inputDataNascimento = document.querySelector("#dataNascimento")
-        var dataDeNascimentoUsuario = inputDataNascimento.value;
-
-        var inputCep = document.querySelector("#cep");
-        var cepUsuario = inputCep.value;
-
-        var inputEstado = document.querySelector("#estado");
-        var estadoUsuario = inputEstado.value;
-
-        var inputCidade = document.querySelector("#cidade");
-        var cidadeUsuario = inputCidade.value;
-
-        var inputBairro = document.querySelector("#bairro");
-        var bairroUsuario = inputBairro.value;
-
-        var inputRua = document.querySelector("#rua");
-        var ruaUsuario = inputRua.value;
-
-        var inputNumero = document.querySelector("#numero");
-        var numeroUsuario = inputNumero.value;
-
-        const cadastrarUsuario = () => {
-            const nomeUsuario = document.getElementById("nome").value || null;
-            const emailUsuario = document.getElementById("email").value || null;
-            const senhaUsuario = document.getElementById("senha").value || null;
-            const cpfUsuario = document.getElementById("cpf").value || null;
-            const dataDeNascimentoUsuario = document.getElementById("data-nascimento").value || null;
-            const enderecoUsuario = document.getElementById("endereco").value || null;
-            const telefone = document.getElementById("telefone").value || null;
-            const celular = document.getElementById("celular").value || null;
-
-            console.log(nome, email, senha, cpf, dataNascimento, endereco, telefone, celular);
-        };
-
-        document.getElementById("btnCadastrar").addEventListener("click", cadastrarUsuario);
-
-        //Falta criar um evento click no botão, para que quando o usuário clicar, 
-        //os dados serem transmitidos para suas respectivas variáveis
-        //Falta Estabelecer a conexão com o banco de dados
-        //Falta dar o Insert(Inserir) os dados do usuário quando ele clicar no botão cadastar
-
-        //função para validar campo, se é Nula ou só tem Espaço em Branco. 
-        //(trim é usado para remover espaço em branco no início e no final de uma variável)
-        function isNullorWhiteSpace(input) {
-            return !input || !input.trim();
-        }            
-    </script>
 
 </body>
 
