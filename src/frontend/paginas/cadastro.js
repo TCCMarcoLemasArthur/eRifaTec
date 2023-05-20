@@ -1,5 +1,3 @@
-
-
 const form = document.getElementById('form')
 const nomeUsuario = document.getElementById("nome").value || null;
 const cpfUsuario = document.getElementById("cpf").value || null;
