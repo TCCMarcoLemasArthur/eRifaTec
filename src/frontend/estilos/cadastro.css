@@ -3,15 +3,6 @@
     padding: 0;
     border: none;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #e3e3e3;
 }
 
 .formulario {
@@ -23,6 +14,7 @@
     background-color: white;
     padding: 15px 20px 0;
     border-radius: 10px;
+    box-shadow: 0 0 10px black;
 }
 
 .titulo {
@@ -47,59 +39,6 @@
         gap: 2rem;
         justify-content: space-between;
     }
-}
-
-.label_campo {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    width: 100%;
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
-}
-
-.formulario label {
-    position: absolute;
-    text-transform: uppercase;
-    pointer-events: none;
-    left: 1rem;
-    padding: 2px;
-    transform: translateY(75%);
-    cursor: default;
-    transition: all 200ms ease 0s;
-    background-color: white;
-    color: rgb(127, 133, 141);
-    font-size: 0.75rem;
-    font-weight: 400;
-}
-
-.formulario .label_ativa {
-    font-weight: bold;
-    color: black;
-    transform: translateY(-50%);
-}
-
-.formulario .label_erro {
-    color: rgb(230, 0, 0);
-}
-
-.formulario .campo_erro {
-    border-color: rgb(230, 0, 0);
-}
-
-.formulario input {
-    height: 3rem;
-    width: 100%;
-    background: none;
-    border: 0.0625rem solid black;
-    border-radius: 5px;
-    font-size: 1rem;
-    line-height: 1rem;
-    font-weight: 600;
-    padding: 0.6875rem 1rem;
-    color: #343434;
-    margin: 0 0 15px;
-    transition: all 200ms ease;
 }
 
 .button-box {
