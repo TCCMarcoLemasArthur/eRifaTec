@@ -5,7 +5,7 @@ import FormUsuario from '../componentes/FormUsuario';
 export default function CadastroUsuario() {
     return (
         <>
-          <FormUsuario />
+          <FormUsuario cadastro/>
         </>
       );
 }

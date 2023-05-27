@@ -1,10 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
-}
-
 .label_campo {
     display: flex;
     flex-direction: row;
@@ -40,23 +33,23 @@
     padding: 0.6875rem 1rem;
     color: #565c69;
     margin: 0 0 15px;
-    transition: all 200ms ease;
-}
-
-.label_campo input:focus {
-    outline: none;
+    transition: all 300ms ease 0s;
 }
 
 .label_campo input:focus ~ label,
 .label_campo input:valid ~ label {
     font-size: 0.75rem;
+    font-weight: bold;
     background-color: white;
     color: black;
     transform: translateY(-50%);
 }
 
 .label_campo .campo_erro ~ label,
-.label_campo .campo_erro {
+.label_campo .campo_erro,
+.label_campo .campo_erro:focus, 
+.label_campo .campo_erro:focus ~ label {
     color: rgb(230, 0, 0);
     border-color: rgb(230, 0, 0);
+    outline-color: rgb(230, 0, 0);
 }

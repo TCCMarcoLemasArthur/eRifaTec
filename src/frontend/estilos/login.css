@@ -1,41 +1,27 @@
-.formUsuario {
+.loginForm {
     display: flex;
     flex-direction: column;
     margin: 15px auto;
     width: 100%;
-    max-width: 46rem;
+    max-width: 23rem;
     background-color: white;
     padding: 15px 20px 0;
     border-radius: 10px;
     box-shadow: 0 0 10px black;
 }
 
-.formUsuario .titulo {
+.loginForm .titulo {
     width: 100%;
     font-size: 2rem;
     text-align: center;
     color: black;
-    margin: 0 0 10px;
+    margin: 0 0 20px;
     user-select: none;
 }
 
-.grupo_campo {
-    display: flex;
-    flex-direction: column;
-}
-
-@media (min-width: 768px) {
-    .grupo_campo {
-        display: flex;
-        position: relative;
-        flex-direction: row;
-        gap: 2rem;
-        justify-content: space-between;
-    }
-}
-
-.formUsuario button {
+.loginForm button {
     width: 40%;
+    max-width: 250px;
     height: 45px;
     font-size: 1.2rem;
     color: white;

@@ -8,3 +8,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

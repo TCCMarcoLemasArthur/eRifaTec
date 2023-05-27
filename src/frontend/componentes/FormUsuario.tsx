@@ -1,15 +1,21 @@
-import '../estilos/cadastro.css'
+import '../estilos/cadastro.css';
+import CampoTexto from './CampoTexto';
 
 // TODO Preparar os campos para os dados que serão inseridos (máscara no campo dataDeNascimento, filtro e verificação)
 // TODO Definir ação do formulário
 
-import CampoTexto from './CampoTexto';
+//* A propriedade cadastro é requerida para identificação
+//* cadastro = true -> Formulário para cadastro
+//* cadastro = false -> Formulário para atualizar dados
+interface Props {
+    cadastro: boolean;
+}
 
-function FormUsuario() {
+function FormUsuario({cadastro}: Props) {
   return (
     <>
-      <form action="" method="" className="formulario">
-        <h2 className="titulo">Cadastrar</h2>
+      <form action="" method="" className="formUsuario">
+        <h2 className="titulo">{cadastro ? "Cadastro" : "Meus dados"}</h2>
 
         <div className="grupo_campo">
           <CampoTexto name="nome" label='Nome*' required/>
@@ -42,8 +48,10 @@ function FormUsuario() {
           <CampoTexto name='numero' label='Número*' required/>
         </div>
 
-        <div className="button-box">
-          <button type="submit" id="botaoCadastrar">Enviar</button>
+        <div className="center">
+          <button type="submit" id={cadastro ? "btnCadastrar" : "btnAtualizar"}>
+            Enviar
+          </button>
         </div>
       </form>
     </>
