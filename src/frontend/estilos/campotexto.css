@@ -47,12 +47,9 @@
     outline: none;
 }
 
-.label_campo input:focus ~ label {
-    left: 0.8125rem;
-    padding: 0 0.125rem;
+.label_campo input:focus ~ label,
+.label_campo input:valid ~ label {
     font-size: 0.75rem;
-    line-height: 1.125rem;
-    font-weight: bold;
     background-color: white;
     color: black;
     transform: translateY(-50%);

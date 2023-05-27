@@ -1,6 +1,7 @@
 import '../estilos/cadastro.css'
 
-// TODO corrigir erro de animacoes das labels do css, quando o campo esta preenchido
+// TODO Preparar os campos para os dados que serão inseridos (máscara no campo dataDeNascimento, filtro e verificação)
+// TODO Definir ação do formulário
 
 import CampoTexto from './CampoTexto';
 

@@ -1,6 +1,6 @@
 import "../estilos/campotexto.css";
 
-// pwd = password ou senha
+// A propriedade pwd serve para definir se o campo receberá uma senha ou um texto normal
 interface Props {
   name: string;
   label: string;
