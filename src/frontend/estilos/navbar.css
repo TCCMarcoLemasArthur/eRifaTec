@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: black;
+    font-size: 20px;
+}
+
+nav {
+    background-color: blue;
+}
+
+
+
+.navbar {
+    box-shadow: none;
+    position: absolute;
+    color: #fff;
+    padding: 1.5em 1.5em;
+    cursor: default;
+    font-size: 1em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1400px;
+}
+
+.navbar #logo {
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 5px;
+}
+
+.navbar h1 {
+    font-weight: 900;
+    margin: 0;
+    color: #fff;
+    line-height: 1em;
+    margin-bottom: 0.1em;
+    outline: none;
+    border: none;
+}
+
+.navbar h1 span {
+    font-weight: 300;
+}
+
+.navbar .navlink {
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+    border: none;
+}
+
+.navbar > ul {
+    position: fixed;
+    right: 2.5em;
+    top: 1.5em;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar .navitem {
+    display: inline-block;
+    padding-left: 0;
+    margin-left: 1em;
+    white-space: nowrap;
+}
+
+.navbar .dropdown {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.navbar .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    transition: all 200ms ease 0s;
+    z-index: 1;
+}
+
+.navbar .dropdown:hover .dropdown-content,
+.navbar .dropdown:hover .dropdown-content .menuitem {
+    display: block;
+    color: black;
+}
+
+.navbar .dropdown .dropdown-content .menulink {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    outline: none;
+    width: 100%;
+    border: 1px solid #555;
+    padding: 12px 12px;
+    transition: all 200ms ease;
+}
+
+.navbar .dropdown .dropdown-content .menulink:hover {
+    background-color: #e2e2e2;
+}
+
+@media screen and (max-width: 720px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar > ul,
+    .navbar h1 {
+        position: absolute;
+        display: block;
+        width: 100%;
+    }
+}
