@@ -1,13 +1,11 @@
-import FormLogin from "../componentes/FormLogin";
-import FormUsuario from '../componentes/FormUsuario';
+import Header from "../componentes/Header";
 
 // TODO criar elementos Header, menu, footer entre outros
 
 export default function LoginUsuario() {
     return (
         <>
-            <FormLogin />
-            <FormUsuario cadastro />
+            <Header />
         </>
     );
 }
