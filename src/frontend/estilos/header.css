@@ -1,3 +1,7 @@
+.headerbox {
+    height: 90px;
+}
+
 .cabecalho {
     position: fixed;
     top: 0;
@@ -12,7 +16,7 @@
     z-index: 99;
 }
 
-.cabecalho .logo h2{
+.cabecalho .logo h1 {
     display: flex;
     font-size: 2em;
     color: #fff;
@@ -28,7 +32,7 @@
     margin-right: 6px;
 }
 
-.cabecalho .logo h2 a {
+.cabecalho .logo h1 a {
     color: #fff;
     user-select: none;
     text-decoration: none;

@@ -8,7 +8,7 @@ export default function Rotas() {
         <div className="App">
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' element={<Home />}/>
+                    <Route path='/' index element={<Home />}/>
                     <Route path='/login' element={<LoginUsuario />}/>
                     <Route path='/cadastrar' element={<CadastroUsuario />}/>
                 </Routes>

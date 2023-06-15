@@ -3,13 +3,13 @@ import logo from "../imagens/probleminha.jpg"
 
 export default function Header() {
   return (
-    <>
-      <header className="cabecalho">
+    <header className="headerbox">
+      <div className="cabecalho">
         <div className="logo">
-          <h2>
+          <h1>
             <img src={logo} alt="Logo" />
             <a href="#">eRifaTec</a>
-          </h2>
+          </h1>
         </div>
 
         <nav className="navbar">
@@ -19,7 +19,7 @@ export default function Header() {
           <a href="#">Contato</a>
           <button className="btnLogin">Entrar</button>
         </nav>
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

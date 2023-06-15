@@ -12,7 +12,7 @@ export default function CampoTexto({ name, label, pwd=false, required=false }: P
 
   return (
     <>
-      <div className="label_campo">
+      <div className="label-campo">
         <input
           type={pwd ? "password" : "text"}
           name={name}

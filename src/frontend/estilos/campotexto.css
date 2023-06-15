@@ -1,4 +1,4 @@
-.label_campo {
+.label-campo {
     display: flex;
     flex-direction: row;
     position: relative;
@@ -7,7 +7,7 @@
     margin-bottom: 1rem;
 }
 
-.label_campo label {
+.label-campo label {
     position: absolute;
     text-transform: uppercase;
     pointer-events: none;
@@ -21,11 +21,11 @@
     font-weight: 400;
 }
 
-.label_campo input {
+.label-campo input {
     height: 3rem;
     width: 100%;
     background: none;
-    border: 0.0625rem solid black;
+    border: 0.0625rem solid #7f858d;
     border-radius: 5px;
     font-size: 1rem;
     line-height: 1rem;
@@ -36,8 +36,8 @@
     transition: all 300ms ease 0s;
 }
 
-.label_campo input:focus ~ label,
-.label_campo input:valid ~ label {
+.label-campo input:focus ~ label,
+.label-campo input:valid ~ label {
     font-size: 0.75rem;
     font-weight: bold;
     background-color: white;
@@ -45,10 +45,10 @@
     transform: translateY(-50%);
 }
 
-.label_campo .campo_erro ~ label,
-.label_campo .campo_erro,
-.label_campo .campo_erro:focus, 
-.label_campo .campo_erro:focus ~ label {
+.label-campo .campo_erro ~ label,
+.label-campo .campo_erro,
+.label-campo .campo_erro:focus, 
+.label-campo .campo_erro:focus ~ label {
     color: rgb(230, 0, 0);
     border-color: rgb(230, 0, 0);
     outline-color: rgb(230, 0, 0);
