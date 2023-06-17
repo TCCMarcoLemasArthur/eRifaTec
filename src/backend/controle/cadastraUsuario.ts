@@ -1,5 +1,5 @@
 //import {Client} from  = require('pg');
-
+import Usuario from "../modelo/Usuario";
 const pool = require('./conectaBD'); 
 
 /* 
@@ -7,7 +7,6 @@ const pool = require('./conectaBD');
     TODO importar como modulo Ex: import { funcao } from './conectaBD'
 */
 
-import Usuario from "../modelo/Usuario";
 
 export async function cadastrarUsuario(){
     const nomeUsuario = (document.getElementById("nome") as HTMLInputElement)?.value;
