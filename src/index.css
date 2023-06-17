@@ -9,6 +9,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  min-height: 100vh;
+}
+
 .center {
     display: flex;
     justify-content: center;
