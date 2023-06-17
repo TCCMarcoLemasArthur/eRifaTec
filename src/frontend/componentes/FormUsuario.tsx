@@ -1,8 +1,8 @@
 import '../estilos/cadastro.css';
 import CampoTexto from './CampoTexto';
+import { cadastrarUsuario } from '../../backend/controle/cadastraUsuario';
 
 // TODO Preparar os campos para os dados que serão inseridos (máscara no campo dataDeNascimento, filtro e verificação)
-// TODO Definir ação do formulário
 
 //* A propriedade cadastro é requerida para identificação
 //* cadastro = true -> Formulário para cadastro
@@ -11,10 +11,21 @@ interface Props {
     cadastro: boolean;
 }
 
+const handleCadastrar = (event: React.FormEvent) => {
+  // Impede a página de recarregar quando clicar no botão
+  event.preventDefault();
+  cadastrarUsuario();
+}
+
+const handleAtualizar = (event: React.FormEvent) => {
+  event.preventDefault();
+  // TODO implementar método de atualização
+}
+
 function FormUsuario({cadastro}: Props) {
   return (
     <>
-      <form action="" method="" className="formUsuario">
+      <form onSubmit={cadastro ? handleCadastrar : handleAtualizar} className="formUsuario">
         <h2 className="titulo">{cadastro ? "Cadastro" : "Meus dados"}</h2>
 
         <div className="grupo-campo">

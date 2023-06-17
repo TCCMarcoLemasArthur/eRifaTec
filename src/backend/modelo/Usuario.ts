@@ -1,128 +1,152 @@
-class CadastroUsuario {
-    public nomeUsuario: string;
-    public cpfUsuario: string;
-    public emailUsuario: string;
-    public senhaUsuario: string;
-    public dataNascUsuario: Date;
-    public cepUsuario: string;
-    public estadoUsuario: string;
-    public cidadeUsuario: string;
-    public bairroUsuario: string;
-    public ruaUsuario: string;
-    public numeroUsuario: string;
-    public telefoneCliente: string;
+class Usuario {
+    private nomeUsuario: string;
+    private cpfUsuario: string;
+    private emailUsuario: string;
+    private senhaUsuario: string;
+    private dataNascUsuario: Date;
+    private cepUsuario: string;
+    private estadoUsuario: string;
+    private cidadeUsuario: string;
+    private bairroUsuario: string;
+    private ruaUsuario: string;
+    private numeroUsuario: string;
+    private celularUsuario: string;
 
-    constructor (nomeUsuario:string, cpfUsuario:string, emailUsuario:string, senhaUsuario:string, dataNascUsuario:Date, cepUsuario:string,estadoUsuario:string,cidadeUsuario:string,bairroUsuario:string,ruaUsuario:string,numeroUsuario:string,telefoneCliente:string) {
+    // Inicializar os atributos
+    constructor (nomeUsuario ="",
+                 cpfUsuario ="", 
+                 emailUsuario ="", 
+                 senhaUsuario ="", 
+                 dataNascUsuario = new Date('2023-06-16'), 
+                 cepUsuario ="",
+                 estadoUsuario ="",
+                 cidadeUsuario ="",
+                 bairroUsuario ="",
+                 ruaUsuario ="",
+                 numeroUsuario ="",
+                 celularUsuario ="") {
         this.nomeUsuario = nomeUsuario;
-        this.cpfUsuario
+        this.cpfUsuario = cpfUsuario;
+        this.emailUsuario = emailUsuario;
+        this.senhaUsuario = senhaUsuario;
+        this.dataNascUsuario = dataNascUsuario;
+        this.cepUsuario = cepUsuario;
+        this.estadoUsuario = estadoUsuario;
+        this.cidadeUsuario = cidadeUsuario;
+        this.bairroUsuario = bairroUsuario;
+        this.ruaUsuario = ruaUsuario;
+        this.numeroUsuario = numeroUsuario;
+        this.celularUsuario = celularUsuario;
 
     }
 
     //Encapsulamento Nome
-    public getNome(): string {
+    get nome(): string {
         return this.nomeUsuario;
     }
 
-    public setNome(nomeUsuario: string): void {
+    set nome(nomeUsuario: string) {
         this.nomeUsuario = nomeUsuario;
     }
 
     //Encapsulamento Cpf
-    public getCpf(): string {
+    get cpf(): string {
         return this.cpfUsuario;
     }
 
-    public setCpf(cpfUsuario: string): void {
+    set cpf(cpfUsuario: string) {
         this.cpfUsuario = cpfUsuario;
     }
 
     //Encapsulamento Email
-    public getEmail(): string {
+    get email(): string {
         return this.emailUsuario;
     }
 
-    public setEmail(emailUsuario: string): void {
+    set email(emailUsuario: string) {
         this.emailUsuario = emailUsuario;
     }
 
     //Encapsulamento Senha
-    public getSenha(): string {
+    get senha(): string {
         return this.senhaUsuario;
     }
 
-    public setSenha(senhaUsuario: string): void {
+    set senha(senhaUsuario: string) {
         this.senhaUsuario = senhaUsuario;
     }
 
     //Encapsulamento Data de Nascimento
-    public getDataDeNascimento(): Date {
+    get dataDeNascimento(): Date {
         return this.dataNascUsuario;
     }
 
-    public setDataDeNascimento(dataNascUsuario: Date): void {
+    set dataDeNascimento(dataNascUsuario: Date) {
         this.dataNascUsuario = dataNascUsuario;
     }
 
     //Encapsulamento Cep
-    public getCep(): string {
+    get cep(): string {
         return this.cepUsuario;
     }
 
-    public setCep(cepUsuario: string): void {
+    set cep(cepUsuario: string) {
         this.cepUsuario = cepUsuario;
     }
 
     //Encapsulamento Estado
-    public getEstado(): string {
+    get estado(): string {
         return this.estadoUsuario;
     }
 
-    public setEstado(estadoUsuario: string): void {
+    set estado(estadoUsuario: string) {
         this.estadoUsuario = estadoUsuario;
     }
 
     //Encapsulamento Cidade
-    public getCidade(): string {
+    get cidade(): string {
         return this.cidadeUsuario;
     }
 
-    public setCidade(cidadeUsuario: string): void {
+    set cidade(cidadeUsuario: string) {
         this.cidadeUsuario = cidadeUsuario;
     }
 
     //Encapsulamento Bairro
-    public getBairro(): string {
+    get bairro(): string {
         return this.bairroUsuario;
     }
 
-    public setBairro(bairroUsuario: string): void {
+    set bairro(bairroUsuario: string) {
         this.bairroUsuario = bairroUsuario;
     }
 
     //Encapsulamento Rua
-    public getRua(): string {
+    get rua(): string {
         return this.ruaUsuario;
     }
 
-    public setRua(ruaUsuario: string): void {
+    set rua(ruaUsuario: string) {
         this.ruaUsuario = ruaUsuario;
     }
 
     //Encapsulamento Numero (casa)
-    public getNumero(): string {
+    get numero(): string {
         return this.numeroUsuario;
     }
 
-    public setNumero(numeroUsuario: string): void {
+    set numero(numeroUsuario: string) {
         this.numeroUsuario = numeroUsuario;
     }
 
     //Encapsulamento Celular
-    public getCelular(): string {
-        return this.telefoneCliente;
+    get celular(): string {
+        return this.celularUsuario;
     }
 
-    public setCelular(telefoneCliente: string): void {
-        this.telefoneCliente = telefoneCliente;
+    set celular(celularUsuario: string) {
+        this.celularUsuario = celularUsuario;
     }
 }
+
+export default Usuario
