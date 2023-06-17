@@ -1,0 +1,8 @@
+.nopage {
+    display: flex;
+    color: red;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50vh;
+}
