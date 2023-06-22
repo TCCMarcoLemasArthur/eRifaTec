@@ -1,10 +1,11 @@
+/*
 import { Pool } from 'pg'
 //Pool é a classe dentro do pacote 'pg' que representa o pool de conexão com o Bd
 
 async function conectaBanco() {
     const config = {
         user: 'postgres',
-        password: '2019setembro*',
+        password: '123456',
         host: '127.0.0.1',
         port: 5432,
         database: 'eRifaTecTeste'
@@ -15,22 +16,19 @@ async function conectaBanco() {
     try {
         // Obtém uma conexão do pool
         const conexao = await pool.connect();
-
         console.log('Conexão estabelecida com sucesso!');
-        return conexao
 
-        /*
         // Libera a conexão do pool
-        conn.release();
+        conexao.release();
 
         // Encerra a conexão do pool
-        await pool.end();
-        */
+        return pool.connect();
+        
     } catch (error) {
         console.error('Erro ao conectar ao banco de dados:', error);
     }
 }
-
+*/
 /*
         // Insere dados em uma tabela
         const idUsuario1 = 2;
