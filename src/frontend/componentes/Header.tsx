@@ -1,23 +1,31 @@
+import { useEffect } from "react";
 import "../estilos/header.css";
 import logo from "../imagens/probleminha.jpg"
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Header() {
+  const navigate = useNavigate();
+
+  const loginPage = () => {
+    navigate("/login")
+  }
+  
   return (
     <header className="headerbox">
       <div className="cabecalho">
         <div className="logo">
           <h1>
             <img src={logo} alt="Logo" />
-            <a href="#">eRifaTec</a>
+            <Link to={"/"}>eRifaTec</Link>
           </h1>
         </div>
 
         <nav className="navbar">
-          <a href="#">Home</a>
-          <a href="#">Sobre</a>
-          <a href="#">Ajuda</a>
-          <a href="#">Contato</a>
-          <button className="btnLogin">Entrar</button>
+          <Link to={'/'}>Home</Link>
+          <Link to={'/sobre'}>Sobre</Link>
+          <Link to={'/ajuda'}>Ajuda</Link>
+          <Link to={'/contatos'}>Contato</Link>
+          <button className="btnLogin" onClick={loginPage}>Entrar</button>
         </nav>
       </div>
     </header>

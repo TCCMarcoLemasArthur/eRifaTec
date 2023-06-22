@@ -1,6 +1,7 @@
-import '../estilos/cadastro.css';
+import '../estilos/formusuario.css';
 import CampoTexto from './CampoTexto';
 import { cadastrarUsuario } from '../../backend/controle/cadastraUsuario';
+import { Link } from 'react-router-dom'
 
 // TODO Preparar os campos para os dados que serão inseridos (máscara no campo dataDeNascimento, filtro e verificação)
 
@@ -59,10 +60,11 @@ function FormUsuario({cadastro}: Props) {
           <CampoTexto name='numero' label='Número*' required/>
         </div>
 
-        <div className="center">
+        <div className="button-box">
           <button type="submit" id={cadastro ? "btnCadastrar" : "btnAtualizar"}>
             Enviar
           </button>
+          {cadastro ? <p>Já possui uma conta? <Link to={'/login'}>Entrar</Link></p> : ""}
         </div>
       </form>
     </>

@@ -33,4 +33,22 @@
     font-weight: 500;
     margin-bottom: 20px;
     transition: all 0.2s ease;
+
+}
+
+.loginForm .button-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm .button-box p {
+    padding-bottom: 20px;
+}
+
+.loginForm .button-box a {
+    text-decoration: none;
+    text-decoration: underline;
+    color:rgb(255, 101, 0)
 }

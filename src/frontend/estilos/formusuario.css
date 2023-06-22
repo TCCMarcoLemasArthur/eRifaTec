@@ -34,6 +34,13 @@
     }
 }
 
+.formUsuario .button-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .formUsuario button {
     width: 40%;
     height: 45px;
@@ -47,4 +54,14 @@
     font-weight: 500;
     margin-bottom: 20px;
     transition: all 0.2s ease;
+}
+
+.formUsuario .button-box p {
+    padding-bottom: 20px;
+}
+
+.formUsuario .button-box a {
+    text-decoration: none;
+    text-decoration: underline;
+    color:rgb(255, 101, 0)
 }
