@@ -14,8 +14,8 @@
     width: 100%;
     font-size: 2rem;
     text-align: center;
-    color: black;
-    margin: 0 0 10px;
+    color: var(--primaria);
+    margin: 0 0 15px;
     user-select: none;
 }
 
@@ -46,8 +46,8 @@
     height: 45px;
     font-size: 1.2rem;
     color: white;
-    background-color: rgb(255, 101, 0);
-    border: 2px solid rgb(255, 255, 255);
+    background-color: var(--primaria);
+    border: 2px transparent;
     outline: none;
     border-radius: 7px;
     cursor: pointer;
@@ -63,5 +63,5 @@
 .formUsuario .button-box a {
     text-decoration: none;
     text-decoration: underline;
-    color:rgb(255, 101, 0)
+    color:var(--primaria);
 }

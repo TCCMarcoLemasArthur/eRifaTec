@@ -9,6 +9,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --primaria: #ff4d00; /* #ff4d00 */
+  --secundaria: #ffa60d; /* #ffa60d */
+  --dominante: #fff; /* #fff */
+
+  --sucesso: #198754; /* #198754 */
+  --aviso: #ffc107; /* #ffc107 */
+  --erro: #e60000; /* #e60000 */
+
+  --escuro-primario: #212121; /* #212121 */
+  --escuro-secundario: #262626; /* #262626 */
+}
+
 body {
   min-height: 100vh;
 }

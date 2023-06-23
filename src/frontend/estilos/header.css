@@ -4,8 +4,8 @@
 
 .cabecalho {
     width: 100%;
-    background-color: orange;
-    padding: 20px 80px;
+    background-color: var(--secundaria);
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     user-select: none;

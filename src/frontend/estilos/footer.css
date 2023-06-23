@@ -1,11 +1,10 @@
 /* Conteiners gerais */
 .footerbox {
-    background-color: #212121;
+    background-color: var(--escuro-primario);
     border-top: 1px solid #121212;
 }
 
 .rodape {
-    background-color: 212121;
     margin: 0;
     padding: 0;
 }
@@ -27,7 +26,7 @@
 }
 
 .rodape .link-section h5 {
-    color: #ff5510;
+    color: var(--primaria);
     text-transform: uppercase;
     font-weight: 300;
     margin-top: 10px;
@@ -61,24 +60,24 @@
     transition: 300ms;
 }
 
-@keyframes rotate-link-icon {
-    0% {transform: rotateZ(0deg)}
-    100% {transform: rotateZ(360deg);}
+@keyframes animate-link-icon {
+    0% {transform: translateX(-5px)}
+    100% {transform: translateX(0);}
 }
 
 .rodape .link-section li:hover .link-icon {
-    animation: rotate-link-icon 300ms;
-    color: #ff5510;
+    animation: animate-link-icon 300ms;
+    color: var(--primaria);
 }
 
 .rodape .link-section li:hover > a{
-    color: #ff5510;
+    color: var(--secundaria);
 }
 
 
 /* Links de redes sociais */
 .rodape .redes-sociais {
-    background-color: #262626;
+    background-color: var(--escuro-secundario);
     width: 100%;
     clear: both;
     margin-right: auto;
@@ -101,12 +100,12 @@
 }
 
 .rodape .redes-sociais li {
-    color: #ff5510;
+    color: var(--secundaria);
     display: inline-block;
     padding: 0 5px;
 }
 
 .rodape .redes-sociais span {
     display: inline-block;
-    color: #ff5510;
+    color: var(--secundaria);
 }

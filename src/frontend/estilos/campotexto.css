@@ -24,6 +24,7 @@
 .label-campo input {
     height: 3rem;
     width: 100%;
+    outline: none;
     background: none;
     border: 0.0625rem solid #7f858d;
     border-radius: 5px;
@@ -39,7 +40,7 @@
 .label-campo input:focus ~ label,
 .label-campo input:valid ~ label {
     font-size: 0.75rem;
-    font-weight: bold;
+    font-weight: normal;
     background-color: white;
     color: black;
     transform: translateY(-50%);
@@ -49,7 +50,7 @@
 .label-campo .campo_erro,
 .label-campo .campo_erro:focus, 
 .label-campo .campo_erro:focus ~ label {
-    color: rgb(230, 0, 0);
-    border-color: rgb(230, 0, 0);
-    outline-color: rgb(230, 0, 0);
+    color: var(--erro);
+    border-color: var(--erro);
+    outline-color: var(--erro);
 }
