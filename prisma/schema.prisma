@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model bilhete {
+  idbilhete              Int     @id(map: "pk_bilhete") @default(autoincrement())
+  numerobilhete          Int
+  statussorteiobilheto   Boolean
+  precobilhete           Decimal @db.Decimal(15, 2)
+  disponibilidadebilhete Boolean
+  idrifa                 Int
+  rifa                   rifa    @relation(fields: [idrifa], references: [idrifa], onDelete: NoAction, onUpdate: NoAction, map: "fk_bilhete_rifa")
+}
+
+model premio {
+  idpremio   Int    @id(map: "pk_premio") @default(autoincrement())
+  nomepremio String @db.VarChar(200)
+  descpremio String @db.VarChar(400)
+  tipopremio String @db.VarChar(50)
+}
+
+model rifa {
+  idrifa           Int       @id(map: "pk_rifa") @default(autoincrement())
+  titulorifa       String    @db.VarChar(50)
+  quantbilheterifa Int
+  descrifa         String    @db.VarChar(400)
+  datasorteiorifa  DateTime  @db.Date
+  datainiciorifa   DateTime  @db.Date
+  statusrifa       String    @db.VarChar(20)
+  horasorteiorifa  DateTime  @db.Time(6)
+  cep              String?   @db.VarChar(9)
+  cidade           String?   @db.VarChar(100)
+  rua              String?   @db.VarChar(100)
+  estado           String?   @db.VarChar(100)
+  bairro           String?   @db.VarChar(100)
+  numero           String?   @db.VarChar(10)
+  bilhete          bilhete[]
+}
+
+model rifapremio {
+  idbilhete Int
+  idpremio  Int
+  idrifa    Int
+
+  @@id([idbilhete, idpremio, idrifa], map: "pk_rifapremio")
+}
+
+model usuario {
+  idusuario       Int      @id(map: "pk_usuario") @default(autoincrement())
+  nomeusuario     String   @db.VarChar(75)
+  cpfusuario      String   @db.VarChar(14)
+  emailusuario    String   @db.VarChar(100)
+  senhausuario    String   @db.VarChar(25)
+  datanascusuario DateTime @db.Date
+  cep             String   @db.VarChar(9)
+  cidade          String   @db.VarChar(100)
+  rua             String   @db.VarChar(100)
+  estado          String   @db.VarChar(100)
+  bairro          String   @db.VarChar(100)
+  numero          String   @db.VarChar(10)
+  venda           venda[]
+}
+
+model venda {
+  idvenda        Int      @id(map: "pk_venda") @default(autoincrement())
+  formapagamento String   @db.VarChar(100)
+  precovenda     Decimal  @db.Decimal(15, 2)
+  datavenda      DateTime @db.Date
+  idusuario      Int
+  usuario        usuario  @relation(fields: [idusuario], references: [idusuario], onDelete: NoAction, onUpdate: NoAction, map: "fk_venda_usuario")
+}
