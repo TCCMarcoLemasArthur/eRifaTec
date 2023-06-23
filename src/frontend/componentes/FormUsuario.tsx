@@ -15,7 +15,7 @@ interface Props {
 const handleCadastrar = (event: React.FormEvent) => {
   // Impede a página de recarregar quando clicar no botão
   event.preventDefault();
-  cadastrarUsuario();
+  // Todo implementar metodo de cadastro
 }
 
 const handleAtualizar = (event: React.FormEvent) => {

@@ -44,6 +44,7 @@ export async function cadastrarUsuario(){
           bairro: usuario.bairro,
           rua: usuario.rua,
           numero: usuario.numero,
+          //celular: usuario.celular
         },
       })
 }

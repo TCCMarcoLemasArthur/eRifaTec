@@ -63,6 +63,7 @@ model usuario {
   estado          String  @db.VarChar(100)
   bairro          String  @db.VarChar(100)
   numero          String  @db.VarChar(10)
+  celular         String  @db.VarChar(20)
   venda           venda[]
 }
 
