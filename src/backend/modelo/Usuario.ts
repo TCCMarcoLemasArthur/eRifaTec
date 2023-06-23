@@ -3,7 +3,7 @@ class Usuario {
     private cpfUsuario: string;
     private emailUsuario: string;
     private senhaUsuario: string;
-    private dataNascUsuario: Date;
+    private dataNascUsuario: string;
     private cepUsuario: string;
     private estadoUsuario: string;
     private cidadeUsuario: string;
@@ -17,7 +17,7 @@ class Usuario {
                  cpfUsuario ="", 
                  emailUsuario ="", 
                  senhaUsuario ="", 
-                 dataNascUsuario = new Date('2023-06-16'), 
+                 dataNascUsuario = "", 
                  cepUsuario ="",
                  estadoUsuario ="",
                  cidadeUsuario ="",
@@ -77,11 +77,11 @@ class Usuario {
     }
 
     //Encapsulamento Data de Nascimento
-    get dataDeNascimento(): Date {
+    get dataDeNascimento(): string {
         return this.dataNascUsuario;
     }
 
-    set dataDeNascimento(dataNascUsuario: Date) {
+    set dataDeNascimento(dataNascUsuario: string) {
         this.dataNascUsuario = dataNascUsuario;
     }
 
