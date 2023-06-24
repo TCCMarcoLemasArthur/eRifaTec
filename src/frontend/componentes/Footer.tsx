@@ -119,22 +119,22 @@ export default function Footer() {
             <ul>
               <li>
                 <a href="http://" target='_blank'>
-                  <span className='material-icons'>navigate_next</span>
+                  <span className="fa-brands fa-facebook-f"></span>
                 </a>
               </li>
               <li>
                 <a href="http://" target='_blank'>
-                  <span className='material-icons'>navigate_next</span>
+                  <span className='fa-brands fa-twitter'></span>
                 </a>
               </li>
               <li>
                 <a href="http://" target='_blank'>
-                  <span className='material-icons'>navigate_next</span>
+                  <span className='fa-brands fa-youtube'></span>
                 </a>
               </li>
               <li>
                 <a href="http://" target='_blank'>
-                  <span className='material-icons'>navigate_next</span>
+                  <span className='fa-brands fa-instagram'></span>
                 </a>
               </li>
             </ul>

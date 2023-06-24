@@ -1,6 +1,5 @@
 import '../estilos/formusuario.css';
 import CampoTexto from './CampoTexto';
-import { cadastrarUsuario } from '../../backend/controle/cadastraUsuario';
 import { Link } from 'react-router-dom'
 
 // TODO Preparar os campos para os dados que serão inseridos (máscara no campo dataDeNascimento, filtro e verificação)

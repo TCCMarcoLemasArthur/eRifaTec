@@ -3,6 +3,7 @@
 }
 
 .cabecalho {
+    border-bottom: 3px solid var(--primaria);
     width: 100%;
     background-color: var(--secundaria);
     padding: 20px 50px;

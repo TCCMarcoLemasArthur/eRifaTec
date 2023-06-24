@@ -10,9 +10,11 @@
 }
 
 :root {
-  --primaria: #ff4d00; /* #ff4d00 */
-  --secundaria: #ffa60d; /* #ffa60d */
+  --primaria: #ffa60d; /* #FF7700 */
+  --secundaria: #FF2500; /* #FF2500 */
   --dominante: #fff; /* #fff */
+
+  --vermelho-cereja: #DC143C;
 
   --sucesso: #198754; /* #198754 */
   --aviso: #ffc107; /* #ffc107 */
