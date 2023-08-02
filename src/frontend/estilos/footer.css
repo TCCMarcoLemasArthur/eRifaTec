@@ -26,7 +26,7 @@
 }
 
 .rodape .link-section h5 {
-    color: var(--secundaria);
+    color: var(--primaria);
     text-transform: uppercase;
     font-weight: 300;
     margin-top: 10px;
@@ -107,5 +107,5 @@
 
 .rodape .redes-sociais span {
     display: inline-block;
-    color: var(--secundaria);
+    color: var(--primaria);
 }
