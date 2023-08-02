@@ -1,3 +1,4 @@
+import React from 'react'
 import "../estilos/header.css";
 import logo from "../imagens/probleminha.jpg"
 import { Link, useNavigate } from 'react-router-dom'

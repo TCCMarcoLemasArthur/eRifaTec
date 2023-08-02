@@ -1,3 +1,4 @@
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './frontend/paginas/Home';
 import CadastroUsuario from './frontend/paginas/CadastroUsuario';

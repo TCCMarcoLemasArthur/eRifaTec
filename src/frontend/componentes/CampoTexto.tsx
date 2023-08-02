@@ -1,3 +1,4 @@
+import React from 'react'
 import "../estilos/campotexto.css";
 
 //* A propriedade pwd serve para definir se o campo receberá uma senha ou um texto normal

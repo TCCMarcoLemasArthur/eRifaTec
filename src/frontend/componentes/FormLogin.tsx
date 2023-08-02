@@ -1,3 +1,4 @@
+import React from 'react'
 import "../estilos/login.css";
 import CampoTexto from "./CampoTexto";
 import { Link } from 'react-router-dom'
