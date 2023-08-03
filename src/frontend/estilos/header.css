@@ -1,17 +1,34 @@
 .headerbox {
-    height: 90px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    max-width: 100vw;
+    overflow: hidden;
+    z-index: 99;
+    background-color: var(--secundaria);
+    border-bottom: 3px solid var(--primaria);
+    padding: 1.8125rem 0px;
 }
 
 .cabecalho {
-    border-bottom: 3px solid var(--primaria);
+    min-height: auto;
+    min-width: auto;
     width: 100%;
-    background-color: var(--secundaria);
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    user-select: none;
-    align-items: center;
-    z-index: 99;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    background-color: transparent;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+}
+
+.cabecalho .logo {
+    grid-column: span 2 / auto;
 }
 
 .cabecalho .logo h1 {
@@ -34,6 +51,20 @@
     color: #fff;
     user-select: none;
     text-decoration: none;
+}
+
+.cabecalho .gap {
+    grid-column: span 3 / auto;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    grid-column: span 6 / auto;
 }
 
 .navbar > a {

@@ -120,22 +120,22 @@ export default function Footer() {
             <ul>
               <li>
                 <a href="http://" target='_blank'>
-                  <span className="fa-brands fa-facebook-f"></span>
+                  <i className="fa-brands fa-facebook-f"></i>
                 </a>
               </li>
               <li>
                 <a href="http://" target='_blank'>
-                  <span className='fa-brands fa-twitter'></span>
+                  <i className='fa-brands fa-twitter'></i>
                 </a>
               </li>
               <li>
                 <a href="http://" target='_blank'>
-                  <span className='fa-brands fa-youtube'></span>
+                  <i className='fa-brands fa-youtube'></i>
                 </a>
               </li>
               <li>
                 <a href="http://" target='_blank'>
-                  <span className='fa-brands fa-instagram'></span>
+                  <i className='fa-brands fa-instagram'></i>
                 </a>
               </li>
             </ul>

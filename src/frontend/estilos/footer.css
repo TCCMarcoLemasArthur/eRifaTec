@@ -105,7 +105,7 @@
     padding: 0 10px;
 }
 
-.rodape .redes-sociais span {
+.rodape .redes-sociais i {
     display: inline-block;
     color: var(--primaria);
 }
