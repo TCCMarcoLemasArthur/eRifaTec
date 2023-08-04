@@ -8,9 +8,11 @@
 }
 
 :root {
-  --primaria: #FF6500; /* #FF6500 */
-  --secundaria: #0080d1; /* #0060b1 */
+  --primaria: #006dc7; /* #FF6500 */
+  --secundaria: #212121; /* #0080d1 */
   --dominante: #fff; /* #fff */
+
+  --detalhe: #6f00ff;
 
   --secundaria-escura: #0060b1;
 
