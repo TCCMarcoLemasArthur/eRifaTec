@@ -34,7 +34,7 @@ export default function Menu() {
                     <Link to={"#"}><i className="fa-solid fa-clock-rotate-left"></i>Histórico de rifas</Link>
                     <Link to={"#"}><i className="fa-solid fa-trophy"></i>Meus prêmios</Link>
                     <h3>Gerenciar rifas</h3>
-                    <Link to={"#"}><i className="fa-solid fa-ticket"></i>Criar rifa</Link>
+                    <Link to={"/criar_rifa"}><i className="fa-solid fa-ticket"></i>Criar rifa</Link>
                     <Link to={"#"}><i className="fa-solid fa-table-columns"></i>Painel de rifas</Link>
                     <Link to={"#"}><i className="fa-solid fa-list"></i>Listar prêmios</Link>
                     <h3>Suporte</h3>

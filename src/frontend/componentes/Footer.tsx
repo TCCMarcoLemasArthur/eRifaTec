@@ -1,5 +1,6 @@
 import React from 'react'
 import '../estilos/footer.css'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -103,7 +104,7 @@ export default function Footer() {
                   <span className="link-icon material-icons">
                     navigate_next
                   </span>
-                  <a href="">Criar nova rifa</a>
+                  <Link to={"/criar_rifa"}>Criar nova rifa</Link>
                 </li>
                 <li>
                   <span className="link-icon material-icons">
@@ -125,7 +126,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="http://" target='_blank'>
-                  <i className='fa-brands fa-twitter'></i>
+                  <i className='fa-brands fa-x-twitter'></i>
                 </a>
               </li>
               <li>
