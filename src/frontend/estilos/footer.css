@@ -67,7 +67,7 @@
 
 .rodape .link-section li:hover .link-icon {
     animation: animate-link-icon 300ms;
-    color: var(--secundaria);
+    color: var(--detalhe);
 }
 
 .rodape .link-section li:hover > a{

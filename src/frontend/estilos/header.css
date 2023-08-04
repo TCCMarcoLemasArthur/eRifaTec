@@ -54,7 +54,7 @@
 }
 
 .cabecalho .gap {
-    grid-column: span 3 / auto;
+    grid-column: span 4 / auto;
 }
 
 .navbar {
@@ -64,7 +64,7 @@
     justify-content: space-between;
     -webkit-box-align: center;
     align-items: center;
-    grid-column: span 6 / auto;
+    grid-column: span 5 / auto;
 }
 
 .navbar > a {
