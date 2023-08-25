@@ -1,15 +1,14 @@
 import React from 'react'
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
-import '../estilos/nopage.css'
+import FormLogin from "../componentes/FormLogin";
 
-export default function NoPage() {
+
+export default function LoginUsuario() {
     return (
         <>
             <Header />
-            <div className="nopage">
-                <h1>Erro 404: Página não encontrada!</h1>
-            </div>
+            <FormLogin />
             <Footer />
         </>
     );

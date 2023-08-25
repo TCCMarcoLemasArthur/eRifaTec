@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './frontend/paginas/Home';
-import CadastroUsuario from './frontend/paginas/CadastroUsuario';
-import LoginUsuario from './frontend/paginas/LoginUsuario';
-import CriarRifa from './frontend/paginas/CriarRifa'
-import NoPage from './frontend/paginas/NoPage';
+import Home from './paginas/Home';
+import CadastroUsuario from './paginas/CadastroUsuario';
+import LoginUsuario from './paginas/LoginUsuario';
+import CriarRifa from './paginas/CriarRifa'
+import NoPage from './paginas/NoPage';
 
 export default function Rotas() {
     return (

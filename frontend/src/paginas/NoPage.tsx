@@ -1,13 +1,16 @@
 import React from 'react'
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
+import '../estilos/nopage.css'
 
-// TODO criar elementos Header, menu, footer entre outros
 
-export default function LoginUsuario() {
+export default function NoPage() {
     return (
         <>
             <Header />
+            <div className="nopage">
+                <h1>Erro 404: Página não encontrada!</h1>
+            </div>
             <Footer />
         </>
     );
