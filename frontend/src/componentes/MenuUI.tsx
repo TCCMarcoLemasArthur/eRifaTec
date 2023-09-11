@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import styles from '../estilos/menu.module.css';
+import user from '../imagens/user.png'
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Drawer from '@mui/material/Drawer';
@@ -28,9 +31,42 @@ export default function MenuUI() {
       setIsOpen(open);
     };
 
+  const items = () => {
+    return (
+      <>
+        <div className={styles.user_info}>
+          <figure>
+            <img src={user} alt="foto pequena do usuário" />
+          </figure>
+          <h4>Visitante</h4>
+        </div>
+        <div className={styles.menu_links}>
+          <Link to={"/"}><i className="fa-solid fa-house"></i>Início</Link>
+          <Link to={"#"}><i className="fa-solid fa-user"></i>Minha conta</Link>
+          <Link to={"#"}><i className="fa-solid fa-clock-rotate-left"></i>Histórico de rifas</Link>
+          <Link to={"#"}><i className="fa-solid fa-trophy"></i>Meus prêmios</Link>
+          <h3>Gerenciar rifas</h3>
+          <Link to={"/criar_rifa"}><i className="fa-solid fa-ticket"></i>Criar rifa</Link>
+          <Link to={"#"}><i className="fa-solid fa-table-columns"></i>Painel de rifas</Link>
+          <Link to={"#"}><i className="fa-solid fa-list"></i>Listar prêmios</Link>
+          <h3>Suporte</h3>
+          <Link to={"#"}><i className="fa-solid fa-circle-question"></i>Dúvidas</Link>
+          <Link to={"#"}><i className="fa-solid fa-headset"></i>Central de atendimento</Link>
+        </div>
+        <div className={styles.menu_buttons}>
+          <button onClick={toggleDrawer(false)}><Link to={"/login"}>Login</Link></button>
+          <button onClick={toggleDrawer(false)}><Link to={"/cadastrar"}>Cadastrar</Link></button>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
-      <Button onClick={toggleDrawer(true)}>
+      <Button 
+        sx={{fontSize: 30, color: '#fff'}}
+        onClick={toggleDrawer(true)}
+      >
         <i className="fa-solid fa-bars"></i>
       </Button>
       <Drawer
@@ -38,7 +74,7 @@ export default function MenuUI() {
         open={isOpen}
         onClose={toggleDrawer(false)}
       >
-        <h1>Hello World</h1>
+        {items()}
       </Drawer>
     </>
   );

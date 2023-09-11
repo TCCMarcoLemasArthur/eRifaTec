@@ -1,7 +1,7 @@
 import React from 'react'
 import "../estilos/header.css";
 import logo from "../imagens/probleminha.jpg"
-import Menu from './Menu';
+import MenuUI from './MenuUI';
 import { Link, useNavigate } from 'react-router-dom'
 
 export default function Header() {
@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="headerbox">
       <div className="cabecalho">
-        <Menu />
+        <MenuUI />
         <div className="logo">
           <h1>
             <img src={logo} alt="Logo" />

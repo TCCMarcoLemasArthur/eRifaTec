@@ -68,7 +68,7 @@ body.open .menu {
     box-shadow: 0 0 20px rgb(0 0 0 / 70%);
 }
 
-.menu .close-btn {
+.menu .close_btn {
     position: absolute;
     background-color: transparent;
     color: #F9F9F9;
@@ -79,7 +79,7 @@ body.open .menu {
     cursor: pointer;
 }
 
-.user-info {
+.user_info {
     width: 100%;
     display: flex;
     -webkit-box-align: center;
@@ -88,7 +88,7 @@ body.open .menu {
     margin-bottom: 20px;
 }
 
-.user-info figure {
+.user_info figure {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -97,40 +97,40 @@ body.open .menu {
     border: 3px solid var(--secundaria);
 }
 
-.user-info figure img {
+.user_info figure img {
     border-radius: 50%;
     height: 54px;
     width: 54px;
     border: 3px solid var(--secundaria);
 }
 
-.user-info h4 {
+.user_info h4 {
     font-size: 1.25rem;
     font-weight: 700;
     color: white;
     margin-left: 1rem;
 }
 
-.menu-links > a {
+.menu_links > a {
     display: flex;
     align-items: center;
     height: 45px;
     color:  #ffffff;
 }
 
-.menu-links > a > i {
+.menu_links > a > i {
     margin-right: 15px;
     color: #ffffff;
 }
 
-.menu-links h3 {
+.menu_links h3 {
     margin: 40px 0 10px;
     color: #ffffff;
     font-weight: 800;
     font-size: 16px;
 }
 
-.menu-buttons {
+.menu_buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,7 +138,7 @@ body.open .menu {
     margin-top: 40px;
 }
 
-.menu-buttons button {
+.menu_buttons button {
     height: 60px;
     border: 0;
     border-radius: 5px;
@@ -148,17 +148,17 @@ body.open .menu {
     font-size: 1.2rem;
 }
 
-.menu-buttons button:first-child {
+.menu_buttons button:first-child {
     background-color: var(--primaria);
     margin-bottom: 20px;
 }
 
-.menu-buttons button:last-child {
+.menu_buttons button:last-child {
     background-color: transparent;
     border: 2px solid white;
 }
 
-.menu-buttons button > a {
+.menu_buttons button > a {
     display: flex;
     align-items: center;
     justify-content: center;
