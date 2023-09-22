@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styles from '../estilos/menu.module.css';
 import user from '../imagens/user.png'
 import Box from '@mui/material/Box';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
@@ -11,6 +10,8 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import { ListItemIcon } from "@mui/material";
+import HomeIcon from '@mui/material'
 
 
 export default function MenuUI() {
@@ -34,6 +35,19 @@ export default function MenuUI() {
   const items = () => {
     return (
       <>
+        <Box>
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary={'Início'} />
+              </ListItemButton>
+            </ListItem>
+          </List>
+          <Divider />
+        </Box>
         <div className={styles.user_info}>
           <figure>
             <img src={user} alt="foto pequena do usuário" />
