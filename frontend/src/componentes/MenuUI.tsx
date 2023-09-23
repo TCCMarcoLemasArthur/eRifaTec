@@ -1,17 +1,34 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link as RouterLink, LinkProps as RouterLinkProps } from "react-router-dom";
+
 import styles from '../estilos/menu.module.css';
-import user from '../imagens/user.png'
+import user from '../imagens/user.png';
+
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import { ListItemIcon } from "@mui/material";
-import HomeIcon from '@mui/material'
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import PersonIcon from '@mui/icons-material/Person';
+import HistoryIcon from '@mui/icons-material/History';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+
+import LocalActivityIcon from '@mui/icons-material/LocalActivity';
+import TableChartIcon from '@mui/icons-material/TableChart';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+
+import HelpIcon from '@mui/icons-material/Help';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import EmailIcon from '@mui/icons-material/Email';
 
 
 export default function MenuUI() {
@@ -20,68 +37,92 @@ export default function MenuUI() {
   const toggleDrawer =
     (open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return;
-      }
+    if (
+      event &&
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+      (event as React.KeyboardEvent).key === 'Shift')
+    ) {
+      return;
+    }
 
-      setIsOpen(open);
-    };
+    setIsOpen(open);
+  };
+
+  interface ListItemLinkProps {
+    icon?: React.ReactElement;
+    primary: string;
+    to: string;
+  }
+  
+  const Link = React.forwardRef<HTMLAnchorElement, RouterLinkProps>(function Link(
+    itemProps,
+    ref,
+  ) {
+    return <RouterLink ref={ref} {...itemProps} role={undefined} />;
+  });
+  
+  function ListItemLink(props: ListItemLinkProps) {
+    const { icon, primary, to } = props;
+  
+    return (
+      <li>
+        <ListItem sx={{color: "#fff"}} component={Link} to={to}>
+          {icon ? <ListItemIcon sx={{color: "#fff"}}>{icon}</ListItemIcon> : null}
+          <ListItemText primary={primary} />
+        </ListItem>
+      </li>
+    );
+  }
 
   const items = () => {
     return (
       <>
-        <Box>
+        <Stack direction="row" spacing={2}>
+          <Avatar sx={{width: 56, height: 56}} src={user} alt="visitante" />
+          <Stack>
+            <Typography sx={{fontSize: 18, color: 'primary.light'}}>Bem Vindo(a),</Typography>
+            <Typography sx={{fontSize: 18, fontWeight: "bold"}}>Visitante</Typography>
+          </Stack>
+        </Stack>
+        <Box sx={{width: '100%', maxWidth: 360, color: '#fff'}}>
+          <Button sx={{fontWeight: 'bold'}}>
+            <Link to={'/cadastrar'}>Cadastrar</Link>
+          </Button>
+          <Button sx={{fontWeight: 'bold'}}>
+            <Link to={'/login'}>Entrar</Link>
+          </Button>
           <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <HomeIcon />
-                </ListItemIcon>
-                <ListItemText primary={'Início'} />
-              </ListItemButton>
-            </ListItem>
+            <ListItemLink to="/" primary="Início" icon={<HomeIcon />} />
+            <ListItemLink to="#" primary="Minha conta" icon={<PersonIcon />} />
+            <ListItemLink to="#" primary="Histórico de rifas" icon={<HistoryIcon />} />
+            <ListItemLink to="#" primary="Meus prêmios" icon={<EmojiEventsIcon />} />
           </List>
           <Divider />
+          <Typography sx={{fontWeight: "bold"}}>Gerenciar rifas</Typography>
+          <List>
+            <ListItemLink to="/criar_rifa" primary="Criar rifa" icon={<LocalActivityIcon />} />
+            <ListItemLink to="#" primary="Painel de rifas" icon={<TableChartIcon />} />
+            <ListItemLink to="#" primary="Listar prêmios" icon={<FormatListBulletedIcon />} />
+          </List>
+          <Divider />
+          <Typography sx={{fontWeight: "bold"}}>Suporte</Typography>
+          <List>
+            <ListItemLink to="#" primary="Dúvidas" icon={<HelpIcon />} />
+            <ListItemLink to="#" primary="Central de atendimento" icon={<SupportAgentIcon />} />
+            <ListItemLink to="#" primary="Contatos" icon={<EmailIcon />} />
+          </List>
         </Box>
-        <div className={styles.user_info}>
-          <figure>
-            <img src={user} alt="foto pequena do usuário" />
-          </figure>
-          <h4>Visitante</h4>
-        </div>
-        <div className={styles.menu_links}>
-          <Link to={"/"}><i className="fa-solid fa-house"></i>Início</Link>
-          <Link to={"#"}><i className="fa-solid fa-user"></i>Minha conta</Link>
-          <Link to={"#"}><i className="fa-solid fa-clock-rotate-left"></i>Histórico de rifas</Link>
-          <Link to={"#"}><i className="fa-solid fa-trophy"></i>Meus prêmios</Link>
-          <h3>Gerenciar rifas</h3>
-          <Link to={"/criar_rifa"}><i className="fa-solid fa-ticket"></i>Criar rifa</Link>
-          <Link to={"#"}><i className="fa-solid fa-table-columns"></i>Painel de rifas</Link>
-          <Link to={"#"}><i className="fa-solid fa-list"></i>Listar prêmios</Link>
-          <h3>Suporte</h3>
-          <Link to={"#"}><i className="fa-solid fa-circle-question"></i>Dúvidas</Link>
-          <Link to={"#"}><i className="fa-solid fa-headset"></i>Central de atendimento</Link>
-        </div>
-        <div className={styles.menu_buttons}>
-          <button onClick={toggleDrawer(false)}><Link to={"/login"}>Login</Link></button>
-          <button onClick={toggleDrawer(false)}><Link to={"/cadastrar"}>Cadastrar</Link></button>
-        </div>
       </>
     );
   }
 
   return (
     <>
-      <Button 
-        sx={{fontSize: 30, color: '#fff'}}
+      <Button
         onClick={toggleDrawer(true)}
       >
-        <i className="fa-solid fa-bars"></i>
+        <MenuIcon fontSize="large" sx={{color: "#fff"}}/>
       </Button>
       <Drawer
         anchor={'left'}
