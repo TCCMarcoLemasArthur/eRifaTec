@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from "../componentes/Header";
+import HeaderUI from "../componentes/HeaderUI";
 import Footer from "../componentes/Footer";
 import FormUsuario from '../componentes/FormUsuario';
 
@@ -7,7 +7,7 @@ import FormUsuario from '../componentes/FormUsuario';
 export default function CadastroUsuario() {
     return (
         <>
-            <Header />
+            <HeaderUI />
             <FormUsuario cadastro />
             <Footer />
         </>
