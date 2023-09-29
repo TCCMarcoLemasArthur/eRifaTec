@@ -1,6 +1,7 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 
 const themeOptions: ThemeOptions = {
+  // Alterando cores ja existentes para as desejadas
   palette: {
     mode: 'dark',
     primary: {
@@ -25,4 +26,13 @@ const themeOptions: ThemeOptions = {
   },
 };
 
-export const tema = createTheme(themeOptions)
+export const tema = createTheme(themeOptions, {
+  // Adicionando nomes de cores personalizados
+  palette: {
+    mode: 'dark',
+    background: {
+      dark: '#212121',
+      light: '#353535'
+    }
+  }
+})

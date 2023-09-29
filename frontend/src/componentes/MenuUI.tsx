@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link as RouterLink, LinkProps as RouterLinkProps } from "react-router-dom";
 
-import styles from '../estilos/menu.module.css';
-import user from '../imagens/user.png';
+import usuario from '../imagens/usuario.png';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -31,8 +30,11 @@ import HelpIcon from '@mui/icons-material/Help';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import EmailIcon from '@mui/icons-material/Email';
 
+interface Props{
+  anchor?: 'left' | 'right'
+}
 
-export default function MenuUI() {
+export default function MenuUI({ anchor }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer =
@@ -79,14 +81,28 @@ export default function MenuUI() {
   const items = () => {
     return (
       <>
-        <Stack direction="row" spacing={2}>
-          <Avatar sx={{width: 56, height: 56}} src={user} alt="visitante" />
+        <Stack direction="row" spacing={2} sx={{
+          bgcolor: 'background.dark',
+          maxWidth: 350,
+          p: 2
+        }}>
+          <Avatar sx={{width: 56, height: 56}} src={usuario} alt="usuario" />
           <Stack>
-            <Typography sx={{fontSize: 18, color: 'primary.light'}}>Bem Vindo(a),</Typography>
-            <Typography sx={{fontSize: 18, fontWeight: "bold"}}>Visitante</Typography>
+            <Typography sx={{fontSize: 18, color: 'primary.light'}}>
+              Bem Vindo(a),
+            </Typography>
+            <Typography sx={{fontSize: 18, fontWeight: "bold"}}>
+              Usuário
+            </Typography>
           </Stack>
         </Stack>
-        <Box sx={{width: '100%', maxWidth: 360, color: '#fff'}}>
+        <Box sx={{
+          width: '100%', 
+          maxWidth: 350, 
+          color: '#fff', 
+          bgcolor: 'background.light',
+          p: 1
+        }}>
           <Button sx={{fontWeight: 'bold'}}>
             <Link to={'/cadastrar'}>Cadastrar</Link>
           </Button>
@@ -126,7 +142,7 @@ export default function MenuUI() {
         <MenuIcon fontSize="large" sx={{color: "#fff"}}/>
       </IconButton>
       <Drawer
-        anchor={'left'}
+        anchor={anchor}
         open={isOpen}
         onClose={toggleDrawer(false)}
       >

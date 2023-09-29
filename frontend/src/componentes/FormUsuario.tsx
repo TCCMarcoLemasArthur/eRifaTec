@@ -64,7 +64,7 @@ function FormUsuario({cadastro}: Props) {
           <button type="submit" id={cadastro ? "btnCadastrar" : "btnAtualizar"}>
             Enviar
           </button>
-          {cadastro ? <p>Já possui uma conta? <Link to={'/login'}>Entrar</Link></p> : ""}
+          {cadastro ? <p><span style={{color: 'black'}}>Já possui uma conta? </span><Link to={'/login'}>Entrar</Link></p> : ""}
         </div>
       </form>
     </>

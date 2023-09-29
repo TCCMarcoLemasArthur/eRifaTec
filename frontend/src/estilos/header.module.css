@@ -1,3 +1,11 @@
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 6px;
+    
+}
+
 .headerbox {
     display: flex;
     -webkit-box-align: center;
