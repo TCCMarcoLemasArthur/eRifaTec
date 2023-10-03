@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from "../imagens/probleminha.jpg";
 import usuario from '../imagens/usuario.png';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,11 +12,15 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import MenuUI from './MenuUI';
+import Avatar from '@mui/material/Avatar';
+
+import HomeIcon from '@mui/icons-material/Home';
+import HelpIcon from '@mui/icons-material/Help';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import MenuUI from './MenuUI';
-import Avatar from '@mui/material/Avatar';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -60,8 +64,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function HeaderUI() {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
   const isMenuOpen = Boolean(anchorEl);
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -71,6 +75,14 @@ export default function HeaderUI() {
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
+
+  function paginaInicio() {
+    navigate("/")
+  }
+  
+  function paginaAjuda() {
+    navigate("/ajuda")
+  }
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -132,6 +144,22 @@ export default function HeaderUI() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton
               size="large"
+              aria-label="inicio"
+              color="inherit"
+              onClick={paginaInicio}
+            >
+              <HomeIcon />
+            </IconButton>
+            <IconButton
+              size="large"
+              aria-label="ajuda"
+              color="inherit"
+              onClick={paginaAjuda}
+            >
+              <HelpIcon />
+            </IconButton>
+            <IconButton
+              size="large"
               aria-label="notificações"
               color="inherit"
             >
@@ -141,7 +169,7 @@ export default function HeaderUI() {
             </IconButton>
             <IconButton
               size="large"
-              aria-label="notificações"
+              aria-label="pedidos"
               color="inherit"
             >
               <Badge badgeContent={0} color="error">
