@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 
 //Insert 
 export const criarUsuario = async (req: Request, res: Response, next: NextFunction) => {
-  const { nome, cpf, email, senha, dataDeNascimento, cep, estado, cidade, bairro, rua, numero, celular} = req.body
+  const { nome, cpf, email, senha, dataNasc, cep, estado, cidade, bairro, rua, numero, celular} = req.body
   try {
       const usuario = await prisma.usuario.create({
           data: {
@@ -13,7 +13,7 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
             cpfusuario: cpf,
             emailusuario: email,
             senhausuario: senha,
-            datanascusuario: dataDeNascimento,
+            datanascusuario: dataNasc,
             cep: cep,
             estado: estado,
             cidade: cidade,
@@ -34,7 +34,7 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
     }
   }
 }
-/*
+
 //Select * from Usuario
 export const listarUsuario = async (req: Request, res: Response) => {
   try {
@@ -54,12 +54,12 @@ export const listarUsuario = async (req: Request, res: Response) => {
 //Select para um registro
 export const listarUsuarioPorId = async (req: Request, res: Response) => {
   try {
-      const response = await prisma.usuario.findUnique({
+      const usuario = await prisma.usuario.findUnique({
           where: {
-              id: Number(req.params.id),
+              idusuario: Number(req.params.id),
           },
       })
-      res.status(200).json(response)
+      res.status(200).json(usuario)
   } catch (error) {
     if (error instanceof Error) {
       // Verificar se 'error' é uma instância de 'Error'
@@ -74,18 +74,18 @@ export const listarUsuarioPorId = async (req: Request, res: Response) => {
 
 //update usuario
 export const atualizarUsuario = async (req: Request, res: Response) => {
-  const { nome, cpf, email, senha, dataDeNascimento, cep, estado, cidade, bairro, rua, numero, celular} = req.body
+  const { id, nome, cpf, email, senha, dataNasc, cep, estado, cidade, bairro, rua, numero, celular} = req.body
   try {
-      const product = await prisma.usuario.update({
+      const usuario = await prisma.usuario.update({
           where: {
-              id: Number(req.params.id),
+              idusuario: Number(id),
           },
           data: {
             nomeusuario: nome,
             cpfusuario: cpf,
             emailusuario: email,
             senhausuario: senha,
-            datanascusuario: dataDeNascimento,
+            datanascusuario: dataNasc,
             cep: cep,
             estado: estado,
             cidade: cidade,
@@ -111,9 +111,9 @@ export const atualizarUsuario = async (req: Request, res: Response) => {
 //delete usuario
 export const deletarUsuario = async (req: Request, res: Response) => {
   try {
-      const product = await prisma.usuario.delete({
+      const usuario = await prisma.usuario.delete({
           where: {
-              id: Number(req.params.id),
+              idusuario: Number(req.params.id),
           },
       })
       res.status(200).json(usuario)
@@ -129,4 +129,3 @@ export const deletarUsuario = async (req: Request, res: Response) => {
 }
 
 
-*/
