@@ -91,7 +91,7 @@ export default function MenuUI({ anchor }: Props) {
             <Typography sx={{fontSize: 18, color: 'primary.light'}}>
               Bem Vindo(a),
             </Typography>
-            <Typography sx={{fontSize: 18, fontWeight: "bold"}}>
+            <Typography sx={{fontSize: 18, fontWeight: "bold", color: 'white'}}>
               Usuário
             </Typography>
           </Stack>

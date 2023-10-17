@@ -109,7 +109,7 @@ export default function HeaderUI() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{bgcolor: 'background.dark'}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -212,63 +212,4 @@ const styles = {
     borderRadius: 5,
     marginRight: 6
   },
-
 }
-
-/*
-import React from 'react'
-import "../estilos/header.css";
-import logo from "../imagens/probleminha.jpg"
-import MenuUI from './MenuUI';
-
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Unstable_Grid2'
-
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-
-import { Link, useNavigate } from 'react-router-dom'
-
-export default function HeaderUI() {
-  const navigate = useNavigate();
-
-  const loginPage = () => {
-    navigate("/login")
-  }
-
-  return (
-    <header>
-      <AppBar>
-
-      </AppBar>
-      <Grid container spacing={2} sx={{
-        bgcolor: '#212121'
-      }}>
-        <Grid xs={1}>
-          <MenuUI />
-        </Grid>
-        <Grid xs={2}>
-          <Box>
-            <h1>
-              <img src={logo} alt="Logo" />
-              <Link to={"/"}>eRifaTec</Link>
-            </h1>
-          </Box>
-        </Grid>
-        <Grid xs={6}>
-          <nav className="navbar">
-            <Link to={'/'}>Home</Link>
-            <Link to={'/sobre'}>Sobre</Link>
-            <Link to={'/ajuda'}>Ajuda</Link>
-            <Link to={'/contatos'}>Contato</Link>
-            <button className="btnLogin" onClick={loginPage}>Entrar</button>
-          </nav>
-        </Grid>
-      </Grid>
-
-
-    </header>
-  );
-}
-*/

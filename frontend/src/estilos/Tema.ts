@@ -3,7 +3,7 @@ import { createTheme, ThemeOptions } from '@mui/material/styles';
 const themeOptions: ThemeOptions = {
   // Alterando cores ja existentes para as desejadas
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
       main: '#1976d2',
     },
@@ -16,9 +16,6 @@ const themeOptions: ThemeOptions = {
     warning: {
       main: '#ff9800',
     },
-    background: {
-      default: '#ffffff',
-    },
   },
   typography: {
     fontFamily: 'Poppins',
@@ -29,10 +26,10 @@ const themeOptions: ThemeOptions = {
 export const tema = createTheme(themeOptions, {
   // Adicionando nomes de cores personalizados
   palette: {
-    mode: 'dark',
+    mode: 'light',
     background: {
-      dark: '#212121',
+      dark: '#272727',
       light: '#353535'
     }
-  }
+  },
 })
