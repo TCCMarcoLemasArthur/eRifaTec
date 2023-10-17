@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../estilos/formusuario.css';
-import "../estilos/campotexto.css";
 import { Link } from 'react-router-dom';
+import styles from '../estilos/formUsuarioStyles';
 import axios from 'axios';
 
 import Grid from '@mui/material/Unstable_Grid2';
@@ -84,33 +83,13 @@ function FormUsuario({cadastro}: Props) {
     }
   }
 
-  const formStyles = {
-    /*
-    display: 'flex',
-    flexDirection: 'column', */
-    margin: '15px auto',
-    width: '100%',
-    maxWidth: '46rem',
-    backgroundColor: 'white',
-    padding: '15px 20px 0',
-    borderRadius: '10px',
-    boxShadow: '0 0 17px rgba(0, 0, 0, 0.3)'
-  }
-
-  const textFieldStyles = {
-    input: {color: '#515151'},
-    label: {color: '#7f858d'},
-    fieldSet: {borderColor: '#7f858d'},
-    width: '100%'
-  }
-
   return (
     <Grid 
       container 
       component="form" 
       onSubmit={cadastro ? handleCadastrar : handleAtualizar} 
       xs={12} 
-      sx={formStyles}
+      sx={styles.formUsuario}
     >
       <Typography variant='h2' component='h2' sx={{
         color: 'primary.main',
@@ -133,7 +112,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.nome}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
       <Grid xs={12} md={6}>
@@ -146,7 +125,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.cpf}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
 
@@ -160,7 +139,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.dataNasc}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
       <Grid xs={12} md={6}>
@@ -173,7 +152,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.celular}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
 
@@ -187,7 +166,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.email}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
 
@@ -201,7 +180,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.senha}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
       <Grid xs={12} md={6}>
@@ -214,7 +193,7 @@ function FormUsuario({cadastro}: Props) {
           onChange={confirmarSenha}
           error={!confirmacao}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
 
@@ -228,7 +207,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.cep}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
       <Grid xs={12} md={4}>
@@ -241,7 +220,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.estado}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
       <Grid xs={12} md={4}>
@@ -254,7 +233,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.cidade}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
 
@@ -268,7 +247,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.bairro}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
       <Grid xs={12} md={4}>
@@ -281,7 +260,7 @@ function FormUsuario({cadastro}: Props) {
           value={userData.rua}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
       <Grid xs={12} md={4}>
@@ -294,16 +273,16 @@ function FormUsuario({cadastro}: Props) {
           value={userData.numero}
           onChange={handleInputChange}
           required
-          sx={textFieldStyles}
+          sx={styles.campo}
         />
       </Grid>
 
-      <Grid xs={12} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <Grid xs={12} sx={styles.center}>
         <Button type='submit' variant='contained' id={cadastro ? 'btnCadastrar' : 'btnAtualizar'}>
           Enviar
         </Button>
       </Grid>
-      <Grid xs={12} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <Grid xs={12} sx={styles.center}>
         {cadastro ? 
           <Typography component='p' sx={{color: 'black'}}>
             Já possui uma conta?
