@@ -18,7 +18,10 @@ const themeOptions: ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: 'Poppins',
+    fontFamily: [
+      'Poppins', 
+      'sans-serif'
+    ].join(','),
     fontSize: 14,
   },
 };
