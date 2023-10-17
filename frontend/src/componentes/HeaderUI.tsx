@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from "../imagens/probleminha.jpg";
-import usuario from '../imagens/usuario.png';
+import logo from "../assets/imagens/probleminha.jpg";
+import usuario from '../assets/imagens/usuario.png';
 import { Link, useNavigate } from 'react-router-dom'
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';

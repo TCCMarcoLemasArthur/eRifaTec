@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link as RouterLink, LinkProps as RouterLinkProps } from "react-router-dom";
 
-import usuario from '../imagens/usuario.png';
+import usuario from '../assets/imagens/usuario.png';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
