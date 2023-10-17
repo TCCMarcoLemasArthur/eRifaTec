@@ -33,7 +33,6 @@ function FormUsuario({cadastro}: Props) {
     numero: ''
   })
   const [confirmacao, setConfirmacao] = useState(true)
-  const [response, setResponse] = useState('')
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -56,7 +55,6 @@ function FormUsuario({cadastro}: Props) {
   
   const handleAtualizar = (event: React.FormEvent) => {
     event.preventDefault();
-    // TODO implementar método de atualização
     axios.put('http://localhost:5000/atualizarusuario', userData)
       .then(response => {
         console.log(response)
@@ -69,10 +67,8 @@ function FormUsuario({cadastro}: Props) {
   const confirmarSenha = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     if (value === userData.senha && (value !== '' && userData.senha !== '')) {
-      //console.log('senha confirmada')
       setConfirmacao(true);
     } else {
-      //console.log('senha não confirmada')
       setConfirmacao(false);
     }
   }
@@ -281,7 +277,7 @@ function FormUsuario({cadastro}: Props) {
       </Grid>
       <Grid xs={12} sx={styles.center}>
         {cadastro ? 
-          <Typography component='p' sx={{color: 'black'}}>
+          <Typography component='p' sx={{color: 'black', margin: 2}}>
             Já possui uma conta?
             <Typography component='span' sx={{a: {textDecoration: 'underline', color: 'primary.main'}}}>
               <Link to={'/login'}> Entre aqui</Link>
