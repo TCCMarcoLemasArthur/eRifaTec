@@ -90,7 +90,7 @@ function FormUsuario({cadastro}: Props) {
         textAlign: 'center',
         width: '100%',
         fontSize: '2rem',
-        fontWeight: 'bold',
+        fontWeight: 600,
         marginBottom: '15px'
       }}>
         {cadastro ? 'Cadastro' : 'Meus dados'}
