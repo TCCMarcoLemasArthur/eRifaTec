@@ -45,31 +45,25 @@ function FormUsuario({cadastro}: Props) {
   const handleCadastrar = (event: React.FormEvent) => {
     // Impede a página de recarregar quando clicar no botão
     event.preventDefault();
-    axios.post('http://localhost:5000/cadastrar', {
-      nome: 'A',
-      cpf: 'A',
-      dataNasc: 'A',
-      celular: 'A',
-      email: 'A',
-      senha: 'A',
-      cep: 'A',
-      estado: 'A',
-      cidade: 'A',
-      bairro: 'A',
-      rua: 'A',
-      numero: 'A'
-    })
+    axios.post('http://localhost:5000/cadastrarusuario', userData)
       .then(response => {
         console.log(response)
       })
       .catch(erro => {
-        console.log('Erro ao fazer postagem', erro)
+        console.log('Erro ao cadastrar', erro)
       })
   }
   
   const handleAtualizar = (event: React.FormEvent) => {
     event.preventDefault();
     // TODO implementar método de atualização
+    axios.put('http://localhost:5000/atualizarusuario', userData)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(erro => {
+        console.log('Erro ao atualizar dados', erro)
+      })
   }
 
   const confirmarSenha = (event: React.ChangeEvent<HTMLInputElement>) => {

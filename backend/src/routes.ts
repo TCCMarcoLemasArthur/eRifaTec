@@ -1,6 +1,6 @@
 import { Router } from 'express'; 
 
-import { criarUsuario, /*listarUsuario, listarUsuarioPorId, atualizarUsuario, deletarUsuario*/} from "./controller/UserController.js";
+import { criarUsuario, listarUsuario, listarUsuarioPorId, atualizarUsuario, deletarUsuario} from "./controller/UserController.js";
 
 
 /*import { CreateRifaController } from "./controller/rifa/RifaController";
@@ -11,10 +11,11 @@ import { DeleteRifaController } from "./controller/rifa/RifaController";*/
 
 const router = Router();
 
-router.post('/cadastrar', criarUsuario);
-/*router.get('/listuser', new listarUsuario().handle);
-router.put('/updateuser', new atualizarUsuario().handle);
-router.delete('/deleteuser', new deletarUsuario().handle);*/
+router.post('/cadastrarusuario', criarUsuario);
+router.get('/listarusuario', listarUsuario);
+router.get('/listarusuario/:id', listarUsuarioPorId);
+router.put('/atualizarusuario', atualizarUsuario);
+router.delete('/deletarusuario', deletarUsuario);
 
 /*router.post('/createrifa', new CreateRifaController().handle);
 router.get('/listrifa', new ReadRifaController().handle);
