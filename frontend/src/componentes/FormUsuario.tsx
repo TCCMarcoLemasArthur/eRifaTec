@@ -117,6 +117,7 @@ function FormUsuario({cadastro}: Props) {
           label='CPF'
           variant='outlined'
           value={userData.cpf}
+          inputProps={{maxlength: 11}}
           onChange={handleInputChange}
           required
           sx={styles.campo}
@@ -130,6 +131,7 @@ function FormUsuario({cadastro}: Props) {
           name='dataNasc'
           label='Data de Nascimento'
           variant='outlined'
+          InputLabelProps={{ shrink: true }}
           value={userData.dataNasc}
           onChange={handleInputChange}
           required
@@ -143,6 +145,7 @@ function FormUsuario({cadastro}: Props) {
           name='celular'
           label='Celular'
           variant='outlined'
+          inputProps={{maxlength: 11}}
           value={userData.celular}
           onChange={handleInputChange}
           required
