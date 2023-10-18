@@ -113,7 +113,7 @@ export const deletarUsuario = async (req: Request, res: Response) => {
   try {
       const usuario = await prisma.usuario.delete({
           where: {
-              idusuario: Number(req.params.id),
+              idusuario: Number(req.query.id),
           },
       })
       res.status(200).json(usuario)
