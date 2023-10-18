@@ -13,7 +13,7 @@ const router = Router();
 
 router.post('/cadastrarusuario', criarUsuario);
 router.get('/listarusuario', listarUsuario);
-router.get('/listarusuario/:id', listarUsuarioPorId);
+router.get('/listarusuarioid', listarUsuarioPorId);
 router.put('/atualizarusuario', atualizarUsuario);
 router.delete('/deletarusuario', deletarUsuario);
 
