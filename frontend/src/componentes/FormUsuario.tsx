@@ -6,7 +6,7 @@ import axios from 'axios';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button'
+import Button from '@mui/material/Button';
 
 // TODO Preparar os campos para os dados que serão inseridos (máscara no campo dataDeNascimento, filtro e verificação)
 
@@ -15,6 +15,14 @@ import Button from '@mui/material/Button'
 //* cadastro = false -> Formulário para atualizar dados
 interface Props {
     cadastro: boolean;
+}
+
+// ! Isso pode retornar pelo menos 3 erros
+const consultarCep = async (cep: string) => {
+  const url = 'https://viacep.com.br/ws/' + cep + '/json/'
+  let res = await axios.get(url)
+  console.log('Estado da Promise:' + res.status)
+  return res.data
 }
 
 function FormUsuario({cadastro}: Props) {
@@ -37,6 +45,16 @@ function FormUsuario({cadastro}: Props) {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
+
+    console.log(userData.cep)
+
+    if (name === 'cep' && value.length == 8) {
+      console.log('cep completo')
+      const endereco = consultarCep(value)
+      console.log(endereco)
+    } else if (value.length < 8) {
+      console.log('cep esta com poucos valores: ' + value.length)
+    }
   };
 
    //! Verificar campos e procurar uma alternativa ao useState
