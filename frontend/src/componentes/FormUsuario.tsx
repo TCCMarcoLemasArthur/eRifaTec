@@ -197,6 +197,7 @@ function FormUsuario({cadastro}: Props) {
           name='cep'
           label='CEP'
           variant='outlined'
+          inputProps={{maxlength: 8}}
           value={userData.cep}
           onChange={handleInputChange}
           required
