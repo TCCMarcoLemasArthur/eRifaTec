@@ -17,14 +17,6 @@ interface Props {
     cadastro: boolean;
 }
 
-// ! Isso pode retornar pelo menos 3 erros
-const consultarCep = async (cep: string) => {
-  const url = 'https://viacep.com.br/ws/' + cep + '/json/'
-  let res = await axios.get(url)
-  console.log('Estado da Promise:' + res.status)
-  return res.data
-}
-
 function FormUsuario({cadastro}: Props) {
   const [userData, setUserData] = useState({
     nome: '',
@@ -45,16 +37,22 @@ function FormUsuario({cadastro}: Props) {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
-
+/*
     console.log(userData.cep)
 
     if (name === 'cep' && value.length == 8) {
       console.log('cep completo')
-      const endereco = consultarCep(value)
-      console.log(endereco)
-    } else if (value.length < 8) {
+      axios.get('http://localhost:5000/consultarcep', { params: { value } })
+        .then(response => {
+          console.log(response.data)
+        })
+        .catch(erro => {
+          console.log('Erro ao consultar cep:', erro.message)
+        })
+    } else if (name === 'cep' && value.length < 8) {
       console.log('cep esta com poucos valores: ' + value.length)
     }
+    */
   };
 
    //! Verificar campos e procurar uma alternativa ao useState
@@ -99,14 +97,7 @@ function FormUsuario({cadastro}: Props) {
       xs={12} 
       sx={styles.formUsuario}
     >
-      <Typography variant='h2' component='h2' sx={{
-        color: 'primary.main',
-        textAlign: 'center',
-        width: '100%',
-        fontSize: '2rem',
-        fontWeight: 600,
-        marginBottom: '15px'
-      }}>
+      <Typography variant='h2' component='h2' sx={styles.titulo}>
         {cadastro ? 'Cadastro' : 'Meus dados'}
       </Typography>
 
@@ -169,7 +160,7 @@ function FormUsuario({cadastro}: Props) {
 
       <Grid xs={12}>
         <TextField
-          type='text'
+          type='email'
           id='email'
           name='email'
           label='Email'

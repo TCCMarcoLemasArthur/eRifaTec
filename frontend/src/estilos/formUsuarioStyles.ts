@@ -4,8 +4,16 @@ const formUsuarioStyles = {
     justifyContent: 'center',
     alignItems: 'center'
   },
+  titulo: {
+    color: 'primary.main',
+    textAlign: 'center',
+    width: '100%',
+    fontSize: '2rem',
+    fontWeight: 600,
+    marginBottom: '15px'
+  },
   formUsuario: {
-    margin: '15px auto',
+    margin: '45px auto',
     width: '100%',
     maxWidth: '46rem',
     backgroundColor: 'white',
