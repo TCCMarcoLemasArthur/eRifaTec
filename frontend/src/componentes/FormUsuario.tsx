@@ -122,7 +122,7 @@ function FormUsuario({cadastro}: Props) {
           label='CPF'
           variant='outlined'
           value={userData.cpf}
-          inputProps={{maxlength: 11}}
+          inputProps={{maxLength: 11}}
           onChange={handleInputChange}
           required
           sx={styles.campo}
@@ -145,12 +145,12 @@ function FormUsuario({cadastro}: Props) {
       </Grid>
       <Grid xs={12} md={6}>
         <TextField
-          type='text'
+          type='tel'
           id='celular'
           name='celular'
           label='Celular'
           variant='outlined'
-          inputProps={{maxlength: 11}}
+          inputProps={{maxLength: 11}}
           value={userData.celular}
           onChange={handleInputChange}
           required
@@ -206,7 +206,7 @@ function FormUsuario({cadastro}: Props) {
           name='cep'
           label='CEP'
           variant='outlined'
-          inputProps={{maxlength: 8}}
+          inputProps={{maxLength: 8}}
           value={userData.cep}
           onChange={handleInputChange}
           required
