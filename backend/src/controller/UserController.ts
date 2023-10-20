@@ -81,11 +81,27 @@ export const loginUsuario = async (req: Request, res: Response) => {
     },
     select:{
       emailusuario: true,
-      senhausuario:true
+      senhausuario: true
     }
   })
+  /*
+  SELECT email, senha
+  FROM usuario
+  WHERE email = "a@a"
+  */
 
-  console.log('Login Efetuado')
+  if (usuario?.senhausuario === senha) {
+    console.log('Login efetuado com sucesso')
+  } else {
+    console.log('Email ou senha incorretos')
+  }
+  /*
+    {
+      emailusuario: 'a@a',
+      senhausuario: '123456'
+    }
+    usuario.senhausuario == senha
+  */
 }
 
 
