@@ -4,7 +4,7 @@ const noPageStyles = {
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
-    minHeight: "50vh",
+    minHeight: "55vh",
     div: {
       svg: {
         fontSize: '2rem'
