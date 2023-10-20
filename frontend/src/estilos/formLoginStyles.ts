@@ -17,7 +17,7 @@ const formLoginStyles = {
       width: '100%',
       maxWidth: '25rem',
       backgroundColor: 'white',
-      padding: '15px 20px 0',
+      padding: '15px 20px',
       borderRadius: '10px',
       boxShadow: '0 0 17px rgba(0, 0, 0, 0.3)'
     },

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from '../estilos/formUsuarioStyles';
 import axios from 'axios';
 
@@ -17,7 +17,8 @@ interface Props {
     cadastro: boolean;
 }
 
-function FormUsuario({cadastro}: Props) {
+export default function FormUsuario({cadastro}: Props) {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     nome: '',
     cpf: '',
@@ -67,6 +68,9 @@ function FormUsuario({cadastro}: Props) {
       .catch(erro => {
         console.log('Erro ao cadastrar', erro)
       })
+
+    // Pegar a mensagem de retorno do servidor e redirecionar o usuário para a home
+      //* navigate('/') <- colocar dentro da condicional
   }
   
   const handleAtualizar = (event: React.FormEvent) => {
@@ -287,7 +291,7 @@ function FormUsuario({cadastro}: Props) {
       </Grid>
       <Grid xs={12} sx={styles.center}>
         {cadastro ? 
-          <Typography component='p' sx={{color: 'black', margin: 2}}>
+          <Typography component='p' sx={{color: 'black', marginTop: 2}}>
             Já possui uma conta?
             <Typography component='span' sx={{a: {textDecoration: 'underline', color: 'primary.main'}}}>
               <Link to={'/login'}> Entre aqui</Link>
@@ -298,5 +302,3 @@ function FormUsuario({cadastro}: Props) {
     </Grid>
   );
 }
-
-export default FormUsuario;

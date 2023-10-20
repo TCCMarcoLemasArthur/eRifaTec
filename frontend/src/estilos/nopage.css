@@ -1,8 +1,0 @@
-.nopage {
-    display: flex;
-    color: var(--erro);
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 50vh;
-}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import HeaderUI from "../componentes/HeaderUI";
+import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
 import axios from 'axios'
 
@@ -37,7 +37,7 @@ export default function ListarUsuarios() {
   
   return (
     <>
-      <HeaderUI />
+      <Header />
       <div style={{ height: 400, width: '100%' }}>
         <DataGrid
           rows={users}

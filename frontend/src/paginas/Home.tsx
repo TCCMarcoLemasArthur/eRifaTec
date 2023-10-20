@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderUI from "../componentes/HeaderUI";
+import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
 
 import Button from '@mui/material/Button'
@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <HeaderUI />
+      <Header />
       <Container sx={{ 
         display: 'flex',
         justifyContent: 'center',

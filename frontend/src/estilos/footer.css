@@ -1,111 +1,116 @@
 /* Conteiners gerais */
 .footerbox {
-    background-color: var(--escuro-primario);
-    border-top: 1px solid #121212;
+  background-color: var(--escuro-primario);
+  border-top: 1px solid #121212;
 }
 
 .rodape {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 
 /* Links de navegação */
-.rodape .atalhos{
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+.rodape .atalhos {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .rodape .link-section {
-    position: relative;
-    width: 25%;
-    float: left;
-    padding: 0 10px;
+  position: relative;
+  width: 25%;
+  float: left;
+  padding: 0 10px;
 }
 
 .rodape .link-section h5 {
-    color: var(--primaria);
-    text-transform: uppercase;
-    font-weight: 300;
-    margin-top: 10px;
+  color: var(--primaria);
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 10px;
 }
 
 .rodape .link-section ul {
-    list-style: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 12px;
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
 }
 
 .rodape .link-section ul li {
-    padding: 2px 0;
-    border: 1px solid transparent;
-    display: flex;
-    align-items: center;
+  padding: 2px 0;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
 }
 
 .rodape .link-section .link-icon {
-    color: #777;
-    font-weight: 600;
-    font-size: 20px;
-    position: relative;
-    display: inline-block;
+  color: #777;
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+  display: inline-block;
 }
 
 .rodape .link-section a {
-    color: #ddd;
-    text-decoration: none;
-    transition: 300ms;
+  color: #ddd;
+  text-decoration: none;
+  transition: 300ms;
 }
 
 @keyframes animate-link-icon {
-    0% {transform: translateX(-5px)}
-    100% {transform: translateX(0);}
+  0% {
+    transform: translateX(-5px)
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .rodape .link-section li:hover .link-icon {
-    animation: animate-link-icon 300ms;
-    color: var(--detalhe);
+  animation: animate-link-icon 300ms;
+  color: var(--detalhe);
 }
 
-.rodape .link-section li:hover > a{
-    color: var(--primaria);
+.rodape .link-section li:hover>a {
+  color: var(--primaria);
 }
 
 
 /* Links de redes sociais */
 .rodape .redes-sociais {
-    background-color: var(--escuro-secundario);
-    width: 100%;
-    clear: both;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 20px 35px 10px;
-    font-size: 30px;
-    text-align: center;
+  background-color: var(--escuro-secundario);
+  width: 100%;
+  clear: both;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px 35px 10px;
+  font-size: 30px;
+  text-align: center;
 }
 
 .rodape .redes-sociais h5 {
-    color: #eee;
-    font-size: 12px;
-    font-weight: 400;
-    padding: 0 0 10px 0;
+  color: #eee;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0 0 10px 0;
 }
 
 
 .rodape .redes-sociais ul {
-    list-style: none;
+  list-style: none;
 }
 
 .rodape .redes-sociais li {
-    color: var(--primaria);
-    display: inline-block;
-    padding: 0 10px;
+  color: var(--primaria);
+  display: inline-block;
+  padding: 0 10px;
 }
 
 .rodape .redes-sociais i {
-    display: inline-block;
-    color: var(--primaria);
+  display: inline-block;
+  color: var(--primaria);
 }

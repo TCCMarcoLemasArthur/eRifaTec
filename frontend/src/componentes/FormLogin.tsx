@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 
 
 export default function FormLogin() {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     email: '',
     senha: ''
@@ -29,6 +30,9 @@ export default function FormLogin() {
       .catch(erro => {
         console.log('Erro ao entrar', erro)
       })
+
+      // Pegar a mensagem de retorno do servidor e redirecionar o usuário para a home
+      //* navigate('/') <- colocar dentro da condicional
   }
 
   return (
@@ -77,7 +81,7 @@ export default function FormLogin() {
         </Button>
       </Grid>
       <Grid xs={12} sx={styles.center}>
-        <Typography component='p' sx={{color: 'black', margin: 2}}>
+        <Typography component='p' sx={{color: 'black', marginTop: 2}}>
           Ainda não possui uma conta? 
           <Typography component='span' sx={{a: {textDecoration: 'underline', color: 'primary.main'}}}>
             <Link to={'/cadastrar'}> Cadastre-se</Link>
