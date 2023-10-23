@@ -1,6 +1,8 @@
 import { Request, Response , NextFunction} from 'express';
 import {PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
+import {hash} from 'bcryptjs';
+
 
 
 //Insert 
@@ -56,7 +58,7 @@ export const listarRifa = async (req: Request, res: Response) => {
 //Select para um registro
 export const listarRifaPorId = async (req: Request, res: Response) => {
   try {
-      const rifa = await prisma.rifa.findUnique({
+      const rifa = await prisma.rifa.findFirst({
           where: {
               idrifa: Number(req.query.id),
           },

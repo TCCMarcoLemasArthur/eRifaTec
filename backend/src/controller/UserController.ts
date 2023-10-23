@@ -1,6 +1,8 @@
 import { Request, Response , NextFunction} from 'express';
 import {PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
+import bcrypt from 'bcryptjs';
+
 
 
 //Insert 
@@ -17,12 +19,13 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
   }
   
   try {
+    const senhaHash = await bcrypt.hash(senha, 8)
       const usuario = await prisma.usuario.create({
           data: {
             nomeusuario: nome,
             cpfusuario: cpf,
             emailusuario: email,
-            senhausuario: senha,
+            senhausuario: senhaHash,
             datanascusuario: dataNasc,
             cep: cep,
             estado: estado,
@@ -64,6 +67,7 @@ export const listarUsuario = async (req: Request, res: Response) => {
 //Select para um registro
 export const loginUsuario = async (req: Request, res: Response) => {
   const {email, senha} = req.body
+  const senhaHash = await bcrypt.hash(senha, 8)
 
   const usuarioExiste = await prisma.usuario.findFirst({
     where: {
@@ -90,7 +94,7 @@ export const loginUsuario = async (req: Request, res: Response) => {
   WHERE email = "a@a"
   */
 
-  if (usuario?.senhausuario === senha) {
+  if (usuario?.senhausuario === senhaHash) {
     console.log('Login efetuado com sucesso')
   } else {
     console.log('Email ou senha incorretos')

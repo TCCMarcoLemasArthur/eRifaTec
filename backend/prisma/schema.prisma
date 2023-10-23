@@ -55,7 +55,7 @@ model usuario {
   nomeusuario     String  @db.VarChar(75)
   cpfusuario      String  @db.VarChar(14)
   emailusuario    String  @db.VarChar(100)
-  senhausuario    String  @db.VarChar(25)
+  senhausuario    String  @db.VarChar(200)
   datanascusuario String  @db.VarChar(15)
   cep             String  @db.VarChar(9)
   cidade          String  @db.VarChar(100)
