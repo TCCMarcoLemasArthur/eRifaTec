@@ -133,3 +133,25 @@ export const deletarRifa = async (req: Request, res: Response) => {
     }
   }
 }
+
+
+function _sortear(quantidade = 1, maximo=40) {
+  var numeros = [];
+  
+  console.time('Sorteando');
+
+  // Preenche um array com os números de 1 ao maximo
+  for (var numero = 1; numero <= maximo;  numero++) {
+    numeros.push(numero);
+  }
+  
+  numeros.sort(function randomizar(a, b) {
+    return Math.random() * 2 - 1; // Ordena randomicamente
+  });
+
+  console.timeEnd('Sorteando');
+  
+  return numeros.splice(0, quantidade);
+}
+
+console.log(_sortear(1, 40).join(','));
