@@ -66,7 +66,7 @@ export default function FormUsuario({cadastro}: Props) {
         console.log(response)
       })
       .catch(erro => {
-        console.log('Erro ao cadastrar', erro)
+        console.log('Erro ao cadastrar', erro.response.data)
       })
 
     // Pegar a mensagem de retorno do servidor e redirecionar o usuário para a home
