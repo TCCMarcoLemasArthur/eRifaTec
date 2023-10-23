@@ -16,6 +16,8 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
 
   if(usuarioExiste){
     console.log("E-mail já cadastrado");
+    res.status(400).json({ msg: 'Email já cadastrado' });
+    return
   }
   
   try {
