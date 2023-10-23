@@ -101,7 +101,7 @@ export default function FormRifa() {
         </Grid>
 
         <Grid container xs={12} md={6}>
-        <TextField
+          <TextField
             type='number'
             id='quantBilhete'
             name='quantBilhete'
@@ -110,7 +110,7 @@ export default function FormRifa() {
             value={rifaData.quantBilhete}
             onChange={handleInputChange}
             required
-            sx={styles.campo}
+            sx={[styles.campo, {marginBottom: 1.8}]}
           />
           <TextField
             type='text'
@@ -144,7 +144,7 @@ export default function FormRifa() {
             InputLabelProps={{ shrink: true }}
             onChange={handleInputChange}
             required
-            sx={styles.campo}
+            sx={[styles.campo, {marginTop: {xs: 0, md: 2}}]}
           />
         </Grid>
       </Grid>
