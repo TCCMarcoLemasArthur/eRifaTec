@@ -38,7 +38,7 @@ export default function FormUsuario({cadastro}: Props) {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
-/*
+
     console.log(userData.cep)
 
     if (name === 'cep' && value.length == 8) {
@@ -53,7 +53,7 @@ export default function FormUsuario({cadastro}: Props) {
     } else if (name === 'cep' && value.length < 8) {
       console.log('cep esta com poucos valores: ' + value.length)
     }
-    */
+    
   };
 
    //! Verificar campos e procurar uma alternativa ao useState

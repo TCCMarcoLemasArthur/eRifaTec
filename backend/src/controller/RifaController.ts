@@ -5,6 +5,7 @@ import {hash} from 'bcryptjs';
 
 
 
+
 //Insert 
 export const criarRifa = async (req: Request, res: Response, next: NextFunction) => {
   const { titulo, quantbilhete, descricaorifa, senha, dataNasc, status, horasorteio, cep, estado, cidade, bairro, rua, numero, bilhete} = req.body
@@ -135,7 +136,7 @@ export const deletarRifa = async (req: Request, res: Response) => {
 }
 
 
-function _sortear(quantidade = 1, maximo=40) {
+export const _sortear = async (quantidade = 1, maximo=501) => {
   var numeros = [];
   
   console.time('Sorteando');
@@ -153,5 +154,11 @@ function _sortear(quantidade = 1, maximo=40) {
   
   return numeros.splice(0, quantidade);
 }
+const quantidade = 1;
+const maximo = 501;
 
-console.log(_sortear(1, 40).join(','));
+const handleSorteio = async()=>{
+  const resultado = await _sortear(quantidade, maximo)
+console.log(resultado.join(','));
+}
+handleSorteio();
