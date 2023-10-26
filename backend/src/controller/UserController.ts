@@ -88,7 +88,8 @@ export const loginUsuario = async (req: Request, res: Response) => {
     },
     select:{
       emailusuario: true,
-      senhausuario: true
+      senhausuario: true,
+      idusuario: true
     }
   })
   /*
@@ -97,6 +98,7 @@ export const loginUsuario = async (req: Request, res: Response) => {
   WHERE email = "a@a"
   */
 
+  //! Inserir a lógica dos cookies nesse if-else
   if (usuario?.senhausuario === senhaHash) {
     console.log('Login efetuado com sucesso')
   } else {
@@ -119,7 +121,7 @@ export const atualizarUsuario = async (req: Request, res: Response) => {
   try {
       const usuario = await prisma.usuario.update({
           where: {
-              idusuario: Number(id),
+              idusuario: Number(req.query.id),
           },
           data: {
             nomeusuario: nome,
