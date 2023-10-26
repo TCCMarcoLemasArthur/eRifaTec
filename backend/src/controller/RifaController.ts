@@ -161,4 +161,5 @@ const handleSorteio = async()=>{
   const resultado = await _sortear(quantidade, maximo)
 console.log(resultado.join(','));
 }
+
 handleSorteio();
