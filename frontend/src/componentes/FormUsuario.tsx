@@ -46,6 +46,18 @@ export default function FormUsuario({cadastro}: Props) {
       axios.get('http://localhost:5000/consultarcep', { params: { value } })
         .then(response => {
           console.log(response.data)
+          const { cep, uf, localidade, bairro, logradouro } = response.data
+          
+          const updatedUserData = {
+            ...userData,
+            cep: cep.replace(/-/g, ''),
+            estado: uf,
+            cidade: localidade,
+            bairro: bairro,
+            rua: logradouro
+          };
+
+          setUserData(updatedUserData)
         })
         .catch(erro => {
           console.log('Erro ao consultar cep:', erro.message)
@@ -63,7 +75,7 @@ export default function FormUsuario({cadastro}: Props) {
     event.preventDefault();
     axios.post('http://localhost:5000/cadastrarusuario', userData)
       .then(response => {
-        console.log(response)
+        console.log(response.data)
       })
       .catch(erro => {
         console.log('Erro ao cadastrar', erro.response.data)
