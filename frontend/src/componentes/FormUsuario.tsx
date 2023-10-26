@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-// TODO Preparar os campos para os dados que serão inseridos (máscara no campo dataDeNascimento, filtro e verificação)
 
 //* A propriedade cadastro é requerida para identificação
 //* cadastro = true -> Formulário para cadastro
@@ -39,25 +38,21 @@ export default function FormUsuario({cadastro}: Props) {
     const { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
 
-    console.log(userData.cep)
-
     if (name === 'cep' && value.length == 8) {
-      console.log('cep completo')
       axios.get('http://localhost:5000/consultarcep', { params: { value } })
         .then(response => {
-          console.log(response.data)
+          // console.log(response.data)
           const { cep, uf, localidade, bairro, logradouro } = response.data
           
-          const updatedUserData = {
+          setUserData({
             ...userData,
             cep: cep.replace(/-/g, ''),
             estado: uf,
             cidade: localidade,
             bairro: bairro,
             rua: logradouro
-          };
+          })
 
-          setUserData(updatedUserData)
         })
         .catch(erro => {
           console.log('Erro ao consultar cep:', erro.message)
