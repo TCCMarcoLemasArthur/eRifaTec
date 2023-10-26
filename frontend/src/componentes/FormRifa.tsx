@@ -7,6 +7,8 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 export default function FormRifa() {
   const navigate = useNavigate()
@@ -16,7 +18,7 @@ export default function FormRifa() {
     horaSorteio: '',
     desc: '',
     quantBilhete: 0,
-    precoBilhete: 0.00,
+    precoBilhete: 0.0,
     premio: '',
     imagens: [],
     cep: '',
@@ -27,10 +29,44 @@ export default function FormRifa() {
     numero: ''
   })
 
+  const [possuiEndereco, setPossuiEndereco] = useState(false)
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setRifaData({ ...rifaData, [name]: value });
+
+    if (name === 'cep' && value.length == 8) {
+      axios.get('http://localhost:5000/consultarcep', { params: { value } })
+        .then(response => {
+          // console.log(response.data)
+          const { cep, uf, localidade, bairro, logradouro } = response.data
+          
+          setRifaData({
+            ...rifaData,
+            cep: cep.replace(/-/g, ''),
+            estado: uf,
+            cidade: localidade,
+            bairro: bairro,
+            rua: logradouro
+          })
+
+        })
+        .catch(erro => {
+          console.log('Erro ao consultar cep:', erro.message)
+        })
+    } else if (name === 'cep' && value.length < 8) {
+      console.log('cep esta com poucos valores: ' + value.length)
+    }
   };
+
+  const handleCheckboxChange = () => {
+    if (!possuiEndereco) {
+      setPossuiEndereco(true)
+    } else {
+      setPossuiEndereco(false)
+    }
+  }
+
   return (
     <>
       <Grid
@@ -147,6 +183,99 @@ export default function FormRifa() {
             sx={[styles.campo, {marginTop: {xs: 0, md: 2}}]}
           />
         </Grid>
+
+        <FormControlLabel 
+          control={<Checkbox checked={possuiEndereco} onChange={handleCheckboxChange} />} 
+          label="Adicionar endereço"
+        />
+        { 
+          possuiEndereco ?
+          
+          <Grid container>
+            <Grid xs={12} md={4}>
+              <TextField
+                type='text'
+                id='cep'
+                name='cep'
+                label='CEP'
+                variant='outlined'
+                inputProps={{maxLength: 8}}
+                value={rifaData.cep}
+                onChange={handleInputChange}
+                required
+                sx={styles.campo}
+              />
+            </Grid>
+            <Grid xs={12} md={4}>
+              <TextField
+                type='text'
+                id='estado'
+                name='estado'
+                label='Estado'
+                variant='outlined'
+                value={rifaData.estado}
+                onChange={handleInputChange}
+                required
+                sx={styles.campo}
+              />
+            </Grid>
+            <Grid xs={12} md={4}>
+              <TextField
+                type='text'
+                id='cidade'
+                name='cidade'
+                label='Cidade'
+                variant='outlined'
+                value={rifaData.cidade}
+                onChange={handleInputChange}
+                required
+                sx={styles.campo}
+              />
+            </Grid>
+
+            <Grid xs={12} md={4}>
+              <TextField
+                type='text'
+                id='bairro'
+                name='bairro'
+                label='Bairro'
+                variant='outlined'
+                value={rifaData.bairro}
+                onChange={handleInputChange}
+                required
+                sx={styles.campo}
+              />
+            </Grid>
+            <Grid xs={12} md={4}>
+              <TextField
+                type='text'
+                id='rua'
+                name='rua'
+                label='Rua'
+                variant='outlined'
+                value={rifaData.rua}
+                onChange={handleInputChange}
+                required
+                sx={styles.campo}
+              />
+            </Grid>
+            <Grid xs={12} md={4}>
+              <TextField
+                type='text'
+                id='numero'
+                name='numero'
+                label='Número'
+                variant='outlined'
+                value={rifaData.numero}
+                onChange={handleInputChange}
+                required
+                sx={styles.campo}
+              />
+            </Grid>
+          </Grid>
+
+          : ''
+        }
       </Grid>
     </>
   )
