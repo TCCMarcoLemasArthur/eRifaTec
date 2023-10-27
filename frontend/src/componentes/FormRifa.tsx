@@ -16,7 +16,7 @@ export default function FormRifa() {
     titulo: '',
     dataSorteio: '',
     horaSorteio: '',
-    desc: '',
+    descricao: '',
     quantBilhete: 0,
     precoBilhete: 0.0,
     premio: '',
@@ -135,13 +135,13 @@ export default function FormRifa() {
 
           <TextField
             type='text'
-            id='desc'
-            name='desc'
+            id='descricao'
+            name='descricao'
             label='Descrição'
             variant='outlined'
             multiline
             rows={5}
-            value={rifaData.desc}
+            value={rifaData.descricao}
             onChange={handleInputChange}
             required
             sx={styles.campo}

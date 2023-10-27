@@ -8,24 +8,23 @@ import {hash} from 'bcryptjs';
 
 //Insert 
 export const criarRifa = async (req: Request, res: Response, next: NextFunction) => {
-  const { titulo, quantbilhete, descricaorifa, senha, dataNasc, status, horasorteio, cep, estado, cidade, bairro, rua, numero, bilhete} = req.body
+  const { titulo, quantBilhete, descricao, dataSorteio, horaSorteio, cep, estado, cidade, bairro, rua, numero } = req.body
   try {
       const rifa = await prisma.rifa.create({
           data: {
             titulorifa: titulo,
-            quantbilheterifa: quantbilhete,
-            descrifa: descricaorifa,
-            datasorteiorifa: senha,
-            datainiciorifa: dataNasc,
-            statusrifa: status,
-            horasorteiorifa: horasorteio,
+            quantbilheterifa: Number(quantBilhete),
+            descrifa: descricao,
+            datasorteiorifa: dataSorteio,
+            datainiciorifa: '02-02-2022', //! Coloca o dia em que a rifa foi criada
+            statusrifa: 'Em andamento', //! Começa automaticamente
+            horasorteiorifa: horaSorteio, //! Precisa colocar o premio e criar os bilhetes
             cep: cep,
             estado: estado,
             cidade: cidade,
             bairro: bairro,
             rua: rua,
-            numero: numero,
-            bilhete: bilhete
+            numero: numero
           },
       })
       res.status(201).json(rifa)
@@ -79,7 +78,7 @@ export const listarRifaPorId = async (req: Request, res: Response) => {
 
 //update rifa
 export const atualizarRifa = async (req: Request, res: Response) => {
-  const { id, titulo, quantbilhete, descricaorifa, senha, dataNasc, status, horasorteio, cep, estado, cidade, bairro, rua, numero, bilhete} = req.body
+  const { id, titulo, quantBilhete, descricaoRifa, dataSorteioRifa, dataInicioRifa, status, horaSorteio, cep, estado, cidade, bairro, rua, numero, bilhete } = req.body
   try {
       const rifa = await prisma.rifa.update({
           where: {
@@ -87,12 +86,12 @@ export const atualizarRifa = async (req: Request, res: Response) => {
           },
           data: {
             titulorifa: titulo,
-            quantbilheterifa: quantbilhete,
-            descrifa: descricaorifa,
-            datasorteiorifa: senha,
-            datainiciorifa: dataNasc,
+            quantbilheterifa: quantBilhete,
+            descrifa: descricaoRifa,
+            datasorteiorifa: dataSorteioRifa,
+            datainiciorifa: dataInicioRifa,
             statusrifa: status,
-            horasorteiorifa: horasorteio,
+            horasorteiorifa: horaSorteio,
             cep: cep,
             estado: estado,
             cidade: cidade,
