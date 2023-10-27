@@ -15,7 +15,7 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
 
   if (usuarioExiste) {
     console.log("E-mail já cadastrado");
-    res.status(400).json({ msg: "Email já cadastrado" });
+    res.status(500).json({ msg: "Email já cadastrado" });
     return;
   }
 
@@ -41,11 +41,8 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
   } catch (error) {
     if (error instanceof Error) {
       // Verificar se 'error' é uma instância de 'Error'
-      res.status(400).json({ msg: error.message });
-    } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
-      res.status(500).json({ msg: "Erro desconhecido" });
-    }
+      res.status(500).json({ msg: error.message });
+    } 
   }
 };
 
@@ -57,10 +54,7 @@ export const listarUsuario = async (req: Request, res: Response) => {
   } catch (error) {
     if (error instanceof Error) {
       // Verificar se 'error' é uma instância de 'Error'
-      res.status(400).json({ msg: error.message });
-    } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
-      res.status(500).json({ msg: "Erro desconhecido" });
+      res.status(500).json({ msg: error.message });
     }
   }
 };
@@ -129,10 +123,7 @@ export const atualizarUsuario = async (req: Request, res: Response) => {
   } catch (error) {
     if (error instanceof Error) {
       // Verificar se 'error' é uma instância de 'Error'
-      res.status(400).json({ msg: error.message });
-    } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
-      res.status(500).json({ msg: "Erro desconhecido" });
+      res.status(500).json({ msg: error.message });
     }
   }
 };
@@ -149,10 +140,7 @@ export const deletarUsuario = async (req: Request, res: Response) => {
   } catch (error) {
     if (error instanceof Error) {
       // Verificar se 'error' é uma instância de 'Error'
-      res.status(400).json({ msg: error.message });
-    } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
-      res.status(500).json({ msg: "Erro desconhecido" });
+      res.status(500).json({ msg: error.message });
     }
   }
 };
