@@ -23,6 +23,11 @@ const formRifaStyles = {
       width: '100%',
       marginBottom: 2
     },
+    center: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
   }
   
   export default formRifaStyles;

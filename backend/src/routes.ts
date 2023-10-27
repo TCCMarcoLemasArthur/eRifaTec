@@ -17,7 +17,7 @@ router.put('/atualizarusuario', atualizarUsuario);
 router.delete('/deletarusuario', deletarUsuario);
 router.post('/loginusuario', loginUsuario);
 
-router.post('/cadastrarrifa',  criarRifa);
+router.post('/criarrifa',  criarRifa);
 router.get('/listarrifa', listarRifa);
 router.get('/listarrifaid', listarRifaPorId);
 router.put('/atualizarrifa', atualizarRifa);

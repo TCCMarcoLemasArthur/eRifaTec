@@ -77,7 +77,7 @@ export default function FormUsuario({cadastro}: Props) {
       })
 
     // Pegar a mensagem de retorno do servidor e redirecionar o usuário para a home
-      //* navigate('/') <- colocar dentro da condicional
+    //* navigate('/') <- colocar dentro da condicional
   }
   
   const handleAtualizar = (event: React.FormEvent) => {

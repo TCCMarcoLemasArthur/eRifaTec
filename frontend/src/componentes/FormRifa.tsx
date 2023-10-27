@@ -67,6 +67,17 @@ export default function FormRifa() {
     }
   }
 
+  const criarRifa = (event: React.FormEvent) => {
+    event.preventDefault();
+    axios.post('http://localhost:5000/criarrifa', rifaData)
+      .then(response => {
+        console.log(response.data)
+      })
+      .catch(erro => {
+        console.log('Erro ao criar rifa:', erro.response.data.msg)
+      })
+  }
+
   return (
     <>
       <Grid
@@ -74,6 +85,7 @@ export default function FormRifa() {
         xs={12}
         component="form" 
         sx={styles.formRifa}
+        onSubmit={criarRifa}
       >
         <Typography variant='h2' component='h2' sx={styles.titulo}>
           Criar Rifa
@@ -276,6 +288,12 @@ export default function FormRifa() {
 
           : ''
         }
+
+        <Grid xs={12} sx={styles.center}>
+          <Button type='submit' variant='contained' id='btnEnviar'>
+            Enviar
+          </Button>
+        </Grid>
       </Grid>
     </>
   )
