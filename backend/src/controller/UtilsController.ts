@@ -21,7 +21,6 @@ export const consultarCep = async (req: Request, res: Response, next: NextFuncti
 
     try {
         const resultado = await axios.get(url);
-        console.log('Estado da Promise:', resultado.status);
         res.status(200).json(resultado.data);
     } catch (error) {
         console.error('Erro ao consultar CEP:', error);

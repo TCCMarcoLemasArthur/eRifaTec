@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 import axios from 'axios'
 
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
@@ -23,6 +24,7 @@ const columns: GridColDef[] = [
 
 export default function GridUsuarios() {
   const [users, setUsers] = useState([])
+  const { id } = useParams()
   
   useEffect(() => {
     axios.get('http://localhost:5000/listarusuario')
@@ -37,6 +39,14 @@ export default function GridUsuarios() {
 
   const handleDelete = () => {
     // Código para deletar um ou mais registros
+    //TODO usar os ids da tabela
+    axios.delete(`http://localhost:5000/deletarusuario/${id}`)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(erro => {
+        console.log(erro)
+      })
   }
 
   return (
