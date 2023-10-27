@@ -18,7 +18,7 @@ export default function Rotas() {
 					<Route path='/cadastrar' element={<CadastroUsuario />}/>
 					<Route path='/criar_rifa' element={<CriarRifa />}/>
 					<Route path='/listar_usuarios' element={<ListarUsuarios />}/>
-					<Route path='/perfil' element={<PerfilUsuario />}/>
+					<Route path='/user/:id' element={<PerfilUsuario />}/>
 					<Route path='*' element={<NoPage />}/>
 				</Routes>
 			</BrowserRouter>

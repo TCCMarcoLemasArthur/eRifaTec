@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import styles from '../estilos/formUsuarioStyles';
 import axios from 'axios';
 
@@ -13,10 +13,10 @@ import Button from '@mui/material/Button';
 //* cadastro = true -> Formulário para cadastro
 //* cadastro = false -> Formulário para atualizar dados
 interface Props {
-    cadastro: boolean;
+  cadastro: boolean;
 }
 
-export default function FormUsuario({cadastro}: Props) {
+export default function FormUsuario({ cadastro }: Props) {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
     nome: '',
@@ -32,18 +32,58 @@ export default function FormUsuario({cadastro}: Props) {
     rua: '',
     numero: ''
   })
+  const { id } = useParams()
   const [confirmacao, setConfirmacao] = useState(true)
+
+  useEffect(() => {
+    if (!cadastro) {
+      console.log('UseEffectAtualizado')
+      axios.get(`http://localhost:5000/selecionarusuario/${id}`)
+        .then(response => {
+          console.log(response.data)
+          const {
+            nomeusuario,
+            cpfusuario,
+            datanascusuario,
+            celular,
+            emailusuario,
+            senhausuario,
+            cep,
+            estado,
+            cidade,
+            bairro,
+            rua,
+            numero } = response.data
+
+          setUserData({
+            ...userData,
+            nome: nomeusuario,
+            cpf: cpfusuario,
+            dataNasc: datanascusuario,
+            celular: celular,
+            email: emailusuario,
+            senha: senhausuario,
+            cep: cep,
+            estado: estado,
+            cidade: cidade,
+            bairro: bairro,
+            rua: rua,
+            numero: numero
+          })
+        })
+    }
+  }, [])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUserData({ ...userData, [name]: value });
 
-    if (name === 'cep' && value.length == 8) {
+    if (name === 'cep' && value.length === 8) {
       axios.get('http://localhost:5000/consultarcep', { params: { value } })
         .then(response => {
           // console.log(response.data)
           const { cep, uf, localidade, bairro, logradouro } = response.data
-          
+
           setUserData({
             ...userData,
             cep: cep.replace(/-/g, ''),
@@ -60,10 +100,8 @@ export default function FormUsuario({cadastro}: Props) {
     } else if (name === 'cep' && value.length < 8) {
       console.log('cep esta com poucos valores: ' + value.length)
     }
-    
-  };
 
-   //! Verificar campos e procurar uma alternativa ao useState
+  };
 
   const handleCadastrar = (event: React.FormEvent) => {
     // Impede a página de recarregar quando clicar no botão
@@ -71,15 +109,13 @@ export default function FormUsuario({cadastro}: Props) {
     axios.post('http://localhost:5000/cadastrarusuario', userData)
       .then(response => {
         console.log(response.data)
+        navigate('/')
       })
       .catch(erro => {
         console.log('Erro ao cadastrar', erro.response.data)
       })
-
-    // Pegar a mensagem de retorno do servidor e redirecionar o usuário para a home
-    //* navigate('/') <- colocar dentro da condicional
   }
-  
+
   const handleAtualizar = (event: React.FormEvent) => {
     event.preventDefault();
     axios.put('http://localhost:5000/atualizarusuario', userData)
@@ -101,11 +137,11 @@ export default function FormUsuario({cadastro}: Props) {
   }
 
   return (
-    <Grid 
-      container 
-      component="form" 
-      onSubmit={cadastro ? handleCadastrar : handleAtualizar} 
-      xs={12} 
+    <Grid
+      container
+      component="form"
+      onSubmit={cadastro ? handleCadastrar : handleAtualizar}
+      xs={12}
       sx={styles.formUsuario}
     >
       <Typography variant='h2' component='h2' sx={styles.titulo}>
@@ -133,7 +169,7 @@ export default function FormUsuario({cadastro}: Props) {
           label='CPF'
           variant='outlined'
           value={userData.cpf}
-          inputProps={{maxLength: 11}}
+          inputProps={{ maxLength: 11 }}
           onChange={handleInputChange}
           required
           sx={styles.campo}
@@ -161,7 +197,7 @@ export default function FormUsuario({cadastro}: Props) {
           name='celular'
           label='Celular'
           variant='outlined'
-          inputProps={{maxLength: 11}}
+          inputProps={{ maxLength: 11 }}
           value={userData.celular}
           onChange={handleInputChange}
           required
@@ -217,7 +253,7 @@ export default function FormUsuario({cadastro}: Props) {
           name='cep'
           label='CEP'
           variant='outlined'
-          inputProps={{maxLength: 8}}
+          inputProps={{ maxLength: 8 }}
           value={userData.cep}
           onChange={handleInputChange}
           required
@@ -297,14 +333,14 @@ export default function FormUsuario({cadastro}: Props) {
         </Button>
       </Grid>
       <Grid xs={12} sx={styles.center}>
-        {cadastro ? 
-          <Typography component='p' sx={{color: 'black', marginTop: 2}}>
+        {cadastro ?
+          <Typography component='p' sx={{ color: 'black', marginTop: 2 }}>
             Já possui uma conta?
-            <Typography component='span' sx={{a: {textDecoration: 'underline', color: 'primary.main'}}}>
+            <Typography component='span' sx={{ a: { textDecoration: 'underline', color: 'primary.main' } }}>
               <Link to={'/login'}> Entre aqui</Link>
             </Typography>
           </Typography>
-        : ''}
+          : ''}
       </Grid>
     </Grid>
   );
