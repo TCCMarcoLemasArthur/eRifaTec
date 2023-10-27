@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AuthUserService } from "./AuthService";
+import { AuthUserService } from "./AuthService.js";
 
 
 //Controller

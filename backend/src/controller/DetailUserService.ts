@@ -1,4 +1,4 @@
-import prismaClient from "../prisma/index";
+import prismaClient from "../prisma/index.js";
 
 class DetailUserService{
     async execute(){

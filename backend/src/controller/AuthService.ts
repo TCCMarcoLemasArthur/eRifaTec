@@ -1,6 +1,8 @@
 import prismaClient from "../prisma/index.js";
-import { compare } from "bcryptjs";
-import { sign } from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+import jsonwebtoken from "jsonwebtoken";
+const { compare } = bcrypt
+const { sign } = jsonwebtoken
 
 // Interface
 interface AuthRequest {
