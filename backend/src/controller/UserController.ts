@@ -59,6 +59,22 @@ export const listarUsuario = async (req: Request, res: Response) => {
   }
 };
 
+//Select por Id
+export const selecionarUsuarioPorId = async (req: Request, res: Response) =>{
+  try {
+    const response = await prisma.usuario.findUnique({
+      where: {
+        idusuario: Number(req.params.id)
+      },
+    })
+    res.status(200).json(response)
+  } catch (error) {
+    if(error instanceof Error){
+    res.status(500).json({msg: error.message})
+    }
+  }
+}
+
 //Select para um registro
 export const loginUsuario = async (req: Request, res: Response) => {
   const { email, senha } = req.body;
