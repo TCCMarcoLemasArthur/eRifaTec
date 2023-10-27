@@ -58,9 +58,9 @@ export const listarRifa = async (req: Request, res: Response) => {
 //Select para um registro
 export const listarRifaPorId = async (req: Request, res: Response) => {
   try {
-      const rifa = await prisma.rifa.findFirst({
+      const rifa = await prisma.rifa.findUnique({
           where: {
-              idrifa: Number(req.query.id),
+              idrifa: Number(req.params.id),
           },
       })
       res.status(200).json(rifa)

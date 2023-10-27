@@ -38,7 +38,12 @@ class AuthUserService {
             }
         );
 
-        return token; 
+        return{
+            id: user.idusuario,
+            email: user.emailusuario,
+            senha: user.senhausuario,
+            token: token
+        } 
     }
 }
 
