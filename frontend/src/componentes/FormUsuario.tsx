@@ -118,7 +118,7 @@ export default function FormUsuario({ cadastro }: Props) {
 
   const handleAtualizar = (event: React.FormEvent) => {
     event.preventDefault();
-    axios.put('http://localhost:5000/atualizarusuario', userData)
+    axios.put(`http://localhost:5000/atualizarusuario/${id}`, userData)
       .then(response => {
         console.log(response)
       })
