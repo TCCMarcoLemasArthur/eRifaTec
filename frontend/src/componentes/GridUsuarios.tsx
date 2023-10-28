@@ -2,9 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios'
 
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import styles from '../estilos/gridUsuariosStyles';
+
+import {
+  DataGrid,
+  GridColDef,
+  GridToolbar,
+  GridValueGetterParams
+} from '@mui/x-data-grid';
 import Button from '@mui/material/Button'
 import DeleteIcon from '@mui/icons-material/Delete'
+import Box from '@mui/material/Box';
 
 const columns: GridColDef[] = [
   { field: 'idusuario', headerName: 'ID', flex: 1 },
@@ -51,25 +59,39 @@ export default function GridUsuarios() {
 
   return (
     <>
-      <div style={{ height: 400, width: '100%' }}>
+      <Box sx={styles.container}>
         <DataGrid
+          disableColumnFilter
+          disableColumnSelector
+          disableDensitySelector
           rows={users}
           columns={columns}
           initialState={{
             pagination: {
               paginationModel: { page: 0, pageSize: 5 },
             },
+            sorting: {
+              sortModel: [{ field: 'idusuario', sort: 'asc' }]
+            }
           }}
           getRowId={(row: any) => row.idusuario}
           pageSizeOptions={[5, 10, 15, 20]}
           checkboxSelection
+          slots={{ toolbar: GridToolbar }}
+          slotProps={{
+            toolbar: {
+              showQuickFilter: true,
+              printOptions: { disableToolbarButton: true },
+              csvOptions: { disableToolbarButton: true }
+            },
+          }}
         />
-      </div>
-      <Button 
-        variant="outlined" 
-        startIcon={<DeleteIcon />} 
+      </Box>
+      <Button
+        variant="outlined"
+        startIcon={<DeleteIcon />}
         onClick={handleDelete}
-        sx={{m: 2}}
+        sx={{ m: 2 }}
       >
         Delete
       </Button>
