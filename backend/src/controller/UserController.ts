@@ -159,3 +159,12 @@ export const deletarUsuario = async (req: Request, res: Response) => {
     }
   }
 };
+
+// todo-- fazer essa bosta 
+export const calcularIdade = async (req: Request, res: Response) =>{
+  try {
+    
+  } catch (error) {
+    
+  }
+} 

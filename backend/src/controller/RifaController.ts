@@ -1,5 +1,6 @@
 import { Request, Response , NextFunction} from 'express';
 import {PrismaClient } from '@prisma/client'
+import { gerarBilhetes } from './BilheteController';
 const prisma = new PrismaClient()
 
 
@@ -23,7 +24,14 @@ export const criarRifa = async (req: Request, res: Response, next: NextFunction)
             rua: rua,
             numero: numero
           },
+          select:{
+            quantbilheterifa: true,
+            idrifa: true
+          }
       })
+        .then(() => {
+          gerarBilhetes(rifa.idrifa, rifa.quantBilhete, rifa.preco)
+        })
       res.status(201).json(rifa)
   } catch (error) {
     if (error instanceof Error) {
@@ -53,7 +61,7 @@ export const listarRifa = async (req: Request, res: Response) => {
 }
 
 //Select para um registro
-export const listarRifaPorId = async (req: Request, res: Response) => {
+export const selecionarRifaPorId = async (req: Request, res: Response) => {
   try {
       const rifa = await prisma.rifa.findUnique({
           where: {
@@ -132,7 +140,7 @@ export const deletarRifa = async (req: Request, res: Response) => {
 }
 
 
-export const _sortear = async (quantidade = 1, maximo=501) => {
+export const sortearNumero = async (quantidade = 1, maximo=501) => {
   var numeros = [];
   
   console.time('Sorteando');
@@ -154,8 +162,15 @@ const quantidade = 1;
 const maximo = 501;
 
 const handleSorteio = async()=>{
-  const resultado = await _sortear(quantidade, maximo)
+  const resultado = await sortearNumero(quantidade, maximo)
 console.log(resultado.join(','));
 }
+//handleSorteio();
 
-handleSorteio();
+// todo -- fazer essa método. Para criá-lo precisa do JWT(Autenticação, para conseguir notificar o usuário específico)
+export const notificarVencedor = async () => {
+
+
+
+}
+
