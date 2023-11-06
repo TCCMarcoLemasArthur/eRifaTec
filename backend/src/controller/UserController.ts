@@ -48,8 +48,8 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
 //Select * from Usuario
 export const listarUsuario = async (req: Request, res: Response) => {
   try {
-    const response = await prisma.usuario.findMany();
-    res.status(200).json(response);
+    const usuario = await prisma.usuario.findMany();
+    res.status(200).json(usuario);
   } catch (error) {
     if (error instanceof Error) {
       // Verificar se 'error' é uma instância de 'Error'
@@ -61,12 +61,12 @@ export const listarUsuario = async (req: Request, res: Response) => {
 //Select por Id
 export const selecionarUsuarioPorId = async (req: Request, res: Response) =>{
   try {
-    const response = await prisma.usuario.findUnique({
+    const usuario = await prisma.usuario.findUnique({
       where: {
         idusuario: Number(req.params.id)
       },
     })
-    res.status(200).json(response)
+    res.status(200).json(usuario)
   } catch (error) {
     if(error instanceof Error){
     res.status(500).json({msg: error.message})
@@ -163,8 +163,27 @@ export const deletarUsuario = async (req: Request, res: Response) => {
 // todo-- fazer essa bosta 
 export const calcularIdade = async (req: Request, res: Response) =>{
   try {
-    
+
+    const datanascusuario = new Date(req.body.datanascusuario);
+    const hoje = new Date();
+    let idade = hoje.getFullYear() - datanascusuario.getFullYear();
+    const mes = hoje.getMonth() - datanascusuario.getMonth();
+
+    if(mes < 0 || (mes === 0 && hoje.getDate() < datanascusuario.getDate()))
+    {
+      idade--;
+    }
+
+    if(idade>=18)
+    {
+      return true
+    } else{
+      console.log("Para criar uma rifa é necessário ter 18 anos ou mais!")
+      return false;
+    }
   } catch (error) {
-    
+    console.error("Erro ao calcular idadade do usuário: ", error)
   }
 } 
+
+
