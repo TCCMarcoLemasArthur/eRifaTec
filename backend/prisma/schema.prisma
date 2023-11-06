@@ -39,15 +39,8 @@ model rifa {
   estado           String?   @db.VarChar(100)
   bairro           String?   @db.VarChar(100)
   numero           String?   @db.VarChar(10)
+  incluirfeed      Boolean
   bilhete          bilhete[]
-}
-
-model rifapremio {
-  idbilhete Int
-  idpremio  Int
-  idrifa    Int
-
-  @@id([idbilhete, idpremio, idrifa], map: "pk_rifapremio")
 }
 
 model usuario {
@@ -57,13 +50,13 @@ model usuario {
   emailusuario    String  @db.VarChar(100)
   senhausuario    String  @db.VarChar(200)
   datanascusuario String  @db.VarChar(15)
-  cep             String  @db.VarChar(9)
-  cidade          String  @db.VarChar(100)
-  rua             String  @db.VarChar(100)
-  estado          String  @db.VarChar(100)
-  bairro          String  @db.VarChar(100)
-  numero          String  @db.VarChar(10)
-  celular         String  @db.VarChar(20)
+  cepusuario      String  @db.VarChar(9)
+  cidadeusuario   String  @db.VarChar(100)
+  ruausuario      String  @db.VarChar(100)
+  estadousuario   String  @db.VarChar(100)
+  bairrousuario   String  @db.VarChar(100)
+  numerousuario   String  @db.VarChar(10)
+  celularusuario  String  @db.VarChar(20)
   venda           venda[]
 }
 
