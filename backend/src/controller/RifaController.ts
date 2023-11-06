@@ -1,12 +1,13 @@
 import { Request, Response , NextFunction} from 'express';
 import {PrismaClient } from '@prisma/client'
-import { gerarBilhetes } from './BilheteController';
+import { gerarBilhetes } from './BilheteController.js';
+import { strict } from 'assert';
 const prisma = new PrismaClient()
 
 
 //Insert 
 export const criarRifa = async (req: Request, res: Response, next: NextFunction) => {
-  const { titulo, quantBilhete, descricao, dataSorteio, horaSorteio, cep, estado, cidade, bairro, rua, numero } = req.body
+  const { titulo, quantBilhete, descricao, dataSorteio, horaSorteio, cep, estado, cidade, bairro, rua, numero, nofeed } = req.body
   try {
       const rifa = await prisma.rifa.create({
           data: {
@@ -14,7 +15,7 @@ export const criarRifa = async (req: Request, res: Response, next: NextFunction)
             quantbilheterifa: Number(quantBilhete),
             descrifa: descricao,
             datasorteiorifa: dataSorteio,
-            datainiciorifa: '02-02-2022', //! Coloca o dia em que a rifa foi criada
+            datainiciorifa: new Date(), //! Coloca o dia em que a rifa foi criada
             statusrifa: 'Em andamento', //! Começa automaticamente
             horasorteiorifa: horaSorteio, //! Precisa colocar o premio e criar os bilhetes
             cep: cep,
@@ -22,7 +23,8 @@ export const criarRifa = async (req: Request, res: Response, next: NextFunction)
             cidade: cidade,
             bairro: bairro,
             rua: rua,
-            numero: numero
+            numero: numero,
+            nofeed: nofeed
           },
           select:{
             quantbilheterifa: true,
@@ -30,7 +32,9 @@ export const criarRifa = async (req: Request, res: Response, next: NextFunction)
           }
       })
         .then(() => {
-          gerarBilhetes(rifa.idrifa, rifa.quantBilhete, rifa.preco)
+          gerarBilhetes(rifa.idrifa, rifa.quantBilhete, rifa.preco, rifa.disponibilidade /*req.body.disponibilidade*/)
+          return rifa
+          // todo QUE ERRO É ESSE NA CHAVE AMARELA AQUI EM BAIXO DO COMENTÁRIO
         })
       res.status(201).json(rifa)
   } catch (error) {
