@@ -48,8 +48,8 @@ export const criarRifa = async (req: Request, res: Response, next: NextFunction)
 //Select * from Rifa
 export const listarRifa = async (req: Request, res: Response) => {
   try {
-      const response = await prisma.rifa.findMany()
-      res.status(200).json(response)
+      const rifa = await prisma.rifa.findMany()
+      res.status(200).json(rifa)
   } catch (error) {
     if (error instanceof Error) {
       res.status(400).json({ msg: error.message });
