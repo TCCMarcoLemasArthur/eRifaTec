@@ -7,31 +7,42 @@ const prisma = new PrismaClient()
 
 //Insert 
 export const criarRifa = async (req: Request, res: Response, next: NextFunction) => {
-  const { titulo, quantBilhete, descricao, dataSorteio, horaSorteio, cep, estado, cidade, bairro, rua, numero, nofeed } = req.body
+  const { titulo, quantBilhete, descricao, dataSorteio, horaSorteio, cep, estado, cidade, bairro, rua, numero} = req.body
+  //select na tabela premio e pega o id do premio selecionado
+
+  const { idpremio } = await prisma.premio.findFirst({
+      select:{
+        idpremio: true,
+      }
+  })
+
   try {
       const rifa = await prisma.rifa.create({
           data: {
             titulorifa: titulo,
             quantbilheterifa: Number(quantBilhete),
             descrifa: descricao,
+            statusrifa: 'Em andamento',
+            datainiciorifa: new Date(Date.now()).toISOString().split('T')[0],
             datasorteiorifa: dataSorteio,
-            datainiciorifa: new Date(), //! Coloca o dia em que a rifa foi criada
-            statusrifa: 'Em andamento', //! Começa automaticamente
-            horasorteiorifa: horaSorteio, //! Precisa colocar o premio e criar os bilhetes
-            cep: cep,
-            estado: estado,
-            cidade: cidade,
-            bairro: bairro,
-            rua: rua,
-            numero: numero,
-            nofeed: nofeed
+            horasorteiorifa: horaSorteio,
+            incluirrifafeed: false,
+            ceprifa: cep,
+            estadorifa: estado,
+            cidaderifa: cidade,
+            bairrorifa: bairro,
+            ruarifa: rua,
+            numerorifa: numero,
+            idpremio: idpremio,
+            idusuario: 1 // TODO -- PRECISAMOS DA AUTENTICAÇÃO
           },
           select:{
             quantbilheterifa: true,
-            idrifa: true
+            idrifa: true,
           }
       })
         .then(() => {
+          //! Precisa criar os bilhetes
           gerarBilhetes(rifa.idrifa, rifa.quantBilhete, rifa.preco, rifa.disponibilidade /*req.body.disponibilidade*/)
           return rifa
         })
@@ -94,12 +105,12 @@ export const atualizarRifa = async (req: Request, res: Response) => {
             datainiciorifa: dataInicioRifa,
             statusrifa: status,
             horasorteiorifa: horaSorteio,
-            cep: cep,
-            estado: estado,
-            cidade: cidade,
-            bairro: bairro,
-            rua: rua,
-            numero: numero,
+            ceprifa: cep,
+            estadorifa: estado,
+            cidaderifa: cidade,
+            bairrorifa: bairro,
+            ruarifa: rua,
+            numerorifa: numero,
             bilhete: bilhete
           },
       })
