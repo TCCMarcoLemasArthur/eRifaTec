@@ -67,7 +67,7 @@ export const excluirPremio = async (req:Request, res:Response) => {
                 idpremio: Number(req.params.id)
             }
         })
-        res.status(200).json({msg: 'Premio deletado com Sucesso'});
+        res.status(200).json(premio);
     } catch (error) {
         if(error instanceof Error){
             console.log("Erro no método EXCLUIR PREMIO")

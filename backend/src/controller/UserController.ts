@@ -148,7 +148,7 @@ export const deletarUsuario = async (req: Request, res: Response) => {
         idusuario: Number(req.params.id),
       },
     });
-    res.status(200).json({ msg: 'Usuário deletado com sucesso' });
+    res.status(200).json(usuario);
   } catch (error) {
     if (error instanceof Error) {
       res.status(500).json({ msg: error.message });

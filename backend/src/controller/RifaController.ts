@@ -34,15 +34,12 @@ export const criarRifa = async (req: Request, res: Response, next: NextFunction)
         .then(() => {
           gerarBilhetes(rifa.idrifa, rifa.quantBilhete, rifa.preco, rifa.disponibilidade /*req.body.disponibilidade*/)
           return rifa
-          // todo QUE ERRO É ESSE NA CHAVE AMARELA AQUI EM BAIXO DO COMENTÁRIO
         })
       res.status(201).json(rifa)
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(400).json({ msg: error.message });
     } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
       res.status(500).json({ msg: 'Erro desconhecido' });
     }
   }
@@ -55,10 +52,8 @@ export const listarRifa = async (req: Request, res: Response) => {
       res.status(200).json(response)
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(400).json({ msg: error.message });
     } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
       res.status(500).json({ msg: 'Erro desconhecido' });
     }
   }
@@ -75,10 +70,8 @@ export const selecionarRifaPorId = async (req: Request, res: Response) => {
       res.status(200).json(rifa)
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(400).json({ msg: error.message });
     } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
       res.status(500).json({ msg: 'Erro desconhecido' });
     }
   }
@@ -113,10 +106,8 @@ export const atualizarRifa = async (req: Request, res: Response) => {
       res.status(200).json(rifa)
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(400).json({ msg: error.message });
     } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
       res.status(500).json({ msg: 'Erro desconhecido' });
     }
   }
@@ -126,18 +117,16 @@ export const atualizarRifa = async (req: Request, res: Response) => {
 //delete rifa
 export const deletarRifa = async (req: Request, res: Response) => {
   try {
-      const usuario = await prisma.usuario.delete({
+      const rifa = await prisma.rifa.delete({
           where: {
-              idusuario: Number(req.query.id),
+              idrifa: Number(req.params.id),
           },
       })
-      res.status(200).json(usuario)
+      res.status(200).json(rifa)
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(400).json({ msg: error.message });
     } else {
-      // Se 'error' não for uma instância de 'Error', você pode tratar de outra forma
       res.status(500).json({ msg: 'Erro desconhecido' });
     }
   }
@@ -173,7 +162,6 @@ console.log(resultado.join(','));
 
 // todo -- fazer essa método. Para criá-lo precisa do JWT(Autenticação, para conseguir notificar o usuário específico)
 export const notificarVencedor = async () => {
-
 
 
 }
