@@ -8,63 +8,72 @@ datasource db {
 }
 
 model bilhete {
-  idbilhete              Int     @id(map: "pk_bilhete") @default(autoincrement())
-  numerobilhete          Int
-  statussorteiobilheto   Boolean
-  precobilhete           Decimal @db.Decimal(15, 2)
-  disponibilidadebilhete Boolean
-  idrifa                 Int
-  rifa                   rifa    @relation(fields: [idrifa], references: [idrifa], onDelete: NoAction, onUpdate: NoAction, map: "fk_bilhete_rifa")
+  idbilhete     Int     @id(map: "pk_bilhete") @default(autoincrement())
+  numerobilhete Int
+  statusbilhete Boolean
+  precobilhete  Decimal @db.Decimal(15, 2)
+  foipremiado   Boolean
+  idrifa        Int
+  idvenda       Int?
+  rifa          rifa    @relation(fields: [idrifa], references: [idrifa], onDelete: NoAction, onUpdate: NoAction, map: "fk_bilhete_rifa")
+  venda         venda?  @relation(fields: [idvenda], references: [idvenda], onDelete: NoAction, onUpdate: NoAction, map: "fk_bilhete_venda")
 }
 
 model premio {
   idpremio   Int    @id(map: "pk_premio") @default(autoincrement())
   nomepremio String @db.VarChar(200)
-  descpremio String @db.VarChar(400)
+  descpremio String @db.VarChar(500)
   tipopremio String @db.VarChar(50)
+  rifa       rifa[]
 }
 
 model rifa {
   idrifa           Int       @id(map: "pk_rifa") @default(autoincrement())
-  titulorifa       String    @db.VarChar(50)
+  titulorifa       String    @db.VarChar(200)
   quantbilheterifa Int
-  descrifa         String    @db.VarChar(400)
-  datasorteiorifa  DateTime  @db.Date
+  descrifa         String    @db.VarChar(500)
+  statusrifa       String    @db.VarChar(50)
   datainiciorifa   DateTime  @db.Date
-  statusrifa       String    @db.VarChar(20)
+  datasorteiorifa  DateTime  @db.Date
   horasorteiorifa  DateTime  @db.Time(6)
-  cep              String?   @db.VarChar(9)
-  cidade           String?   @db.VarChar(100)
-  rua              String?   @db.VarChar(100)
-  estado           String?   @db.VarChar(100)
-  bairro           String?   @db.VarChar(100)
-  numero           String?   @db.VarChar(10)
-  incluirfeed      Boolean
+  incluirrifafeed  Boolean
+  ceprifa          String?   @db.VarChar(8)
+  estadorifa       String?   @db.VarChar(50)
+  cidaderifa       String?   @db.VarChar(50)
+  bairrorifa       String?   @db.VarChar(50)
+  ruarifa          String?   @db.VarChar(50)
+  numerorifa       Int?
+  idusuario        Int
+  idpremio         Int
   bilhete          bilhete[]
+  premio           premio    @relation(fields: [idpremio], references: [idpremio], onDelete: NoAction, onUpdate: NoAction, map: "fk_rifa_premio")
+  usuario          usuario   @relation(fields: [idusuario], references: [idusuario], onDelete: NoAction, onUpdate: NoAction, map: "fk_rifa_usuario")
 }
 
 model usuario {
-  idusuario       Int     @id(map: "pk_usuario") @default(autoincrement())
-  nomeusuario     String  @db.VarChar(75)
-  cpfusuario      String  @db.VarChar(14)
-  emailusuario    String  @db.VarChar(100)
-  senhausuario    String  @db.VarChar(200)
-  datanascusuario String  @db.VarChar(15)
-  cepusuario      String  @db.VarChar(9)
-  cidadeusuario   String  @db.VarChar(100)
-  ruausuario      String  @db.VarChar(100)
-  estadousuario   String  @db.VarChar(100)
-  bairrousuario   String  @db.VarChar(100)
-  numerousuario   String  @db.VarChar(10)
-  celularusuario  String  @db.VarChar(20)
+  idusuario       Int      @id(map: "pk_usuario") @default(autoincrement())
+  nomeusuario     String   @db.VarChar(100)
+  cpfusuario      String   @db.VarChar(11)
+  emailusuario    String   @db.VarChar(100)
+  senhausuario    String   @db.VarChar(200)
+  datanascusuario DateTime @db.Date
+  cepusuario      String   @db.VarChar(8)
+  estadousuario   String   @db.VarChar(50)
+  cidadeusuario   String   @db.VarChar(50)
+  bairrousuario   String   @db.VarChar(50)
+  ruausuario      String   @db.VarChar(50)
+  numerousuario   Int
+  celularusuario  String   @db.VarChar(20) 
+  rifa            rifa[]
   venda           venda[]
 }
 
 model venda {
-  idvenda        Int      @id(map: "pk_venda") @default(autoincrement())
-  formapagamento String   @db.VarChar(100)
-  precovenda     Decimal  @db.Decimal(15, 2)
-  datavenda      DateTime @db.Date
+  idvenda        Int       @id(map: "pk_venda") @default(autoincrement())
+  formapagamento String    @db.VarChar(50)
+  precovenda     Decimal   @db.Decimal(15, 2)
+  datavenda      DateTime  @db.Date
   idusuario      Int
-  usuario        usuario  @relation(fields: [idusuario], references: [idusuario], onDelete: NoAction, onUpdate: NoAction, map: "fk_venda_usuario")
+  bilhete        bilhete[]
+  usuario        usuario   @relation(fields: [idusuario], references: [idusuario], onDelete: NoAction, onUpdate: NoAction, map: "fk_venda_usuario")
 }
