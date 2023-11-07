@@ -105,7 +105,7 @@ export const loginUsuario = async (req: Request, res: Response) => {
       console.log("Email ou senha incorretos");
     }
   } catch (error) {
-    console.log("Algum erro nessa merda");
+    console.log("Algum erro no login de usuario");
   }
 };
 
