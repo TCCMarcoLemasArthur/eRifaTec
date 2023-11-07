@@ -8,7 +8,7 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
   const {nome, cpf, email, senha, dataNasc, cep, estado, cidade, bairro, rua, numero, celular,} = req.body;
   const usuarioExiste = await prisma.usuario.findFirst({
     where: {
-      emailusuario: String(email),
+      emailusuario: String(email),  
     },
   });
 
@@ -39,7 +39,6 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
     res.status(201).json(usuario);
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(500).json({ msg: error.message });
     } 
   }
@@ -52,7 +51,6 @@ export const listarUsuario = async (req: Request, res: Response) => {
     res.status(200).json(usuario);
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(500).json({ msg: error.message });
     }
   }
@@ -117,7 +115,7 @@ export const atualizarUsuario = async (req: Request, res: Response) => {
   try {
     const usuario = await prisma.usuario.update({
       where: {
-        idusuario: Number(req.params.id),
+        idusuario: Number(req.params.id), //req.params.idusuario ou req.params.id ("TEMOS QUE TESTAR")
       },
       data: {
         nomeusuario: nome,
@@ -137,7 +135,6 @@ export const atualizarUsuario = async (req: Request, res: Response) => {
     res.status(200).json(usuario);
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(500).json({ msg: error.message });
     }
   }
@@ -154,13 +151,11 @@ export const deletarUsuario = async (req: Request, res: Response) => {
     res.status(200).json({ msg: 'Usuário deletado com sucesso' });
   } catch (error) {
     if (error instanceof Error) {
-      // Verificar se 'error' é uma instância de 'Error'
       res.status(500).json({ msg: error.message });
     }
   }
 };
 
-// todo-- fazer essa bosta 
 export const calcularIdade = async (req: Request, res: Response) =>{
   try {
 
