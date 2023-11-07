@@ -27,13 +27,13 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
         emailusuario: email,
         senhausuario: senhaHash,
         datanascusuario: dataNasc,
-        cep: cep,
-        estado: estado,
-        cidade: cidade,
-        bairro: bairro,
-        rua: rua,
-        numero: numero,
-        celular: celular,
+        cepusuario: cep,
+        estadousuario: estado,
+        cidadeusuario: cidade,
+        bairrousuario: bairro,
+        ruausuario: rua,
+        numerousuario: numero,
+        celularusuario: celular,
       },
     });
     res.status(201).json(usuario);
@@ -63,6 +63,9 @@ export const selecionarUsuarioPorId = async (req: Request, res: Response) =>{
       where: {
         idusuario: Number(req.params.id)
       },
+      select: {
+        //inclui todos os campos menos a senha
+      }
     })
     res.status(200).json(usuario)
   } catch (error) {
@@ -123,13 +126,13 @@ export const atualizarUsuario = async (req: Request, res: Response) => {
         emailusuario: email,
         senhausuario: senha,
         datanascusuario: dataNasc,
-        cep: cep,
-        estado: estado,
-        cidade: cidade,
-        bairro: bairro,
-        rua: rua,
-        numero: numero,
-        celular: celular,
+        cepusuario: cep,
+        estadousuario: estado,
+        cidadeusuario: cidade,
+        bairrousuario: bairro,
+        ruausuario: rua,
+        numerousuario: numero,
+        celularusuario: celular,
       },
     });
     res.status(200).json(usuario);
