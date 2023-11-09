@@ -1,8 +1,8 @@
 const gridUsuariosStyles = {
-  container: {
+  grid: {
     minHeight: 370.5,
     width: '100%',
-  },
+  }
 };
 
 export default gridUsuariosStyles;

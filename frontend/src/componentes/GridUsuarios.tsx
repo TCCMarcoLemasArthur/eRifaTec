@@ -21,13 +21,13 @@ const columns: GridColDef[] = [
   { field: 'emailusuario', headerName: 'Email', flex: 1 },
   { field: 'senhausuario', headerName: 'Senha', flex: 1 },
   { field: 'datanascusuario', headerName: 'Data de Nascimento', flex: 1.7 },
-  { field: 'cep', headerName: 'CEP', flex: 1 },
-  { field: 'cidade', headerName: 'Cidade', flex: 1 },
-  { field: 'rua', headerName: 'Rua', flex: 1 },
-  { field: 'estado', headerName: 'Estado', flex: 1 },
-  { field: 'bairro', headerName: 'Bairro', flex: 1 },
-  { field: 'numero', headerName: 'Número', flex: 1 },
-  { field: 'celular', headerName: 'Celular', flex: 1 },
+  { field: 'cepusuario', headerName: 'CEP', flex: 1 },
+  { field: 'cidadeusuario', headerName: 'Cidade', flex: 1 },
+  { field: 'ruausuario', headerName: 'Rua', flex: 1 },
+  { field: 'estadousuario', headerName: 'Estado', flex: 1 },
+  { field: 'bairrousuario', headerName: 'Bairro', flex: 1 },
+  { field: 'numerousuario', headerName: 'Número', flex: 1 },
+  { field: 'celularusuario', headerName: 'Celular', flex: 1 },
 ];
 
 export default function GridUsuarios() {
@@ -76,8 +76,9 @@ export default function GridUsuarios() {
 
   return (
     <>
-      <Box sx={styles.container}>
+      <Box>
         <DataGrid
+          sx={styles.grid}
           disableColumnFilter
           disableColumnSelector
           disableDensitySelector

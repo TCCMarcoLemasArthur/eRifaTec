@@ -26,13 +26,13 @@ export const criarUsuario = async (req: Request, res: Response, next: NextFuncti
         cpfusuario: cpf,
         emailusuario: email,
         senhausuario: senhaHash,
-        datanascusuario: dataNasc,
+        datanascusuario: new Date(dataNasc),
         cepusuario: cep,
         estadousuario: estado,
         cidadeusuario: cidade,
         bairrousuario: bairro,
         ruausuario: rua,
-        numerousuario: numero,
+        numerousuario: Number(numero),
         celularusuario: celular,
       },
     });
@@ -64,7 +64,17 @@ export const selecionarUsuarioPorId = async (req: Request, res: Response) =>{
         idusuario: Number(req.params.id)
       },
       select: {
-        //inclui todos os campos menos a senha
+        nomeusuario: true,
+        cpfusuario: true,
+        emailusuario: true,
+        datanascusuario: true,
+        cepusuario: true,
+        estadousuario: true,
+        cidadeusuario: true,
+        bairrousuario: true,
+        ruausuario: true,
+        numerousuario: true,
+        celularusuario: true,
       }
     })
     res.status(200).json(usuario)
@@ -125,13 +135,13 @@ export const atualizarUsuario = async (req: Request, res: Response) => {
         cpfusuario: cpf,
         emailusuario: email,
         senhausuario: senha,
-        datanascusuario: dataNasc,
+        datanascusuario: new Date(dataNasc),
         cepusuario: cep,
         estadousuario: estado,
         cidadeusuario: cidade,
         bairrousuario: bairro,
         ruausuario: rua,
-        numerousuario: numero,
+        numerousuario: Number(numero),
         celularusuario: celular,
       },
     });

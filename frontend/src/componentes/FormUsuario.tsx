@@ -45,30 +45,28 @@ export default function FormUsuario({ cadastro }: Props) {
             nomeusuario,
             cpfusuario,
             datanascusuario,
-            celular,
+            celularusuario,
             emailusuario,
-            senhausuario,
-            cep,
-            estado,
-            cidade,
-            bairro,
-            rua,
-            numero } = response.data
+            cepusuario,
+            estadousuario,
+            cidadeusuario,
+            bairrousuario,
+            ruausuario,
+            numerousuario } = response.data
 
           setUserData({
             ...userData,
             nome: nomeusuario,
             cpf: cpfusuario,
-            dataNasc: datanascusuario,
-            celular: celular,
+            dataNasc: datanascusuario.toString().split('T')[0],
+            celular: celularusuario,
             email: emailusuario,
-            senha: senhausuario,
-            cep: cep,
-            estado: estado,
-            cidade: cidade,
-            bairro: bairro,
-            rua: rua,
-            numero: numero
+            cep: cepusuario,
+            estado: estadousuario,
+            cidade: cidadeusuario,
+            bairro: bairrousuario,
+            rua: ruausuario,
+            numero: numerousuario
           })
         })
     }

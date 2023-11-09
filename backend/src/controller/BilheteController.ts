@@ -4,7 +4,7 @@ import { error } from "console";
 const prisma = new PrismaClient();
 // todo -- fazer esses métodos: gerarBilhetes(), listarBilhetes(), selecionarNumeros().
 
-    export const gerarBilhetes = async (idrifa, quantidade, preco, disponibilidade) => {
+    export const gerarBilhetes = async (idrifa, quantidade, preco) => {
         try {
             //const idrifa = (req.params.idrifa);
             for (let i=1;i <= quantidade; i++) {
@@ -12,10 +12,10 @@ const prisma = new PrismaClient();
                     data:{
                         idrifa: idrifa,
                         numerobilhete: i,
-                        statussorteiobilheto: true,
+                        statusbilhete: true,
                         precobilhete: preco,
-                        disponibilidadebilhete: true,
-                        //foipremiado: false
+                        foipremiado: false,
+                        
                     }
                 });
                    //res.status(201).json(bilhete);

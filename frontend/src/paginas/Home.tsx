@@ -27,28 +27,8 @@ export default function Home() {
     navigate('/criar_rifa')
   }
 
-  const testeUsuarioEspecifico1 = () => {
-    navigate('/user/1')
-  }
-
-  const testeUsuarioEspecifico2 = () => {
-    navigate('/user/2')
-  }
-
-  const testeUsuarioEspecifico3 = () => {
-    navigate('/user/3')
-  }
-
-  const testeUsuarioEspecifico4 = () => {
-    navigate('/user/4')
-  }
-
-  const testeUsuarioEspecifico5 = () => {
-    navigate('/user/5')
-  }
-
   const noPage = () => {
-    navigate('/awgawg')
+    navigate('/404')
   }
 
   return (
@@ -89,26 +69,6 @@ export default function Home() {
 
         <Button onClick={criarRifa} variant='contained' sx={{marginBottom: 2}}>
           Criar Rifa
-        </Button>
-
-        <Button onClick={testeUsuarioEspecifico1} variant='contained' color='warning'  sx={{marginBottom: 2}}>
-          Teste Usuário Específico 1
-        </Button>
-
-        <Button onClick={testeUsuarioEspecifico2} variant='contained' color='warning'  sx={{marginBottom: 2}}>
-          Teste Usuário Específico 2
-        </Button>
-
-        <Button onClick={testeUsuarioEspecifico3} variant='contained' color='warning'  sx={{marginBottom: 2}}>
-          Teste Usuário Específico 3
-        </Button>
-
-        <Button onClick={testeUsuarioEspecifico4} variant='contained' color='warning'  sx={{marginBottom: 2}}>
-          Teste Usuário Específico 4
-        </Button>
-
-        <Button onClick={testeUsuarioEspecifico5} variant='contained' color='warning'  sx={{marginBottom: 2}}>
-          Teste Usuário Específico 5
         </Button>
 
         <Button onClick={noPage} variant='contained' color='error'>

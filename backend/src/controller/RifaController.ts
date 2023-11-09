@@ -43,7 +43,7 @@ export const criarRifa = async (req: Request, res: Response, next: NextFunction)
       })
         .then(() => {
           //! Precisa criar os bilhetes
-          gerarBilhetes(rifa.idrifa, rifa.quantBilhete, rifa.preco, rifa.disponibilidade /*req.body.disponibilidade*/)
+          gerarBilhetes(rifa.idrifa, rifa.quantBilhete, rifa.preco)
           return rifa
         })
       res.status(201).json(rifa)
