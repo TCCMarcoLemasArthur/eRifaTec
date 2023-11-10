@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { styled, alpha } from '@mui/material/styles';
 import styles from '../estilos/headerStyles';
 
-import logo from "../assets/imagens/probleminha.jpg";
+import logo from "../assets/imagens/logo.png";
 import usuario from '../assets/imagens/usuario.png';
 
 import AppBar from '@mui/material/AppBar';
