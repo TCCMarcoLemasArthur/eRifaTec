@@ -8,7 +8,6 @@ const formUsuarioStyles = {
     color: 'primary.main',
     textAlign: 'center',
     width: '100%',
-    fontSize: '2rem',
     fontWeight: 600,
     marginBottom: '15px'
   },

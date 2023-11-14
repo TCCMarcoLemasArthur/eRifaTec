@@ -139,14 +139,14 @@ export default function FormUsuario({ cadastro }: Props) {
       container
       component="form"
       onSubmit={cadastro ? handleCadastrar : handleAtualizar}
-      xs={12}
+      spacing={2}
       sx={styles.formUsuario}
     >
-      <Typography variant='h2' component='h2' sx={styles.titulo}>
+      <Typography variant='h4' component='h2' sx={styles.titulo}>
         {cadastro ? 'Cadastro' : 'Meus dados'}
       </Typography>
 
-      <Grid xs={12} md={6}>
+      <Grid xs={12} sm={6}>
         <TextField
           type='text'
           id='nome'
@@ -159,7 +159,7 @@ export default function FormUsuario({ cadastro }: Props) {
           sx={styles.campo}
         />
       </Grid>
-      <Grid xs={12} md={6}>
+      <Grid xs={6}>
         <TextField
           type='text'
           id='cpf'
@@ -174,7 +174,7 @@ export default function FormUsuario({ cadastro }: Props) {
         />
       </Grid>
 
-      <Grid xs={12} md={6}>
+      <Grid xs={6}>
         <TextField
           type='date'
           id='dataNasc'
@@ -188,7 +188,7 @@ export default function FormUsuario({ cadastro }: Props) {
           sx={styles.campo}
         />
       </Grid>
-      <Grid xs={12} md={6}>
+      <Grid xs={4} sm={6}>
         <TextField
           type='tel'
           id='celular'
@@ -203,7 +203,7 @@ export default function FormUsuario({ cadastro }: Props) {
         />
       </Grid>
 
-      <Grid xs={12}>
+      <Grid xs={8} sm={12}>
         <TextField
           type='email'
           id='email'
@@ -217,7 +217,7 @@ export default function FormUsuario({ cadastro }: Props) {
         />
       </Grid>
 
-      <Grid xs={12} md={6}>
+      <Grid xs={12} sm={6}>
         <TextField
           type='password'
           id='senha'
@@ -230,7 +230,7 @@ export default function FormUsuario({ cadastro }: Props) {
           sx={styles.campo}
         />
       </Grid>
-      <Grid xs={12} md={6}>
+      <Grid xs={12} sm={6}>
         <TextField
           type='password'
           id='confirmacaosenha'
@@ -244,7 +244,7 @@ export default function FormUsuario({ cadastro }: Props) {
         />
       </Grid>
 
-      <Grid xs={12} md={4}>
+      <Grid xs={6} sm={4}>
         <TextField
           type='text'
           id='cep'
@@ -258,7 +258,7 @@ export default function FormUsuario({ cadastro }: Props) {
           sx={styles.campo}
         />
       </Grid>
-      <Grid xs={12} md={4}>
+      <Grid xs={6} sm={4}>
         <TextField
           type='text'
           id='estado'
@@ -271,7 +271,7 @@ export default function FormUsuario({ cadastro }: Props) {
           sx={styles.campo}
         />
       </Grid>
-      <Grid xs={12} md={4}>
+      <Grid xs={6} sm={4}>
         <TextField
           type='text'
           id='cidade'
@@ -285,7 +285,7 @@ export default function FormUsuario({ cadastro }: Props) {
         />
       </Grid>
 
-      <Grid xs={12} md={4}>
+      <Grid xs={6} sm={4}>
         <TextField
           type='text'
           id='bairro'
@@ -298,7 +298,7 @@ export default function FormUsuario({ cadastro }: Props) {
           sx={styles.campo}
         />
       </Grid>
-      <Grid xs={12} md={4}>
+      <Grid xs={9} sm={4}>
         <TextField
           type='text'
           id='rua'
@@ -311,7 +311,7 @@ export default function FormUsuario({ cadastro }: Props) {
           sx={styles.campo}
         />
       </Grid>
-      <Grid xs={12} md={4}>
+      <Grid xs={3} sm={4}>
         <TextField
           type='text'
           id='numero'
