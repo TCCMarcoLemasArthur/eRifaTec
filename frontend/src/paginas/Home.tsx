@@ -42,15 +42,10 @@ export default function Home() {
         width: '100%',
         p: '20px 0'
       }}>
-        <Typography variant='h1' component='h1' sx={{
-          fontSize: 34,
+        <Typography variant='h4' component='h2' sx={{
           p: 2,
           mb: 2,
-          borderRadius: '10px',
-          boxShadow: '0 0 17px #890DB7',
-          borderWidth: '5px',
-          borderStyle: 'double',
-          borderColor: '#890DB7 #B407DB #DF00FF'
+          fontWeight: 500
         }}>
           Páginas existentes no momento
         </Typography>
