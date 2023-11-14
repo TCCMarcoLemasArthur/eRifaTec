@@ -6,7 +6,6 @@ const formRifaStyles = {
       backgroundColor: 'white',
       padding: '15px 20px',
       borderRadius: '10px',
-      boxShadow: '0 0 17px rgba(0, 0, 0, 0.3)'
     },
     titulo: {
       color: 'primary.main',
@@ -22,6 +21,27 @@ const formRifaStyles = {
       fieldSet: {borderColor: '#7f858d'},
       width: '100%',
       marginBottom: 2
+    },
+    campoImagem: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      height: '148px',
+      backgroundColor: '#fff',
+      borderStyle: 'solid',
+      borderWidth: '1px',
+      borderRadius: '7px',
+      borderColor: '#7f858d',
+      cursor: 'pointer',
+      '&:hover': {
+        borderWidth: '2px',
+        borderColor: 'primary.main',
+        color: 'primary.main',
+      }
+    },
+    enderecoBox: {
+      transition: 'all 300ms ease',
     },
     center: {
       display: 'flex',

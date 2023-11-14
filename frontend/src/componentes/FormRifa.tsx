@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import InputLabel from '@mui/material/InputLabel'
 
 export default function FormRifa() {
   const navigate = useNavigate()
@@ -18,9 +19,9 @@ export default function FormRifa() {
     horaSorteio: '',
     descricao: '',
     quantBilhete: 0,
-    precoBilhete: 0.0,
+    precoBilhete: 0.00,
     premio: '',
-    imagens: [],
+    imagem: [],
     cep: '',
     estado: '',
     cidade: '',
@@ -82,16 +83,16 @@ export default function FormRifa() {
     <>
       <Grid
         container
-        xs={12}
         component="form" 
         sx={styles.formRifa}
         onSubmit={criarRifa}
+        spacing={2}
       >
         <Typography variant='h2' component='h2' sx={styles.titulo}>
-          Criar Rifa
+          Nova Rifa
         </Typography>
 
-        <Grid container xs={12} md={6}>
+        <Grid xs={12} sm={6}>
           <TextField
             type='text'
             id='titulo'
@@ -103,36 +104,81 @@ export default function FormRifa() {
             required
             sx={styles.campo}
           />
+        </Grid>
 
-          <Grid xs={6}>
-            <TextField
-              type='date'
-              id='dataSorteio'
-              name='dataSorteio'
-              label='Data do Sorteio'
-              variant='outlined'
-              InputLabelProps={{ shrink: true }}
-              value={rifaData.dataSorteio}
-              onChange={handleInputChange}
-              required
-              sx={styles.campo}
-            />
-          </Grid>
-          <Grid xs={6}>
-            <TextField
-              type='time'
-              id='horaSorteio'
-              name='horaSorteio'
-              label='Hora do Sorteio'
-              variant='outlined'
-              InputLabelProps={{ shrink: true }}
-              value={rifaData.horaSorteio}
-              onChange={handleInputChange}
-              required
-              sx={styles.campo}
-            />
-          </Grid>
+        <Grid xs={12} sm={6}>
+          <TextField
+            type='text'
+            id='premio'
+            name='premio'
+            label='Prêmio da Rifa'
+            variant='outlined'
+            value={rifaData.premio}
+            onChange={handleInputChange}
+            required
+            sx={styles.campo}
+          />
+        </Grid>
 
+        <Grid xs={6}>
+          <TextField
+            type='date'
+            id='dataSorteio'
+            name='dataSorteio'
+            label='Data do Sorteio'
+            variant='outlined'
+            InputLabelProps={{ shrink: true }}
+            value={rifaData.dataSorteio}
+            onChange={handleInputChange}
+            required
+            sx={styles.campo}
+          />
+        </Grid>
+      
+        <Grid xs={6}>
+          <TextField
+            type='time'
+            id='horaSorteio'
+            name='horaSorteio'
+            label='Hora do Sorteio'
+            variant='outlined'
+            InputLabelProps={{ shrink: true }}
+            value={rifaData.horaSorteio}
+            onChange={handleInputChange}
+            required
+            sx={styles.campo}
+          />
+        </Grid>
+
+        <Grid xs={6}>
+          <TextField
+            type='number'
+            id='quantBilhete'
+            name='quantBilhete'
+            label='Quantidade de Bilhetes'
+            variant='outlined'
+            value={rifaData.quantBilhete}
+            onChange={handleInputChange}
+            required
+            sx={styles.campo}
+          />
+        </Grid>
+
+        <Grid xs={6}>
+          <TextField
+            type='text'
+            id='precoBilhete'
+            name='precoBilhete'
+            label='Preço de cada Bilhete'
+            variant='outlined'
+            value={rifaData.precoBilhete}
+            onChange={handleInputChange}
+            required
+            sx={styles.campo}
+          />
+        </Grid>
+        
+        <Grid xs={12} sm={6}>
           <TextField
             type='text'
             id='descricao'
@@ -148,147 +194,120 @@ export default function FormRifa() {
           />
         </Grid>
 
-        <Grid container xs={12} md={6}>
-          <TextField
-            type='number'
-            id='quantBilhete'
-            name='quantBilhete'
-            label='Quantidade de Bilhetes'
-            variant='outlined'
-            value={rifaData.quantBilhete}
-            onChange={handleInputChange}
-            required
-            sx={[styles.campo, {marginBottom: 1.8}]}
-          />
-          <TextField
-            type='text'
-            id='precoBilhete'
-            name='precoBilhete'
-            label='Preço de cada Bilhete'
-            variant='outlined'
-            value={rifaData.precoBilhete}
-            onChange={handleInputChange}
-            required
-            sx={styles.campo}
-          />
-          <TextField
-            type='text'
-            id='premio'
-            name='premio'
-            label='Prêmio da Rifa'
-            variant='outlined'
-            value={rifaData.premio}
-            onChange={handleInputChange}
-            required
-            sx={styles.campo}
-          />
-          <TextField
+        <Grid xs={12} sm={6}>
+          <InputLabel 
+            htmlFor="imagem"
+            sx={styles.campoImagem}
+          >
+            Clique para adicionar uma imagem
+          </InputLabel>
+          <input
             type='file'
-            id='imagens'
-            name='imagens'
-            label='Imagens'
-            variant='outlined'
-            value={rifaData.imagens}
-            InputLabelProps={{ shrink: true }}
+            id='imagem'
+            name='imagem'
+            value={rifaData.imagem}
             onChange={handleInputChange}
             required
-            sx={[styles.campo, {marginTop: {xs: 0, md: 2}}]}
+            style={{display: 'none'}}
           />
         </Grid>
-
-        <FormControlLabel 
-          control={<Checkbox checked={possuiEndereco} onChange={handleCheckboxChange} />} 
-          label="Adicionar endereço"
-        />
-        { 
-          possuiEndereco ?
-          
-          <Grid container>
-            <Grid xs={12} md={4}>
-              <TextField
-                type='text'
-                id='cep'
-                name='cep'
-                label='CEP'
-                variant='outlined'
-                inputProps={{maxLength: 8}}
-                value={rifaData.cep}
-                onChange={handleInputChange}
-                required
-                sx={styles.campo}
-              />
-            </Grid>
-            <Grid xs={12} md={4}>
-              <TextField
-                type='text'
-                id='estado'
-                name='estado'
-                label='Estado'
-                variant='outlined'
-                value={rifaData.estado}
-                onChange={handleInputChange}
-                required
-                sx={styles.campo}
-              />
-            </Grid>
-            <Grid xs={12} md={4}>
-              <TextField
-                type='text'
-                id='cidade'
-                name='cidade'
-                label='Cidade'
-                variant='outlined'
-                value={rifaData.cidade}
-                onChange={handleInputChange}
-                required
-                sx={styles.campo}
-              />
-            </Grid>
-
-            <Grid xs={12} md={4}>
-              <TextField
-                type='text'
-                id='bairro'
-                name='bairro'
-                label='Bairro'
-                variant='outlined'
-                value={rifaData.bairro}
-                onChange={handleInputChange}
-                required
-                sx={styles.campo}
-              />
-            </Grid>
-            <Grid xs={12} md={4}>
-              <TextField
-                type='text'
-                id='rua'
-                name='rua'
-                label='Rua'
-                variant='outlined'
-                value={rifaData.rua}
-                onChange={handleInputChange}
-                required
-                sx={styles.campo}
-              />
-            </Grid>
-            <Grid xs={12} md={4}>
-              <TextField
-                type='text'
-                id='numero'
-                name='numero'
-                label='Número'
-                variant='outlined'
-                value={rifaData.numero}
-                onChange={handleInputChange}
-                required
-                sx={styles.campo}
-              />
-            </Grid>
+        
+        <Grid container sx={styles.enderecoBox}>
+          <Grid xs={12}>
+            <FormControlLabel 
+              control={<Checkbox checked={possuiEndereco} onChange={handleCheckboxChange} />} 
+              label="Adicionar endereço"
+            />
           </Grid>
+          { 
+            possuiEndereco ?
+            
+            <>
+              <Grid xs={6} sm={4}>
+                <TextField
+                  type='text'
+                  id='cep'
+                  name='cep'
+                  label='CEP'
+                  variant='outlined'
+                  inputProps={{maxLength: 8}}
+                  value={rifaData.cep}
+                  onChange={handleInputChange}
+                  required
+                  sx={styles.campo}
+                />
+              </Grid>
+              <Grid xs={6} sm={4}>
+                <TextField
+                  type='text'
+                  id='estado'
+                  name='estado'
+                  label='Estado'
+                  variant='outlined'
+                  value={rifaData.estado}
+                  onChange={handleInputChange}
+                  required
+                  sx={styles.campo}
+                />
+              </Grid>
+              <Grid xs={6} sm={4}>
+                <TextField
+                  type='text'
+                  id='cidade'
+                  name='cidade'
+                  label='Cidade'
+                  variant='outlined'
+                  value={rifaData.cidade}
+                  onChange={handleInputChange}
+                  required
+                  sx={styles.campo}
+                />
+              </Grid>
 
-          : ''
-        }
+              <Grid xs={6} sm={4}>
+                <TextField
+                  type='text'
+                  id='bairro'
+                  name='bairro'
+                  label='Bairro'
+                  variant='outlined'
+                  value={rifaData.bairro}
+                  onChange={handleInputChange}
+                  required
+                  sx={styles.campo}
+                />
+              </Grid>
+              <Grid xs={9} sm={4}>
+                <TextField
+                  type='text'
+                  id='rua'
+                  name='rua'
+                  label='Rua'
+                  variant='outlined'
+                  value={rifaData.rua}
+                  onChange={handleInputChange}
+                  required
+                  sx={styles.campo}
+                />
+              </Grid>
+              <Grid xs={3} sm={4}>
+                <TextField
+                  type='text'
+                  id='numero'
+                  name='numero'
+                  label='Número'
+                  variant='outlined'
+                  value={rifaData.numero}
+                  onChange={handleInputChange}
+                  required
+                  sx={styles.campo}
+                />
+              </Grid>
+            </>
 
+            : ''
+          }
+        </Grid>
         <Grid xs={12} sx={styles.center}>
           <Button type='submit' variant='contained' id='btnEnviar'>
             Enviar
