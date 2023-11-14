@@ -1,4 +1,9 @@
 const headerStyles = {
+  container: {
+    borderWidth: '5px',
+    borderBottomStyle: 'solid',
+    borderColor: 'secondary.main',
+  },
   logo: {
     width: 40,
     height: 40,

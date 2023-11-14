@@ -111,7 +111,7 @@ export default function HeaderUI() {
 
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={styles.container}>
       <AppBar position="static" sx={{bgcolor: 'background.dark'}}>
         <Toolbar>
           <IconButton
