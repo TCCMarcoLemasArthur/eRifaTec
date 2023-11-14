@@ -13,7 +13,7 @@ const formRifaStyles = {
       width: '100%',
       fontSize: '2rem',
       fontWeight: 600,
-      marginBottom: '15px'
+      marginBottom: 3
     },
     campo: {
       input: {color: '#515151'},

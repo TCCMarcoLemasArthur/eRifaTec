@@ -10,23 +10,22 @@ const formLoginStyles = {
       width: '100%',
       fontSize: '2rem',
       fontWeight: 600,
-      marginBottom: '15px'
+      marginBottom: 3,
     },
     formLogin: {
       margin: '45px auto',
       width: '100%',
-      maxWidth: '25rem',
+      maxWidth: '22rem',
       backgroundColor: 'white',
       padding: '15px 20px',
       borderRadius: '10px',
-      boxShadow: '0 0 17px rgba(0, 0, 0, 0.3)'
     },
     campo: {
       input: {color: '#515151'},
       label: {color: '#7f858d'},
       fieldSet: {borderColor: '#7f858d'},
       width: '100%',
-      marginBottom: 2
+      marginBottom: 2,
     },
   }
   

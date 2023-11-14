@@ -39,8 +39,7 @@ export default function FormLogin() {
     <Grid 
       container 
       component="form" 
-      onSubmit={handleLogin} 
-      xs={12} 
+      onSubmit={handleLogin}
       sx={styles.formLogin}
     >
       <Typography variant='h2' component='h2' sx={styles.titulo}>
@@ -76,12 +75,12 @@ export default function FormLogin() {
       </Grid>
 
       <Grid xs={12} sx={styles.center}>
-        <Button type='submit' variant='contained' id={'btnLogin'}>
+        <Button type='submit' variant='contained' id='btnLogin'>
           Entrar
         </Button>
       </Grid>
-      <Grid xs={12} sx={styles.center}>
-        <Typography component='p' sx={{color: 'black', marginTop: 2}}>
+      <Grid xs={12} sx={{textAlign: 'center', marginTop: 2}}>
+        <Typography component='p' sx={{color: 'black'}}>
           Ainda não possui uma conta? 
           <Typography component='span' sx={{a: {textDecoration: 'underline', color: 'primary.main'}}}>
             <Link to={'/cadastrar'}> Cadastre-se</Link>

@@ -9,7 +9,7 @@ const formUsuarioStyles = {
     textAlign: 'center',
     width: '100%',
     fontWeight: 600,
-    marginBottom: '15px'
+    marginBottom: 2
   },
   formUsuario: {
     margin: '45px auto',
