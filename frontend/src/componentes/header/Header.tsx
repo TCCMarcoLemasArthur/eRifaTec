@@ -115,15 +115,11 @@ export default function Header() {
     <Box sx={styles.container}>
       <AppBar position="static" sx={{bgcolor: 'background.dark'}}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="abre o menu"
+          <Box
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
             <MenuLateral anchor='left'/>
-          </IconButton>
+          </Box>
           <Typography
             noWrap
             component="div"
@@ -192,14 +188,7 @@ export default function Header() {
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              edge="end"
-              color="inherit"
-              aria-label="abre o menu"
-            >
-              <MenuLateral anchor='right'/>
-            </IconButton>
+            <MenuLateral anchor='right'/>
           </Box>
         </Toolbar>
       </AppBar>
