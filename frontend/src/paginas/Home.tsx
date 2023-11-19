@@ -1,10 +1,8 @@
-import React from 'react'
-import Header from "../componentes/Header";
-import Footer from "../componentes/Footer";
+import React from 'react';
 
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +31,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
       <Container sx={{ 
         display: 'flex',
         flexDirection: 'column',
@@ -70,7 +67,6 @@ export default function Home() {
           Página 404
         </Button>
       </Container>
-      <Footer />
     </>
   );
 }

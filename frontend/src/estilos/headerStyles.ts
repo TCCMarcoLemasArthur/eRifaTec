@@ -1,6 +1,6 @@
 const headerStyles = {
   container: {
-    borderWidth: '5px',
+    borderWidth:'3px',
     borderBottomStyle: 'solid',
     borderColor: 'secondary.main',
   },

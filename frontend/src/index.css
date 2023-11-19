@@ -1,38 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-:root {
-  --primaria: #006dc7; /* #FF6500 */
-  --secundaria: #212121; /* #0080d1 */
-  --dominante: #fff; /* #fff */
-
-  --detalhe: #6f00ff;
-
-  --secundaria-escura: #0060b1;
-
-  --vermelho-cereja: #DC143C;
-
-  --sucesso: #198754; /* #198754 */
-  --aviso: #ffc107; /* #ffc107 */
-  --erro: #e60000; /* #e60000 */
-
-  --escuro-primario: #212121; /* #212121 */
-  --escuro-secundario: #262626; /* #262626 */
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  min-height: 100vh;
-}
 
 a {
   text-decoration: none;

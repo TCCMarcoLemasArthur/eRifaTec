@@ -1,10 +1,10 @@
 /* Conteiners gerais */
 .footerbox {
-  background-color: var(--escuro-primario);
+  background-color: #212121;
   border-top: 1px solid #121212;
 }
 
-.rodape {
+.rodape * {
   margin: 0;
   padding: 0;
 }
@@ -26,7 +26,7 @@
 }
 
 .rodape .link-section h5 {
-  color: var(--primaria);
+  color: #006dc7;
   text-transform: uppercase;
   font-weight: 300;
   margin-top: 10px;
@@ -72,17 +72,17 @@
 
 .rodape .link-section li:hover .link-icon {
   animation: animate-link-icon 300ms;
-  color: var(--detalhe);
+  color: #6f00ff;
 }
 
 .rodape .link-section li:hover>a {
-  color: var(--primaria);
+  color: #006dc7;
 }
 
 
 /* Links de redes sociais */
 .rodape .redes-sociais {
-  background-color: var(--escuro-secundario);
+  background-color: #262626;
   width: 100%;
   clear: both;
   margin-right: auto;
@@ -105,12 +105,12 @@
 }
 
 .rodape .redes-sociais li {
-  color: var(--primaria);
+  color: #006dc7;
   display: inline-block;
   padding: 0 10px;
 }
 
 .rodape .redes-sociais i {
   display: inline-block;
-  color: var(--primaria);
+  color: #006dc7;
 }

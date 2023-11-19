@@ -34,7 +34,7 @@ interface Props{
   anchor?: 'left' | 'right'
 }
 
-export default function MenuUI({ anchor }: Props) {
+export default function Menu({ anchor }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer =
