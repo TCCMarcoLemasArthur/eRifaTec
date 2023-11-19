@@ -1,8 +1,11 @@
+import sizeConfigs from "../../configs/sizeConfigs";
+
+const sizes = sizeConfigs.header
+
 const headerStyles = {
   container: {
-    borderWidth:'3px',
-    borderBottomStyle: 'solid',
-    borderColor: 'secondary.main',
+    bgcolor: 'background.dark',
+    height: `${sizes.height}`
   },
   logo: {
     width: 40,

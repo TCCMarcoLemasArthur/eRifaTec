@@ -19,8 +19,6 @@ export default function Footer() {
           flexDirection: 'column',
           height: `${sizes.height}`,
           backgroundColor: 'background.dark',
-          borderTop: '3px solid',
-          borderColor: 'secondary.main',
         }}
       >
         <Typography 

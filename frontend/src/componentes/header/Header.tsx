@@ -112,8 +112,8 @@ export default function Header() {
 
 
   return (
-    <Box sx={styles.container}>
-      <AppBar position="static" sx={{bgcolor: 'background.dark'}}>
+    <Box>
+      <AppBar position="static" sx={styles.container}>
         <Toolbar>
           <Box
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}

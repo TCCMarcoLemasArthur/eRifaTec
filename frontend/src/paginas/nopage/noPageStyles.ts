@@ -1,10 +1,14 @@
+import sizeConfigs from "../../configs/sizeConfigs";
+
+const sizes = sizeConfigs.conteudo
+
 const noPageStyles = {
   container: {
     display: "flex",
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
-    minHeight: "55vh",
+    minHeight: `${sizes.minHeight}`,
     div: {
       svg: {
         fontSize: '2rem'

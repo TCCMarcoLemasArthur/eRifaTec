@@ -1,9 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import loadable from '@loadable/component';
-
-import Header from "./componentes/header/Header";
-import Footer from "./componentes/footer/Footer";
 
 const Home = loadable(() => import('./paginas/Home'));
 const CadastroUsuario = loadable(() => import('./paginas/CadastroUsuario'));
@@ -15,18 +12,14 @@ const PerfilUsuario = loadable(() => import('./paginas/PerfilUsuario'));
 
 export default function Rotas() {
 	return (
-		<BrowserRouter>
-			<Header />
-			<Routes>
-				<Route path='/' index element={<Home />}/>
-				<Route path='/login' element={<LoginUsuario />}/>
-				<Route path='/cadastrar' element={<CadastroUsuario />}/>
-				<Route path='/criar_rifa' element={<CriarRifa />}/>
-				<Route path='/listar_usuarios' element={<ListarUsuarios />}/>
-				<Route path='/user/:id' element={<PerfilUsuario />}/>
-				<Route path='*' element={<NoPage />}/>
-			</Routes>
-			<Footer />
-		</BrowserRouter>
+		<Routes>
+			<Route path='/' index element={<Home />}/>
+			<Route path='/login' element={<LoginUsuario />}/>
+			<Route path='/cadastrar' element={<CadastroUsuario />}/>
+			<Route path='/criar_rifa' element={<CriarRifa />}/>
+			<Route path='/listar_usuarios' element={<ListarUsuarios />}/>
+			<Route path='/user/:id' element={<PerfilUsuario />}/>
+			<Route path='*' element={<NoPage />}/>
+		</Routes>
 	);
 }
