@@ -124,12 +124,11 @@ export default function Header() {
             <MenuUI anchor='left'/>
           </IconButton>
           <Typography
-            variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2 }}
           >
-            <Link to={"/"} style={{display: 'flex', alignItems: 'center'}}>
+            <Link to={"/"} style={{display: 'flex', alignItems: 'center', textDecoration: 'none', color: '#fff'}}>
               <img src={logo} alt="eRifaTec" style={styles.logo}/>
               <Typography sx={{display: { xs: 'none', md: 'block' }}}>eRifaTec</Typography>
             </Link>

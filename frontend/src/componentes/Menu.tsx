@@ -104,10 +104,10 @@ export default function Menu({ anchor }: Props) {
           p: 1
         }}>
           <Button sx={{fontWeight: 'bold'}}>
-            <Link to={'/cadastrar'}>Cadastrar</Link>
+            <Link to={'/cadastrar'} style={{textDecoration: 'none', color: '#fff'}}>Cadastrar</Link>
           </Button>
           <Button sx={{fontWeight: 'bold'}}>
-            <Link to={'/login'}>Entrar</Link>
+            <Link to={'/login'} style={{textDecoration: 'none', color: '#fff'}}>Entrar</Link>
           </Button>
           <List>
             <ListItemLink to="/" primary="Início" icon={<HomeIcon />} />
