@@ -82,7 +82,7 @@ export default function MenuLateral({ anchor }: Props) {
         <Stack direction="row" spacing={2} sx={{
           bgcolor: 'background.dark',
           maxWidth: 350,
-          p: 2
+          p: 2,
         }}>
           <Avatar sx={{width: 56, height: 56}} src={usuario} alt="usuario" />
           <Stack>
@@ -99,7 +99,18 @@ export default function MenuLateral({ anchor }: Props) {
           maxWidth: 350, 
           color: '#fff', 
           bgcolor: 'background.light',
-          p: 1
+          p: 1,
+          overflowY: 'scroll',
+          '&::-webkit-scrollbar': {
+            width: '10px',
+            backgroundColor: '#000'
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: 'rgba(255,255,255, 0.3)',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#373737',
+          },
         }}>
           <Button sx={{fontWeight: 'bold'}}>
             <Link to={'/cadastrar'} style={{textDecoration: 'none', color: '#fff'}}>Cadastrar</Link>
@@ -113,14 +124,14 @@ export default function MenuLateral({ anchor }: Props) {
             <ListItemLink to="#" primary="Histórico de rifas" icon={<HistoryIcon />} />
             <ListItemLink to="#" primary="Meus prêmios" icon={<EmojiEventsIcon />} />
           </List>
-          <Divider />
+          <Divider color="#575757" />
           <Typography sx={{fontWeight: "bold"}}>Gerenciar rifas</Typography>
           <List>
             <ListItemLink to="/criar_rifa" primary="Criar rifa" icon={<LocalActivityIcon />} />
             <ListItemLink to="#" primary="Painel de rifas" icon={<TableChartIcon />} />
             <ListItemLink to="#" primary="Listar prêmios" icon={<FormatListBulletedIcon />} />
           </List>
-          <Divider />
+          <Divider color="#575757" />
           <Typography sx={{fontWeight: "bold"}}>Suporte</Typography>
           <List>
             <ListItemLink to="#" primary="Dúvidas" icon={<HelpIcon />} />
@@ -143,6 +154,11 @@ export default function MenuLateral({ anchor }: Props) {
         anchor={anchor}
         open={isOpen}
         onClose={toggleDrawer(false)}
+        sx={{
+          '& .MuiPaper-root': {
+            overflowY: 'hidden'
+          }
+        }}
       >
         {items()}
       </Drawer>
