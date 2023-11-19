@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link as RouterLink, LinkProps as RouterLinkProps } from "react-router-dom";
 
-import usuario from '../assets/imagens/usuario.png';
-
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Drawer from '@mui/material/Drawer';
@@ -21,20 +19,20 @@ import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import HistoryIcon from '@mui/icons-material/History';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-
 import LocalActivityIcon from '@mui/icons-material/LocalActivity';
 import TableChartIcon from '@mui/icons-material/TableChart';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-
 import HelpIcon from '@mui/icons-material/Help';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import EmailIcon from '@mui/icons-material/Email';
+
+import usuario from '../../assets/imagens/usuario.png';
 
 interface Props{
   anchor?: 'left' | 'right'
 }
 
-export default function Menu({ anchor }: Props) {
+export default function MenuLateral({ anchor }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer =

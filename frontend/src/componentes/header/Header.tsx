@@ -1,11 +1,7 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
+
 import { styled, alpha } from '@mui/material/styles';
-import styles from '../estilos/headerStyles';
-
-import logo from "../assets/imagens/logo.png";
-import usuario from '../assets/imagens/usuario.png';
-
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,7 +11,6 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuUI from './Menu';
 import Avatar from '@mui/material/Avatar';
 
 import HomeIcon from '@mui/icons-material/Home';
@@ -24,6 +19,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
+import MenuLateral from '../menulateral/MenuLateral';
+
+import logo from "../../assets/imagens/logo.png";
+import usuario from '../../assets/imagens/usuario.png';
+
+import styles from './headerStyles';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -121,7 +122,7 @@ export default function Header() {
             aria-label="abre o menu"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <MenuUI anchor='left'/>
+            <MenuLateral anchor='left'/>
           </IconButton>
           <Typography
             noWrap
@@ -197,7 +198,7 @@ export default function Header() {
               color="inherit"
               aria-label="abre o menu"
             >
-              <MenuUI anchor='right'/>
+              <MenuLateral anchor='right'/>
             </IconButton>
           </Box>
         </Toolbar>

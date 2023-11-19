@@ -1,5 +1,6 @@
 import React from 'react';
-import FormUsuario from '../componentes/FormUsuario';
+
+import FormUsuario from '../componentes/formusuario/FormUsuario';
 
 export default function PerfilUsuario() {
   return (

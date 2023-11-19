@@ -1,6 +1,7 @@
-import React from 'react'
-import '../estilos/footer.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import './footer.css';
 
 export default function Footer() {
   return (

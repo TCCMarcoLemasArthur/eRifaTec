@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import styles from '../estilos/formRifaStyles';
 import axios from 'axios';
 
 import Grid from '@mui/material/Unstable_Grid2';
@@ -9,7 +8,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import InputLabel from '@mui/material/InputLabel'
+import InputLabel from '@mui/material/InputLabel';
+
+import styles from './formRifaStyles';
 
 export default function FormRifa() {
   const navigate = useNavigate()

@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import loadable from '@loadable/component';
 
-import Header from "./componentes/Header";
-import Footer from "./componentes/Footer";
+import Header from "./componentes/header/Header";
+import Footer from "./componentes/footer/Footer";
 
-const Home = loadable(() => import('./paginas/Home'))
-const CadastroUsuario = loadable(() => import('./paginas/CadastroUsuario'))
-const LoginUsuario = loadable(() => import('./paginas/LoginUsuario'))
-const CriarRifa = loadable(() => import('./paginas/CriarRifa'))
-const NoPage = loadable(() => import('./paginas/NoPage'))
-const ListarUsuarios = loadable(() => import('./paginas/ListarUsuarios'))
-const PerfilUsuario = loadable(() => import('./paginas/PerfilUsuario'))
+const Home = loadable(() => import('./paginas/Home'));
+const CadastroUsuario = loadable(() => import('./paginas/CadastroUsuario'));
+const LoginUsuario = loadable(() => import('./paginas/LoginUsuario'));
+const CriarRifa = loadable(() => import('./paginas/CriarRifa'));
+const NoPage = loadable(() => import('./paginas/nopage/NoPage'));
+const ListarUsuarios = loadable(() => import('./paginas/ListarUsuarios'));
+const PerfilUsuario = loadable(() => import('./paginas/PerfilUsuario'));
 
 export default function Rotas() {
 	return (

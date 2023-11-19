@@ -1,6 +1,6 @@
 import React from 'react';
-import FormRifa from '../componentes/FormRifa';
 
+import FormRifa from '../componentes/formrifa/FormRifa';
 
 export default function CriarRifa() {
   return (

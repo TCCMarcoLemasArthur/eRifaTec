@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import styles from '../estilos/formUsuarioStyles';
 import axios from 'axios';
 
 import Grid from '@mui/material/Unstable_Grid2';
@@ -8,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
+import styles from './formUsuarioStyles';
 
 //* A propriedade cadastro é requerida para identificação
 //* cadastro = true -> Formulário para cadastro

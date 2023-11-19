@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
-
-import styles from '../estilos/gridUsuariosStyles';
+import axios from 'axios';
 
 import {
   DataGrid,
   GridColDef,
   GridToolbar
 } from '@mui/x-data-grid';
-import Button from '@mui/material/Button'
+
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import DeleteIcon from '@mui/icons-material/Delete'
+
+import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+
+import styles from './gridUsuariosStyles';
 
 const columns: GridColDef[] = [
   { field: 'idusuario', headerName: 'ID', flex: 0.7 },

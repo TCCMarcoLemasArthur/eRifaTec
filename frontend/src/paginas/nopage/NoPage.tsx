@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from '../estilos/noPageStyles';
 
 import Alert from "@mui/material/Alert";
 import AlertTitle from '@mui/material/AlertTitle';
 import Container from "@mui/material/Container";
 
+import styles from './noPageStyles';
 
 export default function NoPage() {
   return (

@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import styles from '../estilos/formLoginStyles'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import Grid from '@mui/material/Unstable_Grid2';
@@ -8,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
+import styles from './formLoginStyles';
 
 export default function FormLogin() {
   const navigate = useNavigate();
