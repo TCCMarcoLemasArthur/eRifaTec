@@ -19,8 +19,8 @@ export default function FormRifa() {
     dataSorteio: '',
     horaSorteio: '',
     descricao: '',
-    quantBilhete: 0,
-    precoBilhete: 0.00,
+    quantBilhete: '',
+    precoBilhete: '',
     premio: '',
     imagem: [],
     cep: '',
@@ -161,13 +161,13 @@ export default function FormRifa() {
             value={rifaData.quantBilhete}
             onChange={handleInputChange}
             required
-            sx={styles.campo}
+            sx={[styles.campo, styles.campoNumero]}
           />
         </Grid>
 
         <Grid xs={6}>
           <TextField
-            type='text'
+            type='number'
             id='precoBilhete'
             name='precoBilhete'
             label='Preço de cada Bilhete'
@@ -175,7 +175,7 @@ export default function FormRifa() {
             value={rifaData.precoBilhete}
             onChange={handleInputChange}
             required
-            sx={styles.campo}
+            sx={[styles.campo, styles.campoNumero]}
           />
         </Grid>
         
@@ -226,7 +226,7 @@ export default function FormRifa() {
             <>
               <Grid xs={6} sm={4}>
                 <TextField
-                  type='text'
+                  type='number'
                   id='cep'
                   name='cep'
                   label='CEP'
@@ -235,7 +235,7 @@ export default function FormRifa() {
                   value={rifaData.cep}
                   onChange={handleInputChange}
                   required
-                  sx={styles.campo}
+                  sx={[styles.campo, styles.campoNumero]}
                 />
               </Grid>
               <Grid xs={6} sm={4}>
@@ -293,7 +293,7 @@ export default function FormRifa() {
               </Grid>
               <Grid xs={3} sm={4}>
                 <TextField
-                  type='text'
+                  type='number'
                   id='numero'
                   name='numero'
                   label='Número'
@@ -301,7 +301,7 @@ export default function FormRifa() {
                   value={rifaData.numero}
                   onChange={handleInputChange}
                   required
-                  sx={styles.campo}
+                  sx={[styles.campo, styles.campoNumero]}
                 />
               </Grid>
             </>

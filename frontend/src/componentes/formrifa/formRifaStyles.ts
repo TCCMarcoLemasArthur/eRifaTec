@@ -21,6 +21,17 @@ const formRifaStyles = {
       width: '100%',
       marginBottom: 2
     },
+    campoNumero: {
+      input: {
+        '&::-webkit-inner-spin-button': {
+          WebkitAppearance: 'none'
+        },
+        '&::-webkit-outer-spin-button': {
+          WebkitAppearance: 'none'
+        },
+        MozAppearance: 'textfield'
+      }
+    },
     campoImagem: {
       display: 'flex',
       justifyContent: 'center',

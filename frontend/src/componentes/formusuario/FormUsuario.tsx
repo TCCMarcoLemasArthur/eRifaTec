@@ -161,7 +161,7 @@ export default function FormUsuario({ cadastro }: Props) {
       </Grid>
       <Grid xs={6}>
         <TextField
-          type='text'
+          type='number'
           id='cpf'
           name='cpf'
           label='CPF'
@@ -170,7 +170,7 @@ export default function FormUsuario({ cadastro }: Props) {
           inputProps={{ maxLength: 11 }}
           onChange={handleInputChange}
           required
-          sx={styles.campo}
+          sx={[styles.campo, styles.campoNumero]}
         />
       </Grid>
 
@@ -190,7 +190,7 @@ export default function FormUsuario({ cadastro }: Props) {
       </Grid>
       <Grid xs={4} sm={6}>
         <TextField
-          type='tel'
+          type='number'
           id='celular'
           name='celular'
           label='Celular'
@@ -199,7 +199,7 @@ export default function FormUsuario({ cadastro }: Props) {
           value={userData.celular}
           onChange={handleInputChange}
           required
-          sx={styles.campo}
+          sx={[styles.campo, styles.campoNumero]}
         />
       </Grid>
 
@@ -246,7 +246,7 @@ export default function FormUsuario({ cadastro }: Props) {
 
       <Grid xs={6} sm={4}>
         <TextField
-          type='text'
+          type='number'
           id='cep'
           name='cep'
           label='CEP'
@@ -255,7 +255,7 @@ export default function FormUsuario({ cadastro }: Props) {
           value={userData.cep}
           onChange={handleInputChange}
           required
-          sx={styles.campo}
+          sx={[styles.campo, styles.campoNumero]}
         />
       </Grid>
       <Grid xs={6} sm={4}>
@@ -313,7 +313,7 @@ export default function FormUsuario({ cadastro }: Props) {
       </Grid>
       <Grid xs={3} sm={4}>
         <TextField
-          type='text'
+          type='number'
           id='numero'
           name='numero'
           label='Número'
@@ -321,7 +321,7 @@ export default function FormUsuario({ cadastro }: Props) {
           value={userData.numero}
           onChange={handleInputChange}
           required
-          sx={styles.campo}
+          sx={[styles.campo, styles.campoNumero]}
         />
       </Grid>
 
