@@ -11,9 +11,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Box sx={{
-        minHeight: `${sizeConfigs.conteudo.minHeight}`
-      }}>
+      <Box
+        component='main'
+        sx={{
+          minHeight: `${sizeConfigs.conteudo.minHeight}`,
+          '& > .MuiBox-root': {
+            minHeight: `${sizeConfigs.conteudo.minHeight}`
+          }
+        }}
+      >
         <Rotas />
       </Box>
       <Footer />

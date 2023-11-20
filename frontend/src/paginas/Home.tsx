@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 export default function Home() {
@@ -30,11 +30,10 @@ export default function Home() {
 
   return (
     <>
-      <Container sx={{ 
+      <Box sx={{ 
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center', 
+        alignItems: 'center',
         width: '100%',
         p: '20px 0'
       }}>
@@ -65,7 +64,7 @@ export default function Home() {
         <Button onClick={noPage} variant='contained' color='error'>
           Página 404
         </Button>
-      </Container>
+      </Box>
     </>
   );
 }

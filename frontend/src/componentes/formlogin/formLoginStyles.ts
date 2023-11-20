@@ -13,12 +13,10 @@ const formLoginStyles = {
       marginBottom: 3,
     },
     formLogin: {
-      margin: '45px auto',
       width: '100%',
       maxWidth: '22rem',
       backgroundColor: 'white',
-      padding: '15px 20px',
-      borderRadius: '10px',
+      padding: '15px 20px'
     },
     campo: {
       input: {color: '#515151'},

@@ -112,7 +112,7 @@ export default function Header() {
 
 
   return (
-    <Box>
+    <Box component='header'>
       <AppBar position="static" sx={styles.container}>
         <Toolbar>
           <Box

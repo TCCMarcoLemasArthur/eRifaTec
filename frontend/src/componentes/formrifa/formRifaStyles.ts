@@ -1,11 +1,10 @@
 const formRifaStyles = {
     formRifa: {
-      margin: '45px auto',
+      margin: 'auto',
       width: '100%',
       maxWidth: '46rem',
       backgroundColor: 'white',
-      padding: '15px 20px',
-      borderRadius: '10px',
+      padding: '15px 20px'
     },
     titulo: {
       color: 'primary.main',

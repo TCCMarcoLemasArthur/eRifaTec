@@ -12,19 +12,11 @@ const formUsuarioStyles = {
     marginBottom: 2
   },
   formUsuario: {
-    margin: '45px auto',
+    margin: 'auto',
     width: '100%',
     maxWidth: '46rem',
     backgroundColor: 'white',
     padding: '15px 20px',
-    borderRadius: '10px',
-    
-  },
-  cadastro: {
-    boxShadow: '0 0 17px rgba(0, 0, 0, 0.3)'
-  },
-  perfil: {
-
   },
   campo: {
     input: {color: '#515151'},

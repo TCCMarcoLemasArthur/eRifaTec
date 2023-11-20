@@ -5,7 +5,8 @@ const sizes = sizeConfigs.header
 const headerStyles = {
   container: {
     bgcolor: 'background.dark',
-    height: `${sizes.height}`
+    height: `${sizes.height}`,
+    boxShadow: 'none'
   },
   logo: {
     width: 40,
