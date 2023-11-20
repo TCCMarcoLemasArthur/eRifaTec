@@ -155,7 +155,8 @@ export default function MenuLateral({ anchor }: Props) {
         open={isOpen}
         onClose={toggleDrawer(false)}
         sx={{
-          '& .MuiPaper-root': {
+          '& > .MuiPaper-root': {
+            backgroundColor: 'background.light',
             overflowY: 'hidden'
           }
         }}
