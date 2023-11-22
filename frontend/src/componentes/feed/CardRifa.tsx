@@ -1,8 +1,11 @@
 import React from "react";
 
-import Grid from '@mui/material/Unstable_Grid2';
-import Box from '@mui/material/Box'
-import Typography from "@mui/material/Typography";
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 import sizeConfigs from "../../configs/sizeConfigs";
 
@@ -19,49 +22,56 @@ const sizes = sizeConfigs.feed
 
 export default function CardRifa({ titulo, status, dataSorteio, preco, quantbilhetes }: CardRifaProps) {
   return (
-    <Grid
-      container
+    <Card
       sx={{
         borderRadius: '10px',
-        maxWidth: '20rem',
+        width: '90%',
         boxShadow: '0 0 10px #000',
-        marginX: {
-          xs: '12px'
-        }
       }}
     >
-      <Grid xs={12}>
-        <Box 
+      <CardContent>
+        <Box
           sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             bgcolor: 'pink',
-            borderTopRightRadius: '10px',
-            borderTopLeftRadius: '10px',
+            borderRadius: '10px',
             height: `${sizes.img.height}`,
             width: `${sizes.img.width}`
           }}
         />
-      </Grid>
 
-      <Grid xs={12}>
-        <Typography component='h2' variant="h5">{titulo}</Typography>
-      </Grid>
+        <Typography component='h2' variant="h5"
+          sx={{
+            textAlign: 'center'
+          }}
+        >
+          {titulo}
+        </Typography>
 
-      <Grid xs={6}>
-        <Typography>{preco}</Typography>
-      </Grid>
+        <Typography>
+          Preço do bilhete: R${preco}
+        </Typography>
 
-      <Grid xs={6}>
-        <Typography>{status}</Typography>
-      </Grid>
-      <Grid xs={6}>
-        <Typography>{quantbilhetes}</Typography>
-      </Grid>
-      <Grid xs={6}>
-        <Typography>{dataSorteio}</Typography>
-      </Grid>
-    </Grid>
+        <Typography>
+          Total de bilhetes: {quantbilhetes}
+        </Typography>
+
+        <Typography>
+          Data do sorteio: {dataSorteio}
+        </Typography>
+
+        <Typography>
+          Status: {status}
+        </Typography>
+
+      </CardContent>
+
+      <CardActions sx={{ justifyContent: 'center' }}>
+        <Button variant='contained' size="small">Saiba mais</Button>
+        <Button variant='contained' size="small">Compartilhar</Button>
+      </CardActions>
+    </Card>
   )
 }

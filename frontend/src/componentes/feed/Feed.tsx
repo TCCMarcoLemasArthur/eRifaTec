@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { format } from "date-fns";
 
 import Grid from '@mui/material/Unstable_Grid2';
+import Typography from '@mui/material/Typography';
 
 import CardRifa from "./CardRifa";
 
@@ -13,13 +15,18 @@ interface Rifa {
   datasorteiorifa: string;
 }
 
-export default function Feed() {
+export default function Feed() { 
   const [rifas, setRifas] = useState<Rifa[]>([])
 
   const listarRifas = () => {
     axios.get('http://localhost:5000/listarrifa')
       .then(response => {
-        setRifas(response.data)
+        const rifas = response.data.map((rifa: Rifa) => ({
+          ...rifa,
+          datasorteiorifa: format(new Date(rifa.datasorteiorifa), 'dd/MM/yyyy'),
+        }));
+        console.log(rifas);
+        setRifas(rifas);
       })
       .catch(erro => console.log(erro))
   }
@@ -32,13 +39,31 @@ export default function Feed() {
   return (
     <Grid
       container
-      spacing={5}
+      spacing={4}
+      sx={{
+        mx: {
+          md: 8
+        },
+      }}
     >
       <Grid xs={12}>
-        <h1>Feed</h1>
+        <Typography 
+          component='h1'
+          variant='h2'
+          sx={{
+            textAlign: 'center',
+            color: 'primary.dark',
+            mb: {
+              md: 3
+            }
+          }}
+        >
+          Feed
+        </Typography>
       </Grid>
+
       {rifas.map(rifa => (
-        <Grid xs={12} sm={6} md={4}>
+        <Grid xs={12} sm={6} md={4} lg={3} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 5 }}>
           <CardRifa
             key={rifa.idrifa}
             titulo={rifa.titulorifa}
