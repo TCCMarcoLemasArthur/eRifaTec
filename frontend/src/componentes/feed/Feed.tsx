@@ -49,16 +49,17 @@ export default function Feed() {
       <Grid xs={12}>
         <Typography 
           component='h1'
-          variant='h2'
+          variant='h1'
           sx={{
             textAlign: 'center',
             color: 'primary.dark',
+            fontFamily: 'Edwardian Script ITC',
             mb: {
               md: 3
             }
           }}
         >
-          Feed
+          eRifaTec
         </Typography>
       </Grid>
 
