@@ -5,6 +5,12 @@ const sizeConfigs = {
   conteudo: {
     minHeight: '',
   },
+  feed: {
+    img: {
+      height: '192px',
+      width: 'auto'
+    }
+  },
   footer: {
     height: '96px',
   },
