@@ -1,3 +1,6 @@
+@import url('./assets/fonts/Poppins.css');
+@import url('./assets/fonts/Cookie.css');
+
 body {
     overflow-y: scroll;
 }

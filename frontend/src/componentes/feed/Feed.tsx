@@ -15,7 +15,7 @@ interface Rifa {
   datasorteiorifa: string;
 }
 
-export default function Feed() { 
+export default function Feed() {
   const [rifas, setRifas] = useState<Rifa[]>([])
 
   const listarRifas = () => {
@@ -47,13 +47,13 @@ export default function Feed() {
       }}
     >
       <Grid xs={12}>
-        <Typography 
+        <Typography
           component='h1'
           variant='h1'
           sx={{
             textAlign: 'center',
-            color: 'primary.dark',
-            fontFamily: 'Edwardian Script ITC',
+            color: 'primary.main',
+            fontFamily: 'Cookie',
             mb: {
               md: 3
             }
@@ -64,9 +64,17 @@ export default function Feed() {
       </Grid>
 
       {rifas.map(rifa => (
-        <Grid xs={12} sm={6} md={4} lg={3} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 5 }}>
+        <Grid
+          key={rifa.idrifa}
+          xs={12} sm={6} md={4} lg={3}
+          sx={{
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            mb: 5
+          }}
+        >
           <CardRifa
-            key={rifa.idrifa}
             titulo={rifa.titulorifa}
             status={rifa.statusrifa}
             quantbilhetes={rifa.quantbilheterifa}
