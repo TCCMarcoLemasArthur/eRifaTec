@@ -2,12 +2,15 @@ import React from "react";
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import sizeConfigs from "../../configs/sizeConfigs";
+
+import bicicletaAzul from '../../assets/imagens/bicicleta_azul.jpg'
 
 interface CardRifaProps {
   titulo: string;
@@ -29,20 +32,22 @@ export default function CardRifa({ titulo, status, dataSorteio, preco, quantbilh
         boxShadow: '0 0 10px #000',
       }}
     >
+      <CardMedia
+        component='img'
+        src={bicicletaAzul}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderTopRightRadius: '10px',
+          borderTopLeftRadius: '10px',
+          objectFit: 'cover',
+          height: `${sizes.img.height}`,
+          width: `${sizes.img.width}`
+        }}
+      />
       <CardContent>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            bgcolor: 'pink',
-            borderRadius: '10px',
-            height: `${sizes.img.height}`,
-            width: `${sizes.img.width}`
-          }}
-        />
-
-        <Typography component='h2' variant="h5"
+        <Typography gutterBottom component='h2' variant="h5"
           sx={{
             textAlign: 'center'
           }}

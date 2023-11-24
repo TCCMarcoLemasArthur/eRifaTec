@@ -7,8 +7,8 @@ const sizeConfigs = {
   },
   feed: {
     img: {
-      height: '192px',
-      width: 'auto'
+      height: '100%',
+      width: '100%'
     }
   },
   footer: {
