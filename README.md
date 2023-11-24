@@ -3,9 +3,9 @@
 
 ## Páginas
 
-### 1. Home
+### 1. Feed
 
-![Home](https://github.com/TCCMarcoLemasArthur/eRifaTec/blob/main/galeria/home.png)
+![Feed](https://github.com/TCCMarcoLemasArthur/eRifaTec/blob/main/galeria/feed.png)
 
 ### 2. Cadastro
 
