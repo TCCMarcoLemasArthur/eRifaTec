@@ -107,7 +107,7 @@ export default function FormUsuario({ cadastro }: Props) {
     axios.post('http://localhost:5000/cadastrarusuario', userData)
       .then(response => {
         console.log(response.data)
-        // navigate('/')
+        navigate('/')
       })
       .catch(erro => {
         console.log('Erro ao cadastrar', erro.response.data)
